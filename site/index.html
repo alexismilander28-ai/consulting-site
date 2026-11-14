@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlos Milander | Office automation for home-service trades in eastern PA</title>
+<meta name="description" content="Missed calls, quotes nobody chased, reminders, paperwork. I find where your shop loses money in the office and give you a written report with the fixes. English or Spanish.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#fbfcfe" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d2130'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h8' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLg.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK4397yjA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/newsreader/v26/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRd6JFYYzbA.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Google Fonts, latin subset (covers Spanish), declared inline so no stylesheet blocks the first paint. */
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 400 800; font-stretch: 100% 125%; font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLg.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Newsreader"; font-style: normal; font-weight: 200 800; font-display: swap;
+  src: url(https://fonts.gstatic.com/s/newsreader/v26/cY9AfjOCX1hbuyalUrK4397yjA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(https://fonts.gstatic.com/s/newsreader/v26/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRd6JFYYzbA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* Width-matched fallbacks (measured against the real faces) so the swap does not shift the layout. */
+@font-face { font-family: "Archivo Fallback"; src: local("Arial"); size-adjust: 98.4%; ascent-override: 89%; descent-override: 21%; line-gap-override: 0%; }
+@font-face { font-family: "Newsreader Fallback"; font-style: normal; src: local("Georgia"); size-adjust: 100%; ascent-override: 92%; descent-override: 24%; line-gap-override: 0%; }
+@font-face { font-family: "Newsreader Fallback"; font-style: italic; src: local("Georgia Italic"), local("Georgia-Italic"); size-adjust: 90%; ascent-override: 102%; descent-override: 27%; line-gap-override: 0%; }
+
+@layer tokens, base, layout, components;
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+
+    /* primitives */
+    --paper-0: oklch(0.99 0.003 255);
+    --paper-1: oklch(0.965 0.006 258);
+    --paper-2: oklch(0.935 0.009 260);
+    --ink-950: oklch(0.17 0.012 262);
+    --ink-900: oklch(0.2 0.02 262);
+    --ink-850: oklch(0.235 0.018 262);
+    --ink-800: oklch(0.27 0.018 262);
+    --ink-600: oklch(0.43 0.02 262);
+    --ink-300: oklch(0.86 0.01 262);
+    --ink-200: oklch(0.92 0.008 262);
+    --blue-500: oklch(0.47 0.19 264);
+    --blue-600: oklch(0.41 0.18 264);
+    --blue-300: oklch(0.75 0.13 264);
+    --blue-200: oklch(0.82 0.1 264);
+    --red-500: oklch(0.55 0.19 29);
+    --red-300: oklch(0.72 0.15 32);
+
+    /* semantic: light */
+    --bg: var(--paper-0);
+    --bg-alt: var(--paper-1);
+    --surface: oklch(1 0 0);
+    --sunk: var(--paper-2);
+    --text: var(--ink-900);
+    --text-soft: var(--ink-600);
+    --line: var(--ink-300);
+    --accent: var(--blue-500);
+    --accent-press: var(--blue-600);
+    --on-accent: oklch(1 0 0);
+    --signal: var(--red-500);
+    --band-bg: var(--ink-900);
+    --band-text: var(--paper-0);
+    --band-soft: oklch(0.8 0.012 262);
+    --band-line: oklch(0.36 0.02 262);
+    --highlight: oklch(1 0 0 / 0.7);
+    --sh: oklch(0.3 0.04 262);
+
+    /* elevation: five levels, two layers each, y = 2x, hue-matched */
+    --e1: 0 1px 1px oklch(from var(--sh) l c h / 0.07), 0 2px 4px oklch(from var(--sh) l c h / 0.05);
+    --e2: 0 1px 2px oklch(from var(--sh) l c h / 0.08), 0 4px 10px oklch(from var(--sh) l c h / 0.07);
+    --e3: 0 2px 4px oklch(from var(--sh) l c h / 0.08), 0 10px 22px oklch(from var(--sh) l c h / 0.09);
+    --e4: 0 3px 6px oklch(from var(--sh) l c h / 0.08), 0 18px 40px oklch(from var(--sh) l c h / 0.12);
+    --e5: 0 4px 8px oklch(from var(--sh) l c h / 0.09), 0 28px 60px oklch(from var(--sh) l c h / 0.16);
+
+    /* type */
+    --serif: "Newsreader", "Newsreader Fallback", Georgia, serif;
+    --sans: "Archivo", "Archivo Fallback", Arial, sans-serif;
+    --fs--1: 0.8125rem;
+    --fs-0: 1.0625rem;
+    --fs-1: 1.3rem;
+    --fs-2: 1.75rem;
+    --fs-3: clamp(2rem, 1.4rem + 2.6vw, 2.75rem);
+    --fs-4: clamp(2.75rem, 1.5rem + 5.4vw, 4.75rem);
+
+    /* space 4/8 */
+    --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem;
+    --s-6: 2rem; --s-7: 3rem; --s-8: 4rem; --s-9: 6rem; --s-10: 8rem;
+
+    /* radius: concentric */
+    --r-1: 4px; --r-2: 8px; --r-3: 14px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --wrap: 74rem;
+    --gutter: clamp(1.25rem, 0.6rem + 3vw, 2.5rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: var(--ink-950);
+      --bg-alt: oklch(0.195 0.014 262);
+      --surface: var(--ink-850);
+      --sunk: var(--ink-800);
+      --text: oklch(0.95 0.006 262);
+      --text-soft: oklch(0.78 0.012 262);
+      --line: oklch(0.34 0.016 262);
+      --accent: var(--blue-300);
+      --accent-press: var(--blue-200);
+      --on-accent: var(--ink-950);
+      --signal: var(--red-300);
+      --band-bg: oklch(0.235 0.022 264);
+      --band-text: oklch(0.96 0.006 262);
+      --band-soft: oklch(0.8 0.014 262);
+      --band-line: oklch(0.36 0.02 262);
+      --highlight: oklch(1 0 0 / 0.06);
+      --sh: oklch(0.06 0.01 262);
+    }
+  }
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-block-start: var(--s-5); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: var(--fs-0);
+    line-height: 1.55;
+    font-variation-settings: "wdth" 100;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+  p, li, dd { text-wrap: pretty; }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; }
+  a { color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: var(--r-1); }
+  ::selection { background: color-mix(in oklch, var(--accent) 22%, transparent); }
+  [hidden] { display: none !important; }
+  .sr-only { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer layout {
+  .wrap { inline-size: min(100% - 2 * var(--gutter), var(--wrap)); margin-inline: auto; }
+  section { padding-block: var(--s-9); }
+  .section-head { display: grid; gap: var(--s-4); margin-block-end: var(--s-7); max-inline-size: 44rem; }
+  .section-head h2 { font-size: var(--fs-3); }
+  .lede { color: var(--text-soft); font-size: var(--fs-1); line-height: 1.45; max-inline-size: 38ch; }
+  @media (min-width: 60em) { section { padding-block: var(--s-10); } }
+}
+
+@layer components {
+  /* skip link */
+  .skip {
+    position: absolute; inset-inline-start: var(--s-4); inset-block-start: var(--s-4); z-index: 10;
+    background: var(--accent); color: var(--on-accent); padding: var(--s-3) var(--s-4);
+    border-radius: var(--r-2); font-weight: 650; text-decoration: none;
+    transform: translateY(-200%);
+  }
+  .skip:focus-visible { transform: none; }
+
+  /* header */
+  .masthead { padding-block: var(--s-4); }
+  .masthead .wrap { display: flex; align-items: center; gap: var(--s-5); }
+  .brand { display: grid; line-height: 1.15; text-decoration: none; color: var(--text); min-block-size: 44px; align-content: center; }
+  .brand b { font-family: var(--serif); font-size: var(--fs-1); font-weight: 650; letter-spacing: -0.01em; }
+  .brand span { font-size: var(--fs--1); color: var(--text-soft); }
+  .nav { display: none; margin-inline-start: auto; gap: var(--s-2); }
+  .nav a { color: var(--text-soft); text-decoration: none; font-size: 0.9375rem; padding: var(--s-3) var(--s-3); border-radius: var(--r-1); }
+  .nav a:hover { color: var(--text); }
+  .lang { margin-inline-start: auto; display: inline-flex; padding: 3px; gap: 2px; background: var(--sunk); border-radius: var(--r-2); }
+  .lang button {
+    font: 650 0.875rem/1 var(--sans); letter-spacing: 0.04em; color: var(--text-soft);
+    background: none; border: 0; border-radius: 5px; min-inline-size: 44px; min-block-size: 44px; cursor: pointer;
+    transition: color 150ms var(--ease-out), background-color 150ms var(--ease-out);
+  }
+  .lang button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: var(--e1), inset 0 1px 0 var(--highlight); }
+  .lang button:hover { color: var(--text); }
+  @media (min-width: 60em) {
+    .nav { display: flex; }
+    .lang { margin-inline-start: var(--s-2); }
+  }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+    min-block-size: 52px; padding: 0 var(--s-5);
+    font: 650 1rem/1.2 var(--sans); font-variation-settings: "wdth" 104;
+    color: var(--on-accent); background: var(--accent);
+    border: 0; border-radius: var(--r-2); text-decoration: none; cursor: pointer;
+    box-shadow: var(--e2), inset 0 1px 0 oklch(1 0 0 / 0.22);
+    transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+  }
+  .btn:hover { background: var(--accent-press); text-decoration: none; }
+  .btn:active { transform: scale(0.97); }
+  .text-link { font-weight: 600; display: inline-flex; align-items: center; min-block-size: 44px; }
+
+  /* hero */
+  .hero { padding-block: var(--s-6) var(--s-9); }
+  .hero .wrap { display: grid; gap: var(--s-8); align-items: center; }
+  .hero-copy { display: grid; gap: var(--s-5); }
+  .for { font-size: 0.9375rem; color: var(--text-soft); max-inline-size: 40ch; }
+  .hero h1 { font-size: var(--fs-4); font-weight: 400; line-height: 1.02; letter-spacing: -0.03em; font-variation-settings: "opsz" 72; }
+  .hero h1 em { font-style: normal; font-weight: 750; }
+  .hero .lede { max-inline-size: 34ch; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-5); margin-block-start: var(--s-2); }
+  .assure { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); list-style: none; font-size: 0.9375rem; color: var(--text-soft); }
+  .assure li { display: flex; align-items: baseline; gap: var(--s-2); }
+  .assure li::before { content: ""; inline-size: 0.5rem; block-size: 0.5rem; border: 1.5px solid currentColor; border-radius: 50%; flex: none; transform: translateY(-1px); }
+  @media (min-width: 60em) {
+    .hero { padding-block: var(--s-8) var(--s-10); }
+    .hero .wrap { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); gap: var(--s-8); align-items: start; }
+    .slip { margin-block-start: var(--s-7); }
+  }
+
+  /* the work order */
+  .slip {
+    position: relative; margin: 0;
+    background: var(--surface); border-radius: var(--r-3);
+    box-shadow: var(--e4), inset 0 1px 0 var(--highlight);
+    padding: var(--s-5);
+  }
+  .slip::before {
+    /* perforation between the stub and the ticket */
+    content: ""; position: absolute; inset-inline: var(--s-4); inset-block-start: 4.1rem; block-size: 2px;
+    background: radial-gradient(circle, var(--line) 1px, transparent 1.5px) 0 0 / 8px 2px repeat-x;
+  }
+  .slip-top { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); padding-block-end: var(--s-6); }
+  .slip-title { font: 750 0.8125rem/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; font-variation-settings: "wdth" 118; }
+  .slip-no { font-family: var(--serif); font-size: var(--fs-1); font-variant-numeric: tabular-nums lining-nums; color: var(--text-soft); }
+  .slip dl { margin: 0; display: grid; }
+  .slip .row { display: grid; gap: var(--s-1); padding-block: var(--s-3); border-block-end: 1px solid var(--line); }
+  .slip .row:last-child { border-block-end: 0; }
+  .slip dt { font: 700 0.6875rem/1.3 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); font-variation-settings: "wdth" 115; }
+  .slip dd { margin: 0; font-family: var(--serif); font-size: 1.1875rem; line-height: 1.35; font-style: italic; font-variation-settings: "opsz" 18; }
+  .slip-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s-4); margin-block-start: var(--s-4); }
+  .stamp {
+    flex: none; margin-inline-end: var(--s-1);
+    font: 800 0.8125rem/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; font-variation-settings: "wdth" 120;
+    color: var(--text); opacity: 0.72; padding: var(--s-2) var(--s-3);
+    border: 2px solid currentColor; outline: 1px solid currentColor; outline-offset: 2px; border-radius: var(--r-1);
+    transform: rotate(-8deg);
+  }
+  .slip figcaption { font-size: var(--fs--1); color: var(--text-soft); }
+  @media (min-width: 30em) {
+    .slip .row { grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--s-4); align-items: baseline; }
+    .slip { padding: var(--s-6) var(--s-6) var(--s-6); }
+    .slip::before { inset-block-start: 4.6rem; }
+  }
+  @media (min-width: 60em) {
+    .slip { transform: rotate(-1.25deg); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .stamp { animation: stamp 420ms var(--ease-out) 650ms both; }
+    @keyframes stamp {
+      from { opacity: 0; transform: rotate(-8deg) scale(1.35); }
+      to { opacity: 0.72; transform: rotate(-8deg) scale(1); }
+    }
+  }
+
+  /* leaks */
+  .leaks { background: var(--bg-alt); }
+  .leak-list { list-style: none; display: grid; gap: var(--s-7); }
+  .leak { display: grid; gap: var(--s-4); }
+  .log {
+    justify-self: start; display: grid; gap: 2px;
+    background: var(--sunk); border-radius: var(--r-2); padding: var(--s-3) var(--s-4);
+    font-size: 0.875rem; line-height: 1.35; font-variant-numeric: tabular-nums;
+  }
+  .log .t { color: var(--text-soft); }
+  .log b { display: flex; align-items: center; gap: var(--s-2); font-weight: 650; }
+  .log b::before { content: ""; inline-size: 0.5rem; block-size: 0.5rem; border-radius: 50%; background: var(--signal); flex: none; }
+  .leak h3 { font-size: var(--fs-2); }
+  .leak p { color: var(--text-soft); max-inline-size: 60ch; margin-block-start: var(--s-3); }
+  @media (min-width: 48em) {
+    .leak { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--s-6); align-items: start; }
+    .log { justify-self: stretch; margin-block-start: 0.35rem; }
+  }
+
+  /* steps */
+  .steps { list-style: none; display: grid; gap: var(--s-7); counter-reset: step; }
+  .step { display: grid; gap: var(--s-3); align-content: start; counter-increment: step; }
+  .step::before {
+    content: counter(step); font-family: var(--serif); font-weight: 200; font-size: 4rem; line-height: 0.9;
+    color: var(--text-soft); font-variant-numeric: lining-nums; font-variation-settings: "opsz" 72;
+  }
+  .step h3 { font-size: var(--fs-1); font-weight: 650; letter-spacing: -0.01em; }
+  .step p { color: var(--text-soft); max-inline-size: 40ch; }
+  @media (min-width: 52em) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); } }
+
+  /* offer: one panel, a rail joining the three parts */
+  .offer { background: var(--bg-alt); }
+  .ladder {
+    list-style: none; display: grid; gap: 0;
+    background: var(--surface); border-radius: var(--r-3); box-shadow: var(--e2), inset 0 1px 0 var(--highlight);
+    padding: var(--s-6) var(--s-5);
+  }
+  .rung { position: relative; display: grid; gap: var(--s-3); align-content: start; padding-inline-start: var(--s-6); padding-block-end: var(--s-7); }
+  .rung:last-child { padding-block-end: 0; }
+  .rung::before {
+    /* rail node */
+    content: ""; position: absolute; inset-inline-start: 0; inset-block-start: 0.55rem;
+    inline-size: 0.875rem; block-size: 0.875rem; border-radius: 50%;
+    border: 2px solid var(--text); background: var(--surface);
+  }
+  .rung:first-child::before { background: var(--text); }
+  .rung::after {
+    /* rail segment */
+    content: ""; position: absolute; inset-inline-start: calc(0.4375rem - 1px); inset-block: 1.6rem 0.2rem;
+    inline-size: 2px; background: var(--line);
+  }
+  .rung:last-child::after { display: none; }
+  .rung-name { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--s-2) var(--s-3); }
+  .rung h3 { font-size: clamp(2rem, 1rem + 2vw, 2.75rem); font-weight: 400; letter-spacing: -0.025em; overflow-wrap: anywhere; }
+  .start { font-size: var(--fs--1); font-weight: 650; color: var(--text-soft); }
+  .rung .tag { font-family: var(--serif); font-style: italic; font-size: var(--fs-1); line-height: 1.3; }
+  .rung ul { list-style: none; display: grid; gap: var(--s-2); margin-block-start: var(--s-2); }
+  .rung li { position: relative; padding-inline-start: var(--s-5); color: var(--text-soft); }
+  .rung li::before { content: ""; position: absolute; inset-inline-start: 0; inset-block-start: 0.72em; inline-size: 0.625rem; block-size: 2px; background: var(--line); }
+  .rung .note { margin-block-start: var(--s-3); font-size: 0.9375rem; padding: var(--s-3) var(--s-4); background: var(--sunk); border-radius: var(--r-2); }
+  .terms { margin-block-start: var(--s-6); display: grid; gap: var(--s-2); max-inline-size: 60ch; }
+  .terms strong { font-family: var(--serif); font-size: var(--fs-1); font-weight: 600; letter-spacing: -0.01em; }
+  .terms p { color: var(--text-soft); }
+  @media (min-width: 60em) {
+    .ladder { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: var(--s-7) var(--s-6) var(--s-6); gap: var(--s-6); }
+    .rung { padding-inline-start: 0; padding-block: var(--s-6) 0; }
+    .rung::before { inset-block-start: 0; }
+    .rung::after { inset-block: calc(0.4375rem - 1px) auto; inset-inline: 1.4rem calc(-1 * var(--s-6) + 0.5rem); inline-size: auto; block-size: 2px; }
+    .rung:last-child::after { display: none; }
+  }
+
+  /* ownership band */
+  .own { background: var(--band-bg); color: var(--band-text); }
+  .own .wrap { display: grid; gap: var(--s-7); }
+  .own h2 { font-size: var(--fs-4); font-weight: 400; letter-spacing: -0.03em; line-height: 1.02; }
+  .own h2 em { font-style: normal; font-weight: 750; }
+  .own .copy { display: grid; gap: var(--s-5); align-content: start; }
+  .own .copy p { color: var(--band-soft); font-size: var(--fs-1); line-height: 1.45; max-inline-size: 36ch; }
+  .accounts { list-style: none; display: grid; }
+  .accounts li { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); padding-block: var(--s-4); border-block-end: 1px solid var(--band-line); }
+  .accounts li:first-child { border-block-start: 1px solid var(--band-line); }
+  .accounts span:first-child { font-family: var(--serif); font-size: 1.1875rem; line-height: 1.3; }
+  .accounts span:last-child { font-size: var(--fs--1); font-weight: 650; color: var(--band-soft); white-space: nowrap; }
+  .own .fine { margin-block-start: var(--s-5); color: var(--band-soft); font-size: 0.9375rem; max-inline-size: 48ch; }
+  @media (min-width: 60em) { .own .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-9); } }
+
+  /* the test */
+  .test-panel {
+    position: relative; display: grid; gap: var(--s-6);
+    background: var(--surface); border-radius: var(--r-3); box-shadow: var(--e4), inset 0 1px 0 var(--highlight);
+    padding: var(--s-6) var(--s-5);
+  }
+  .test-panel h2 { font-size: var(--fs-3); }
+  .test-intro { display: grid; gap: var(--s-4); align-content: start; }
+  .test-intro p { color: var(--text-soft); font-size: var(--fs-1); line-height: 1.45; max-inline-size: 34ch; }
+  .test-steps { list-style: none; display: grid; gap: var(--s-4); counter-reset: t; }
+  .test-steps li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: var(--s-3); counter-increment: t; }
+  .test-steps li::before {
+    content: counter(t); font-family: var(--serif); font-size: 1.125rem; font-weight: 600; line-height: 1;
+    display: grid; place-items: center; inline-size: 2rem; block-size: 2rem; border-radius: 50%;
+    background: var(--sunk); font-variant-numeric: lining-nums;
+  }
+  .test-steps li span { padding-block-start: 0.2rem; }
+  .test-do { display: grid; gap: var(--s-4); }
+  .test-do .fine { font-size: 0.9375rem; color: var(--text-soft); max-inline-size: 52ch; }
+  .test-do .actions { margin: 0; }
+  @media (min-width: 60em) {
+    .test-panel { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); padding: var(--s-8) var(--s-7); gap: var(--s-6) var(--s-8); }
+    .test-do { grid-column: 2; }
+  }
+
+  /* faq */
+  .faq-list { display: grid; max-inline-size: 50rem; }
+  .faq-list details { border-block-end: 1px solid var(--line); }
+  .faq-list details:first-child { border-block-start: 1px solid var(--line); }
+  .faq-list summary {
+    display: flex; justify-content: space-between; align-items: center; gap: var(--s-4);
+    min-block-size: 56px; padding-block: var(--s-4); cursor: pointer; list-style: none;
+    font-family: var(--serif); font-size: var(--fs-1); font-weight: 500; line-height: 1.3; letter-spacing: -0.01em;
+  }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after {
+    content: "+"; font-family: var(--sans); font-weight: 400; font-size: 1.5rem; line-height: 1; color: var(--accent);
+    flex: none; transition: transform 200ms var(--ease-out);
+  }
+  .faq-list details[open] summary::after { transform: rotate(45deg); }
+  .faq-list summary:hover { color: var(--accent); }
+  .faq-list .answer { padding-block-end: var(--s-5); color: var(--text-soft); max-inline-size: 65ch; }
+
+  /* contact */
+  .contact { background: var(--bg-alt); }
+  .contact .wrap { display: grid; gap: var(--s-7); }
+  .contact-info { display: grid; gap: var(--s-5); align-content: start; }
+  .contact-info h2 { font-size: var(--fs-3); }
+  .contact-info > p { color: var(--text-soft); font-size: var(--fs-1); line-height: 1.45; max-inline-size: 34ch; }
+  .facts { margin: 0; display: grid; gap: var(--s-4); }
+  .facts div { display: grid; gap: 2px; }
+  .facts dt { font-size: var(--fs--1); color: var(--text-soft); }
+  .facts dd { margin: 0; font-family: var(--serif); font-size: var(--fs-1); line-height: 1.3; overflow-wrap: anywhere; }
+  .facts a { min-block-size: 44px; display: inline-flex; align-items: center; }
+  .form {
+    display: grid; gap: var(--s-4);
+    background: var(--surface); border-radius: var(--r-3); box-shadow: var(--e2), inset 0 1px 0 var(--highlight);
+    padding: var(--s-5);
+  }
+  .field { display: grid; gap: var(--s-2); }
+  .field label { font-weight: 650; font-size: 0.9375rem; min-block-size: 24px; }
+  .field label small { font-weight: 400; color: var(--text-soft); font-size: inherit; }
+  .field input, .field textarea {
+    font: 400 1rem/1.4 var(--sans); color: var(--text);
+    background: var(--bg); border: 1.5px solid var(--line); border-radius: var(--r-2);
+    padding: var(--s-3) var(--s-3); min-block-size: 48px; inline-size: 100%;
+    transition: border-color 150ms var(--ease-out);
+  }
+  .field textarea { min-block-size: 8rem; resize: vertical; }
+  .field input:hover, .field textarea:hover { border-color: var(--text-soft); }
+  .field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+  .field [aria-invalid="true"] { border-color: var(--signal); }
+  .err { font-size: 0.875rem; font-weight: 600; color: var(--signal); display: flex; gap: var(--s-2); align-items: baseline; }
+  .err:empty { display: none; }
+  .err::before { content: "!"; display: grid; place-items: center; inline-size: 1.1rem; block-size: 1.1rem; border-radius: 50%; background: var(--signal); color: var(--surface); font-size: 0.75rem; flex: none; transform: translateY(2px); }
+  .two { display: grid; gap: var(--s-4); }
+  .form .btn { justify-self: start; margin-block-start: var(--s-2); }
+  .form .fine { font-size: var(--fs--1); color: var(--text-soft); }
+  @media (min-width: 36em) { .two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .form { padding: var(--s-6); } }
+  @media (min-width: 60em) { .contact .wrap { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: var(--s-9); } }
+
+  /* footer */
+  .foot { padding-block: var(--s-6); font-size: var(--fs--1); color: var(--text-soft); }
+  .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2) var(--s-5); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <b>Carlos Milander</b>
+      <span data-i18n="area">Eastern &amp; Northeastern PA</span>
+    </a>
+    <nav class="nav" aria-label="Sections" data-i18n-attr="aria-label:navLabel">
+      <a href="#how" data-i18n="navHow">How it works</a>
+      <a href="#offer" data-i18n="navOffer">What I offer</a>
+      <a href="#faq" data-i18n="navFaq">Questions</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / Idioma">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true" title="English">EN<span class="sr-only"> English</span></button>
+      <button type="button" data-lang="es" lang="es" aria-pressed="false" title="Español">ES<span class="sr-only"> Español</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="for" data-i18n="heroFor">For HVAC, plumbing, electrical, roofing, landscaping and cleaning shops in eastern Pennsylvania.</p>
+        <h1 id="hero-title" data-i18n="heroTitle">The jobs you lose are lost <em>in the office.</em></h1>
+        <p class="lede" data-i18n="heroLede">A call nobody answered. A quote nobody chased. A reminder that never went out. I find where your shop is losing work and give you a written report with the fixes, ranked by what they return for each dollar.</p>
+        <div class="actions">
+          <a class="btn" href="#test" data-i18n="heroCta">Get the free missed‑call test</a>
+          <a class="text-link" href="#how" data-i18n="heroCta2">See how it works</a>
+        </div>
+        <ul class="assure">
+          <li data-i18n="assure1">Fixed price, in writing, before you commit</li>
+          <li data-i18n="assure2">You own every account</li>
+          <li data-i18n="assure3">English or Spanish</li>
+        </ul>
+      </div>
+
+      <figure class="slip">
+        <div class="slip-top">
+          <span class="slip-title" data-i18n="slipTitle">Work order</span>
+          <span class="slip-no">No. 0001</span>
+        </div>
+        <dl>
+          <div class="row"><dt data-i18n="slipCustK">Customer</dt><dd data-i18n="slipCust">Your shop</dd></div>
+          <div class="row"><dt data-i18n="slipProbK">Complaint</dt><dd data-i18n="slipProb">Calls after 5 pm go to voicemail. Quotes go out and nobody follows up.</dd></div>
+          <div class="row"><dt data-i18n="slipWorkK">Work done</dt><dd data-i18n="slipWork">An example fix: a text back to missed calls during hours you approve. Open quotes get a follow-up on a schedule you set.</dd></div>
+          <div class="row"><dt data-i18n="slipPartsK">Parts</dt><dd data-i18n="slipParts">Your phone number, your software, your accounts. Nothing rented from me.</dd></div>
+          <div class="row"><dt data-i18n="slipOkK">Approved by</dt><dd data-i18n="slipOk">You, before anything reaches a customer.</dd></div>
+        </dl>
+        <div class="slip-foot">
+          <figcaption data-i18n="slipCap">An example. The Map writes your real one.</figcaption>
+          <span class="stamp" aria-hidden="true" data-i18n="stamp">Approved</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="leaks" aria-labelledby="leaks-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="leaks-title" data-i18n="leaksTitle">Three places the money leaks out</h2>
+        <p class="lede" data-i18n="leaksLede">None of these show up on a profit and loss statement. They show up as jobs that went to someone else.</p>
+      </div>
+      <ol class="leak-list">
+        <li class="leak">
+          <p class="log"><span class="t" data-i18n="log1t">Tue 6:42 pm</span><b data-i18n="log1">Missed call, no message</b></p>
+          <div>
+            <h3 data-i18n="leak1h">The call nobody answered</h3>
+            <p data-i18n="leak1p">The crew is up on a roof, the office closed at 4:30, the phone rings out. A caller who reaches voicemail often doesn't leave a message. They call the next shop on the list.</p>
+          </div>
+        </li>
+        <li class="leak">
+          <p class="log"><span class="t" data-i18n="log2t">Mon 9:15 am</span><b data-i18n="log2">Quote sent, no follow-up</b></p>
+          <div>
+            <h3 data-i18n="leak2h">The quote nobody chased</h3>
+            <p data-i18n="leak2p">You drove out, measured, wrote it up and sent it. Then the week got busy. A homeowner comparing three quotes often goes with whoever called back.</p>
+          </div>
+        </li>
+        <li class="leak">
+          <p class="log"><span class="t" data-i18n="log3t">Thu 9:30 pm</span><b data-i18n="log3">Invoices, reminders, reviews</b></p>
+          <div>
+            <h3 data-i18n="leak3h">The paperwork after dinner</h3>
+            <p data-i18n="leak3p">Appointment reminders, nudges on unpaid invoices, asking happy customers for a review, typing the same job into two systems. It gets done at the kitchen table, or it doesn't get done.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-title" data-i18n="howTitle">How it works</h2>
+        <p class="lede" data-i18n="howLede">You don't commit to a build until you've seen the problem, the fix and the price in writing.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3 data-i18n="step1h">A free test, or a 20-minute call</h3>
+          <p data-i18n="step1p">Start with the free missed-call response test, or just call. We talk about how calls, quotes and jobs move through your office today.</p>
+        </li>
+        <li class="step">
+          <h3 data-i18n="step2h">The Map</h3>
+          <p data-i18n="step2p">A paid visit to your office. I see how a call becomes a paid job, work from your own numbers, and hand you a written report: where the money leaks, what each leak costs, and planned prices to fix it, from a company I intend to form (not an offer; you may hire anyone).</p>
+        </li>
+        <li class="step">
+          <h3 data-i18n="step3h">You decide</h3>
+          <p data-i18n="step3p">Build one fix, build several, wait, or do nothing. The report is yours either way.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="offer" id="offer" aria-labelledby="offer-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="offer-title" data-i18n="offerTitle">The Map, and what comes after</h2>
+        <p class="lede" data-i18n="offerLede">The Map is the only thing offered today. Build and Run are planned for later, through a separate company, and are not for sale yet.</p>
+      </div>
+      <ol class="ladder">
+        <li class="rung">
+          <div class="rung-name"><h3 data-i18n="mapName">Map</h3><span class="start" data-i18n="start">Start here</span></div>
+          <p class="tag" data-i18n="mapTag">Find the leaks.</p>
+          <ul>
+            <li data-i18n="map1">Time in your office with you and your staff</li>
+            <li data-i18n="map2">A one-page picture of how a lead becomes a paid job, with the leaks marked</li>
+            <li data-i18n="map3">Each leak in hours and dollars, from your own numbers</li>
+            <li data-i18n="map4">The top fixes, ranked by what they return for each dollar</li>
+            <li data-i18n="map5">What should not be automated, and why</li>
+          </ul>
+          <p class="note" data-i18n="mapNote">Paid before the visit, tax included. The report is yours even if you never build.</p>
+        </li>
+        <li class="rung">
+          <div class="rung-name"><h3 data-i18n="buildName">Build</h3></div>
+          <p class="tag" data-i18n="buildTag">Fix them, in your accounts.</p>
+          <ul>
+            <li data-i18n="build1">Set up inside your own phone, software and email accounts</li>
+            <li data-i18n="build2">Tested on real past calls and quotes before it goes live</li>
+            <li data-i18n="build3">Customer messages in English, Spanish, or both</li>
+            <li data-i18n="build4">Your staff trained, with recordings to keep</li>
+            <li data-i18n="build5">A written runbook: what it does, how to turn it off, who to call</li>
+          </ul>
+          <p class="note" data-i18n="buildNote">Not offered yet. Planned for later through a separate company.</p>
+        </li>
+        <li class="rung">
+          <div class="rung-name"><h3 data-i18n="runName">Run</h3></div>
+          <p class="tag" data-i18n="runTag">Keep it working.</p>
+          <ul>
+            <li data-i18n="run1">Checking that it runs, and fixing what breaks</li>
+            <li data-i18n="run2">Updates when one of your tools changes</li>
+            <li data-i18n="run3">Small changes each month, within an agreed allowance</li>
+            <li data-i18n="run4">A one-page report every month</li>
+          </ul>
+          <p class="note" data-i18n="runNote">Not offered yet. Planned for later through a separate company.</p>
+        </li>
+      </ol>
+      <div class="terms">
+        <strong data-i18n="termsH">Fixed price. You see it before you commit.</strong>
+        <p data-i18n="termsP">The Map fee is in writing before any work starts and includes any sales tax. Later work, when it is offered, will be priced in writing plus applicable sales tax. Software, phone and texting fees are billed to you directly by those companies, at their prices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="own" aria-labelledby="own-title">
+    <div class="wrap">
+      <div class="copy">
+        <h2 id="own-title" data-i18n="ownTitle">You own <em>every account.</em></h2>
+        <p data-i18n="ownP">The Map needs no access to your accounts. Any later work is set up in your business's name and paid on your card, you choose who gets access, and you can remove anyone any day. What gets built stays with you.</p>
+      </div>
+      <div>
+        <ul class="accounts">
+          <li><span data-i18n="acc1">Your phone and texting number</span><span data-i18n="yours">In your name</span></li>
+          <li><span data-i18n="acc2">Your field-service or customer software</span><span data-i18n="yours">In your name</span></li>
+          <li><span data-i18n="acc3">Your email and calendar</span><span data-i18n="yours">In your name</span></li>
+          <li><span data-i18n="acc4">Your texting registration with the carriers</span><span data-i18n="yours">In your name</span></li>
+          <li><span data-i18n="acc5">Your AI usage account</span><span data-i18n="yours">In your name</span></li>
+        </ul>
+        <p class="fine" data-i18n="ownFine">You see every vendor bill yourself. I don't resell or mark up anything, and I take no commission or referral fee from any vendor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="test" aria-labelledby="test-title">
+    <div class="wrap">
+      <div class="test-panel">
+        <div class="test-intro">
+          <h2 id="test-title" data-i18n="testTitle">Free missed‑call response test</h2>
+          <p data-i18n="testP">See what a new customer runs into when they reach out to your shop. It costs nothing and takes a few minutes of your time.</p>
+        </div>
+        <ol class="test-steps">
+          <li><span data-i18n="test1">You send me your website or business number.</span></li>
+          <li><span data-i18n="test2">I send one ordinary quote request through your site, or call once after hours, under my real name.</span></li>
+          <li><span data-i18n="test3">I write down when it went out and when a person first replied.</span></li>
+          <li><span data-i18n="test4">You get the exact times in a private email. What you do with them is up to you.</span></li>
+        </ol>
+        <div class="test-do">
+          <div class="actions">
+            <a class="btn" id="test-mail" href="mailto:alexis.milander28@gmail.com?subject=Free%20missed-call%20response%20test" data-i18n="testCta">Request the free test</a>
+            <a class="text-link" href="tel:+15703929271"><span data-i18n="testCall">Or call</span>&nbsp;(570) 392-9271</a>
+          </div>
+          <p class="fine" data-i18n="testFine">One test only. No fake emergencies, no recorded calls. Your results go only to you; I may keep anonymous totals with no business names.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="faq-title" data-i18n="faqTitle">Straight answers</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary data-i18n="q1">What will the AI actually do?</summary>
+          <p class="answer" data-i18n="a1">Less than you might think, on purpose. Most of the work is plain automation: text a caller back when a call is missed, remind your office about an open quote, send appointment and invoice reminders. AI is used where it saves real time, like drafting a reply or summarizing a voicemail, and a person on your team checks that work.</p>
+        </details>
+        <details>
+          <summary data-i18n="q2">What won't it do?</summary>
+          <p class="answer" data-i18n="a2">It won't answer your phone pretending to be a person. It won't send a customer anything you haven't approved. It won't replace the person who runs your office; it takes the repetitive part off their desk. And I won't promise you a number of jobs or dollars. I measure before and after, so you can see what changed.</p>
+        </details>
+        <details>
+          <summary data-i18n="q3">Who approves what customers see?</summary>
+          <p class="answer" data-i18n="a3">You do. Every automatic message is a template you approve in writing before it goes live. Anything an AI drafts is read and sent by a person on your team.</p>
+        </details>
+        <details>
+          <summary data-i18n="q4">Do I have to switch software?</summary>
+          <p class="answer" data-i18n="a4">No. If you already pay for field-service software, the first job is getting what you have to work properly, then filling the gaps. I don't migrate or replace your systems.</p>
+        </details>
+        <details>
+          <summary data-i18n="q5">What about the rules on texting customers?</summary>
+          <p class="answer" data-i18n="a5">Texting customers comes with rules on consent, opting out and carrier registration. When texting is part of a later project, the registration is set up under your business, you keep the opt-in records, and STOP is tested before anything sends. I'm not a lawyer, so the final word on your message wording belongs to your attorney.</p>
+        </details>
+        <details>
+          <summary data-i18n="q6">How much does it cost?</summary>
+          <p class="answer" data-i18n="a6">The Map has a fixed fee you see in writing before you commit, tax included. Later work, when offered, gets a fixed written price plus applicable sales tax and is never billed by the hour. Software and texting fees are billed to you directly by those companies.</p>
+        </details>
+        <details>
+          <summary data-i18n="q7">Do you work in Spanish?</summary>
+          <p class="answer" data-i18n="a7">Yes. Customer messages, staff training and the written runbook in English, Spanish, or both.</p>
+        </details>
+        <details>
+          <summary data-i18n="q8">What happens to my accounts?</summary>
+          <p class="answer" data-i18n="a8">Nothing of yours is held by me. The Map needs no access to your accounts. If you later hire anyone to build, everything stays in your accounts and you can remove their access.</p>
+        </details>
+        <details>
+          <summary data-i18n="q9">Where do you work?</summary>
+          <p class="answer" data-i18n="a9">Eastern and Northeastern Pennsylvania. The Map includes time in your office, in person.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="contact-info">
+        <h2 id="contact-title" data-i18n="contactTitle">Talk to a person</h2>
+        <p data-i18n="contactP">Call, email, or use the form. You'll hear back from me directly.</p>
+        <dl class="facts">
+          <div><dt data-i18n="fPhone">Phone</dt><dd><a href="tel:+15703929271">(570) 392-9271</a></dd></div>
+          <div><dt data-i18n="fEmail">Email</dt><dd><a href="mailto:alexis.milander28@gmail.com">alexis.milander28@gmail.com</a></dd></div>
+          <div><dt data-i18n="fArea">Area</dt><dd data-i18n="fAreaV">Eastern and Northeastern Pennsylvania</dd></div>
+          <div><dt data-i18n="fLang">Languages</dt><dd data-i18n="fLangV">English and Spanish</dd></div>
+        </dl>
+      </div>
+
+      <form class="form" id="contact-form" action="mailto:alexis.milander28@gmail.com" method="post" enctype="text/plain" novalidate data-to="alexis.milander28@gmail.com">
+        <div class="two">
+          <div class="field">
+            <label for="f-name" data-i18n="lName">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+            <p class="err" id="e-name" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-biz"><span data-i18n="lBiz">Business</span> <small data-i18n="optional">(optional)</small></label>
+            <input id="f-biz" name="business" type="text" autocomplete="organization">
+          </div>
+        </div>
+        <div class="two">
+          <div class="field">
+            <label for="f-trade"><span data-i18n="lTrade">Trade</span> <small data-i18n="optional">(optional)</small></label>
+            <input id="f-trade" name="trade" type="text" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="f-phone"><span data-i18n="lPhone">Phone</span> <small data-i18n="optional">(optional)</small></label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg" data-i18n="lMsg">What's going on in your office?</label>
+          <textarea id="f-msg" name="message" rows="5" required aria-describedby="e-msg"></textarea>
+          <p class="err" id="e-msg" aria-live="polite"></p>
+        </div>
+        <button class="btn" type="submit" data-i18n="submit">Open in my email</button>
+        <p class="fine" data-i18n="formFine">This opens your email app with the message filled in. Nothing is sent until you press send there.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><span>&copy; 2026 Carlos Milander.</span> <span data-i18n="footArea">Eastern and Northeastern Pennsylvania.</span></p>
+    <p data-i18n="footNote">No cookies and no analytics. Fonts load from Google, which can see your IP address.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var KEY = "lang";
+  var ES = {
+    _title: "Carlos Milander | Automatización de oficina para negocios de servicios en el este de PA",
+    _desc: "Llamadas perdidas, presupuestos sin seguimiento, recordatorios, papeleo. Encuentro dónde su negocio pierde dinero en la oficina y le entrego un informe escrito con los arreglos. En inglés o en español.",
+    skip: "Saltar al contenido",
+    area: "Este y noreste de PA",
+    navLabel: "Secciones",
+    navHow: "Cómo funciona",
+    navOffer: "Servicios",
+    navFaq: "Preguntas",
+    navContact: "Contacto",
+    heroFor: "Para negocios de HVAC, plomería, electricidad, techos, jardinería y limpieza en el este de Pensilvania.",
+    heroTitle: "Los trabajos que se pierden, se pierden <em>en la oficina.</em>",
+    heroLede: "Una llamada que nadie contestó. Un presupuesto al que nadie le dio seguimiento. Un recordatorio que nunca salió. Encuentro dónde su negocio está perdiendo trabajo y le entrego un informe escrito con los arreglos, ordenados por lo que devuelven por cada dólar.",
+    heroCta: "Pedir la prueba gratuita de llamadas perdidas",
+    heroCta2: "Ver cómo funciona",
+    assure1: "Precio fijo y por escrito antes de comprometerse",
+    assure2: "Todas las cuentas son suyas",
+    assure3: "En inglés o en español",
+    slipTitle: "Orden de trabajo",
+    slipCustK: "Cliente",
+    slipCust: "Su negocio",
+    slipProbK: "Problema",
+    slipProb: "Las llamadas después de las 5 pm caen al buzón de voz. Los presupuestos salen y nadie les da seguimiento.",
+    slipWorkK: "Trabajo",
+    slipWork: "Ejemplo de arreglo: un mensaje de texto a las llamadas perdidas en el horario que usted apruebe. Los presupuestos abiertos reciben seguimiento según el calendario que usted decida.",
+    slipPartsK: "Materiales",
+    slipParts: "Su número, su software, sus cuentas. Nada se renta de mí.",
+    slipOkK: "Aprobado por",
+    slipOk: "Usted, antes de que algo le llegue a un cliente.",
+    stamp: "Aprobado",
+    slipCap: "Es un ejemplo. La suya sale del Mapa.",
+    leaksTitle: "Tres lugares por donde se escapa el dinero",
+    leaksLede: "Nada de esto aparece en el estado de resultados. Aparece como trabajos que se llevó otro.",
+    log1t: "Mar 6:42 pm",
+    log1: "Llamada perdida, sin mensaje",
+    leak1h: "La llamada que nadie contestó",
+    leak1p: "La cuadrilla está arriba en un techo, la oficina cerró a las 4:30 y el teléfono suena sin respuesta. Quien cae al buzón de voz muchas veces no deja mensaje: llama al siguiente negocio de la lista.",
+    log2t: "Lun 9:15 am",
+    log2: "Presupuesto enviado, sin seguimiento",
+    leak2h: "El presupuesto que nadie siguió",
+    leak2p: "Fue hasta la casa, midió, preparó el presupuesto y lo envió. Después la semana se complicó. Un cliente que compara tres presupuestos muchas veces se queda con el que le volvió a llamar.",
+    log3t: "Jue 9:30 pm",
+    log3: "Facturas, recordatorios, reseñas",
+    leak3h: "El papeleo después de la cena",
+    leak3p: "Recordatorios de citas, avisos de facturas sin pagar, pedirle una reseña a un cliente contento, escribir el mismo trabajo en dos sistemas. Se hace en la mesa de la cocina, o no se hace.",
+    howTitle: "Cómo funciona",
+    howLede: "No se compromete con ninguna instalación hasta ver por escrito el problema, la solución y el precio.",
+    step1h: "Una prueba gratuita o una llamada de 20 minutos",
+    step1p: "Empiece con la prueba gratuita de respuesta a llamadas, o simplemente llámeme. Hablamos de cómo se mueven hoy las llamadas, los presupuestos y los trabajos en su oficina.",
+    step2h: "El Mapa",
+    step2p: "Una visita pagada a su oficina. Veo cómo una llamada se convierte en un trabajo cobrado, uso sus propios números y le entrego un informe por escrito: por dónde se escapa el dinero, cuánto cuesta cada fuga y precios planeados para arreglarlo, de una empresa que pienso formar (no es una oferta; puede contratar a quien quiera).",
+    step3h: "Usted decide",
+    step3p: "Arreglar una cosa, varias, esperar o no hacer nada. El informe es suyo de todos modos.",
+    offerTitle: "El Mapa y lo que viene después",
+    offerLede: "El Mapa es lo único que se ofrece hoy. La instalación y el mantenimiento están planeados para más adelante, a través de otra empresa, y todavía no están a la venta.",
+    mapName: "Mapa",
+    start: "Se empieza aquí",
+    mapTag: "Encontrar las fugas.",
+    map1: "Tiempo en su oficina con usted y su equipo",
+    map2: "Una página que muestra cómo un cliente interesado se convierte en un trabajo cobrado, con las fugas marcadas",
+    map3: "Cada fuga en horas y en dólares, con sus propios números",
+    map4: "Las mejores soluciones, ordenadas por lo que devuelven por cada dólar",
+    map5: "Lo que no conviene automatizar, y por qué",
+    mapNote: "Se paga antes de la visita, impuestos incluidos. El informe es suyo aunque nunca haga la instalación.",
+    buildName: "Instalación",
+    buildTag: "Arreglarlas, en sus cuentas.",
+    build1: "Se configura dentro de sus propias cuentas de teléfono, software y correo",
+    build2: "Se prueba con llamadas y presupuestos reales del pasado antes de ponerlo en marcha",
+    build3: "Mensajes a clientes en inglés, en español o en ambos",
+    build4: "Capacitación para su equipo, con grabaciones para que las conserve",
+    build5: "Un manual por escrito: qué hace, cómo apagarlo y a quién llamar",
+    buildNote: "Todavía no se ofrece. Planeado para más adelante, a través de otra empresa.",
+    runName: "Mantenimiento",
+    runTag: "Que siga funcionando.",
+    run1: "Revisar que funcione y arreglar lo que falle",
+    run2: "Actualizaciones cuando cambia alguna de sus herramientas",
+    run3: "Pequeños cambios cada mes, dentro de lo acordado",
+    run4: "Un informe de una página cada mes",
+    runNote: "Todavía no se ofrece. Planeado para más adelante, a través de otra empresa.",
+    termsH: "Precio fijo. Lo ve antes de comprometerse.",
+    termsP: "La tarifa del Mapa queda por escrito antes de empezar e incluye cualquier impuesto de venta. El trabajo posterior, cuando se ofrezca, tendrá precio por escrito más el impuesto de venta aplicable. Las tarifas de software, teléfono y mensajes de texto se las cobran directamente esas empresas, a su precio.",
+    ownTitle: "Todas las cuentas <em>son suyas.</em>",
+    ownP: "El Mapa no necesita acceso a sus cuentas. Cualquier trabajo posterior se abre a nombre de su negocio y se paga con su tarjeta, usted decide quién tiene acceso y puede quitar a cualquiera cualquier día. Lo que se construye se queda con usted.",
+    acc1: "Su número de teléfono y de mensajes",
+    acc2: "Su software de servicio o de clientes",
+    acc3: "Su correo y su calendario",
+    acc4: "Su registro de mensajes ante las compañías telefónicas",
+    acc5: "Su cuenta de uso de IA",
+    yours: "A su nombre",
+    ownFine: "Usted ve cada factura de cada proveedor. Yo no revendo nada ni le agrego margen, y no cobro comisión ni honorario por referencia de ningún proveedor.",
+    testTitle: "Prueba gratuita de respuesta a llamadas",
+    testP: "Vea lo que encuentra un cliente nuevo cuando se comunica con su negocio. No cuesta nada y a usted le toma unos minutos.",
+    test1: "Usted me envía su página web o su número de teléfono.",
+    test2: "Envío una solicitud de presupuesto normal por su página, o llamo una vez fuera de horario, con mi nombre real.",
+    test3: "Anoto a qué hora salió y a qué hora respondió una persona por primera vez.",
+    test4: "Le envío los horarios exactos en un correo privado. Lo que haga con ellos es decisión suya.",
+    testCta: "Pedir la prueba gratuita de llamadas perdidas",
+    testCall: "O llame al",
+    testFine: "Una sola prueba. Sin emergencias inventadas, sin grabar llamadas. Sus resultados son solo para usted; puedo guardar totales anónimos sin nombres de negocios.",
+    faqTitle: "Respuestas claras",
+    q1: "¿Qué hace la IA, en concreto?",
+    a1: "Menos de lo que se imagina, y es a propósito. La mayor parte es automatización sencilla: responder con un texto cuando se pierde una llamada, recordarle a su oficina un presupuesto abierto, enviar recordatorios de citas y de facturas. La IA se usa donde de verdad ahorra tiempo, como redactar un borrador de respuesta o resumir un mensaje de voz, y una persona de su equipo revisa ese trabajo.",
+    q2: "¿Qué no hace?",
+    a2: "No contesta su teléfono haciéndose pasar por una persona. No le envía a un cliente nada que usted no haya aprobado. No reemplaza a quien lleva su oficina: le quita de encima la parte repetitiva. Y no le prometo una cantidad de trabajos ni de dólares. Mido antes y después para que usted vea qué cambió.",
+    q3: "¿Quién aprueba lo que ven los clientes?",
+    a3: "Usted. Cada mensaje automático es una plantilla que usted aprueba por escrito antes de ponerla en marcha. Cualquier texto que redacte la IA lo lee y lo envía una persona de su equipo.",
+    q4: "¿Tengo que cambiar de software?",
+    a4: "No. Si ya paga un software de servicio, lo primero es hacer que lo que tiene funcione bien y después cubrir lo que falta. No migro ni reemplazo sus sistemas.",
+    q5: "¿Y las reglas para enviar mensajes de texto a clientes?",
+    a5: "Enviar mensajes de texto a clientes tiene reglas de consentimiento, de baja y de registro ante las compañías telefónicas. Cuando los mensajes de texto forman parte de un proyecto posterior, el registro se hace a nombre de su negocio, usted conserva los registros de consentimiento y se prueba que STOP funcione antes de enviar nada. No soy abogado, así que la última palabra sobre la redacción de sus mensajes la tiene su abogado.",
+    q6: "¿Cuánto cuesta?",
+    a6: "El Mapa tiene una tarifa fija que usted ve por escrito antes de comprometerse, impuestos incluidos. El trabajo posterior, cuando se ofrezca, tendrá un precio fijo por escrito más el impuesto de venta aplicable y nunca se cobra por hora. Las tarifas de software y de mensajes se las cobran directamente esas empresas.",
+    q7: "¿Trabaja en español?",
+    a7: "Sí. Los mensajes a clientes, la capacitación del equipo y el manual por escrito, en español, en inglés o en ambos.",
+    q8: "¿Qué pasa con mis cuentas?",
+    a8: "Nada suyo queda en mis manos. El Mapa no necesita acceso a sus cuentas. Si más adelante contrata a alguien para instalar, lo construido se queda en sus cuentas y usted puede quitarle el acceso.",
+    q9: "¿En qué zona trabaja?",
+    a9: "En el este y el noreste de Pensilvania. El Mapa incluye tiempo en su oficina, en persona.",
+    contactTitle: "Hable con una persona",
+    contactP: "Llame, escriba o use el formulario. Le respondo yo directamente.",
+    fPhone: "Teléfono",
+    fEmail: "Correo",
+    fArea: "Zona",
+    fAreaV: "Este y noreste de Pensilvania",
+    fLang: "Idiomas",
+    fLangV: "Español e inglés",
+    lName: "Su nombre",
+    lBiz: "Negocio",
+    lTrade: "Oficio",
+    lPhone: "Teléfono",
+    optional: "(opcional)",
+    lMsg: "¿Qué está pasando en su oficina?",
+    submit: "Abrir en mi correo",
+    formFine: "Esto abre su aplicación de correo con el mensaje listo. No se envía nada hasta que usted lo envíe.",
+    footArea: "Este y noreste de Pensilvania.",
+    footNote: "Sin cookies y sin analítica. Las fuentes se cargan desde Google, que puede ver su dirección IP."
+  };
+  var MAIL = {
+    en: {
+      testSubject: "Free missed-call response test",
+      testBody: "Hi, I'd like the free missed-call response test.\n\nBusiness name:\nWebsite or business phone:\nBest way to reach me:\n",
+      subject: "Inquiry from the website",
+      name: "Name", biz: "Business", trade: "Trade", phone: "Phone",
+      errName: "Enter your name so I know who to answer.",
+      errMsg: "Write a line or two about what's going on."
+    },
+    es: {
+      testSubject: "Prueba gratuita de respuesta a llamadas",
+      testBody: "Hola, quiero la prueba gratuita de respuesta a llamadas.\n\nNombre del negocio:\nPágina web o teléfono del negocio:\nMejor forma de contactarme:\n",
+      subject: "Consulta desde la página web",
+      name: "Nombre", biz: "Negocio", trade: "Oficio", phone: "Teléfono",
+      errName: "Escriba su nombre para saber a quién responder.",
+      errMsg: "Escriba una o dos líneas sobre lo que está pasando."
+    }
+  };
+
+  var doc = document.documentElement;
+  var nodes = document.querySelectorAll("[data-i18n]");
+  var attrNodes = document.querySelectorAll("[data-i18n-attr]");
+  var EN = { _title: document.title, _desc: "" };
+  var meta = document.querySelector('meta[name="description"]');
+  if (meta) EN._desc = meta.getAttribute("content");
+  nodes.forEach(function (el) { EN[el.getAttribute("data-i18n")] = el.innerHTML; });
+  attrNodes.forEach(function (el) {
+    el.getAttribute("data-i18n-attr").split(";").forEach(function (pair) {
+      var p = pair.split(":");
+      EN[p[1]] = el.getAttribute(p[0]);
+    });
+  });
+
+  var current = "en";
+  var form = document.getElementById("contact-form");
+  var to = form ? form.getAttribute("data-to") : "";
+
+  function enc(s) { return encodeURIComponent(s); }
+
+  function apply(lang) {
+    var dict = lang === "es" ? ES : EN;
+    current = lang;
+    doc.lang = lang;
+    nodes.forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n")];
+      if (v != null) el.innerHTML = v;
+    });
+    attrNodes.forEach(function (el) {
+      el.getAttribute("data-i18n-attr").split(";").forEach(function (pair) {
+        var p = pair.split(":");
+        if (dict[p[1]] != null) el.setAttribute(p[0], dict[p[1]]);
+      });
+    });
+    document.title = dict._title;
+    if (meta) meta.setAttribute("content", dict._desc);
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
+    });
+    var m = MAIL[lang];
+    var test = document.getElementById("test-mail");
+    if (test) test.setAttribute("href", "mailto:" + to + "?subject=" + enc(m.testSubject) + "&body=" + enc(m.testBody));
+    document.querySelectorAll(".err").forEach(function (e) {
+      if (e.textContent) e.textContent = e.id === "e-name" ? m.errName : m.errMsg;
+    });
+  }
+
+  function setLang(lang) {
+    apply(lang);
+    try { localStorage.setItem(KEY, lang); } catch (e) { /* storage blocked: the choice lasts for this visit only */ }
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { saved = null; }
+  var initial = saved === "es" || saved === "en" ? saved
+    : (navigator.language || "").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+  apply(initial);
+
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+  });
+
+  if (form) {
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var m = MAIL[current];
+      var name = form.elements.name, msg = form.elements.message;
+      var checks = [[name, "e-name", m.errName], [msg, "e-msg", m.errMsg]];
+      var firstBad = null;
+      checks.forEach(function (c) {
+        var bad = !c[0].value.trim();
+        c[0].setAttribute("aria-invalid", String(bad));
+        document.getElementById(c[1]).textContent = bad ? c[2] : "";
+        if (bad && !firstBad) firstBad = c[0];
+      });
+      if (firstBad) { firstBad.focus(); return; }
+      var lines = [
+        m.name + ": " + name.value.trim(),
+        m.biz + ": " + form.elements.business.value.trim(),
+        m.trade + ": " + form.elements.trade.value.trim(),
+        m.phone + ": " + form.elements.phone.value.trim(),
+        "",
+        msg.value.trim()
+      ];
+      window.location.href = "mailto:" + to + "?subject=" + enc(m.subject) + "&body=" + enc(lines.join("\n"));
+    });
+  }
+})();
+</script>
+</body>
+</html>
