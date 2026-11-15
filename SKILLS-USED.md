@@ -31,7 +31,14 @@ Found in the plugin directory search. All are optional; none is needed to ship t
 
 No matching skills were found in the account's own skill library.
 
+## Second pass: "no long scroll" (owner feedback)
+
+Same skills, plus one lesson that is now in the `website-redesign` skill: tabs alone do not fix a long
+page. Each tab got a height budget (Home about 1.5 screens at 1280 and 3 at 375; other tabs about 2 and 4),
+measured by a script in both languages. Home is now a hero, six cards and a trust strip; the leaks, the AI
+workers, the samples and the services show one piece at a time through inner tabs; the rules are an accordion.
+
 ## New skill saved from this job
 
 `~/.claude/skills/website-redesign/` holds the workflow and the helper scripts (CSP server, screenshot matrix,
-i18n coverage check, contact-sheet builder).
+i18n coverage check, height budget check, inner-tab keyboard check, quick-look and contact-sheet builders).

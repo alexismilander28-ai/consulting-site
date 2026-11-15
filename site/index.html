@@ -16,7 +16,7 @@
 <link rel="preload" href="https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZQ.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="https://fonts.gstatic.com/s/sourceserif4/v15/vEFI2_tTDB4M7-auWDN0ahZJW1gb8tc.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="https://fonts.gstatic.com/s/sourceserif4/v15/vEFH2_tTDB4M7-auWDN0ahZJW1ge6NmXq2ZbF8zBfb98SUr6aX0.woff2" as="font" type="font/woff2" crossorigin>
-<script>(function(){var d=document.documentElement,m={top:"home",home:"home",test:"home",map:"map",how:"map",ai:"ai",samples:"samples",film:"samples",services:"services",offer:"services",about:"about",who:"about",faq:"faq",contact:"contact"};d.classList.add("js");d.setAttribute("data-tab",m[(location.hash||"").slice(1).toLowerCase()]||"home");})();</script>
+<script>(function(){var d=document.documentElement,m={top:"home",home:"home",leaks:"leaks",test:"leaks",map:"map",how:"map",ai:"ai",samples:"samples",film:"samples",services:"services",offer:"services",about:"about",who:"about",faq:"faq",contact:"contact"};d.classList.add("js");d.setAttribute("data-tab",m[(location.hash||"").slice(1).toLowerCase()]||"home");})();</script>
 <style>
 /* Google Fonts, latin subset (covers Spanish), declared inline so no stylesheet blocks the first paint. */
 @font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 200 900; font-display: swap;
@@ -1117,6 +1117,179 @@ html:not(.js) .ow-actions { display: none; }
 .about-facts { margin-block-start: var(--s-3); display: flex; flex-wrap: wrap; gap: var(--s-4) var(--s-7); }
 .who-copy .actions { margin-block-start: var(--s-3); }
 .who-copy .facts dd { font-size: 1.1875rem; }
+
+/* ================================================================
+   Second pass: app-like density. One screen or two per tab; long
+   material sits behind inner tabs, one piece at a time.
+   ================================================================ */
+section { padding-block: var(--s-6); }
+@media (min-width: 60em) { section { padding-block: var(--s-7); } }
+.tp > section:first-child:not(.hero) { padding-block-start: var(--s-6); }
+.section-head { margin-block-end: var(--s-5); gap: var(--s-3); }
+.js[data-tab="leaks"] #leaks { display: block; }
+.pager { padding-block: 0 var(--s-5); }
+.alt + .pager, .leaks + .pager, .faq + .pager { padding-block-start: var(--s-5); }
+.pager a { min-block-size: 44px; padding: 0 var(--s-4); gap: var(--s-2); }
+.pager a b { font-size: 1.125rem; }
+.foot { padding-block: var(--s-4); }
+
+/* inner tab sets */
+.js .panel[data-later] { display: none; }
+html:not(.js) .tablist { display: none; }
+html:not(.js) .panel + .panel { margin-block-start: var(--s-7); }
+.tablist { margin-block-end: var(--s-5); }
+.tab { min-block-size: 44px; }
+@media (min-width: 40em) {
+  .tablist.seg3 { grid-template-columns: repeat(3, minmax(0, 1fr)); max-inline-size: 44rem; }
+  .tablist.seg6, .tablist.wk-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 64em) { .tablist.seg6, .tablist.wk-tabs { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.tablist.seg3 { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 26em) { .tablist.seg3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.wk-tabs .tab { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); }
+.wk-tabs .tab svg { inline-size: 1.25rem; block-size: 1.25rem; flex: none; }
+.wk-tabs .tab[aria-selected="true"] svg { color: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .js .panel:not([hidden]) { animation: tp-in 200ms var(--ease-out); }
+}
+
+/* home: hero, six doors, a thin trust strip */
+.hero { padding-block: var(--s-5) var(--s-5); }
+.hero .wrap { gap: var(--s-5); }
+.hero-copy { gap: var(--s-4); }
+.hero .lede { max-inline-size: 44ch; }
+.hero .route { inline-size: min(100%, 21rem); justify-self: center; padding: var(--s-3); gap: var(--s-2); }
+.hero .route-title { font-size: 1rem; }
+.hero .route figcaption { gap: var(--s-1) var(--s-4); }
+.btn.ghost { background: var(--surface); color: var(--text); box-shadow: var(--e1), inset 0 0 0 1px var(--line); }
+.btn.ghost:hover { background: var(--sunk); }
+@media (min-width: 60em) {
+  .hero { padding-block: var(--s-6) var(--s-5); }
+  .hero .wrap { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--s-8); }
+  .hero .route { inline-size: min(100%, 25rem); justify-self: end; }
+}
+.teasers { padding-block: var(--s-3) var(--s-5); }
+.tz { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+.tz li { display: grid; min-inline-size: 0; }
+.tz-card {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "ico go" "h h" "p p";
+  gap: var(--s-1) var(--s-3); align-content: start; align-items: center;
+  padding: var(--s-3); border-radius: var(--r-3); background: var(--surface); color: var(--text); text-decoration: none;
+  box-shadow: var(--e2), inset 0 1px 0 var(--highlight);
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+.tz-card:hover { box-shadow: var(--e3), inset 0 1px 0 var(--highlight); text-decoration: none; }
+.tz-card:active { transform: scale(0.98); }
+.tz-card .worker-ico { grid-area: ico; inline-size: 2.5rem; block-size: 2.5rem; }
+.tz-card .worker-ico svg { inline-size: 1.375rem; block-size: 1.375rem; }
+.tz-card b { grid-area: h; font: 600 1.1875rem/1.2 var(--serif); letter-spacing: -0.01em; margin-block-start: var(--s-2); }
+.tz-p { grid-area: p; font-size: 0.875rem; line-height: 1.4; color: var(--text-soft); }
+.tz-go { grid-area: go; justify-self: end; inline-size: 1.125rem; block-size: 1.125rem; color: var(--accent); }
+@media (min-width: 60em) {
+  .tz { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); }
+  .tz-card { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "ico h go" "ico p go"; padding: var(--s-4); gap: 2px var(--s-4); }
+  .tz-card b { margin: 0; align-self: end; }
+  .tz-p { align-self: start; font-size: 0.9375rem; }
+  .tz-go { align-self: center; }
+}
+.trust { padding-block: 0 var(--s-5); }
+.trust .wrap { display: grid; gap: var(--s-3); align-items: center; }
+.trust-list { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); font-size: 0.9375rem; font-weight: 600; }
+.trust-list li { display: flex; align-items: center; gap: var(--s-2); }
+.trust .hero-status { max-inline-size: none; padding: var(--s-2) var(--s-3); font-size: 0.875rem; line-height: 1.45; }
+@media (min-width: 72em) { .trust .wrap { grid-template-columns: auto minmax(0, 1fr); gap: var(--s-6); } }
+
+/* the leaks */
+.leaks .section-head { max-inline-size: 60rem; }
+.leaks .for { font-size: 0.9375rem; }
+.leaks .bridge { margin: 0; }
+.leak-list { gap: var(--s-5); }
+.leak-cta { margin: 0; font-family: var(--serif); font-size: 1.125rem; }
+.leak-cta a { color: var(--accent); }
+.leakchart { margin: 0; }
+@media (min-width: 56em) {
+  .leak-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); }
+  .leak-list .leak { grid-template-columns: minmax(0, 1fr); gap: var(--s-3); align-content: start; background: var(--surface); border-radius: var(--r-3); padding: var(--s-5); box-shadow: var(--e2), inset 0 1px 0 var(--highlight); }
+  .leak-list .leak h3 { font-size: 1.5rem; }
+}
+@media (min-width: 60em) { .test-panel { padding: var(--s-6) var(--s-7); } }
+
+/* AI team: one worker at a time, its mock beside the text */
+.ai-top { margin-block-end: var(--s-5); gap: var(--s-5); }
+.status-box { padding: var(--s-4) var(--s-5); gap: var(--s-2); }
+.status-box h3 { font-size: 1.1875rem; }
+.status-list { gap: var(--s-2); font-size: 0.9375rem; }
+.wk { gap: var(--s-6); align-items: start; }
+.wk > * { min-inline-size: 0; }
+.wk-copy { display: grid; gap: var(--s-3); align-content: start; }
+.wk-copy h3 { font-size: var(--fs-2); line-height: 1.15; }
+.wk-copy > p { color: var(--text-soft); max-inline-size: 56ch; }
+.wk-copy .chips { display: grid; gap: var(--s-1); }
+.wk-sub { margin: var(--s-3) 0 0; font: 600 1.1875rem/1.2 var(--serif); }
+.wk-fig { margin: 0; display: grid; gap: var(--s-3); align-content: start; }
+.wk-fig .tag { justify-self: start; }
+.wk-fig.chat-phone { justify-self: center; }
+.wk-fig.chat-phone .tag { justify-self: center; }
+.chat-phone .screen { min-block-size: 0; }
+.wk .flow li { padding-block-end: var(--s-3); grid-template-columns: 2.25rem minmax(0, 1fr); gap: var(--s-3); }
+.wk .flow-ico { inline-size: 2.25rem; block-size: 2.25rem; }
+.wk .flow-ico svg { inline-size: 1.125rem; block-size: 1.125rem; }
+.wk .flow li::after { inset-inline-start: calc(1.125rem - 1px); inset-block: 2.5rem 0.125rem; }
+.wk .flow b { padding-block-start: 0; font-size: 0.9375rem; }
+.wk .flow span.d { font-size: 0.875rem; }
+.wk .ow-result { min-block-size: 3.2em; }
+.ow-note { font-size: 0.9375rem; color: var(--text-soft); }
+.kv .off dd { color: var(--text-soft); font-weight: 400; }
+.kv .flag.ok dd::before { background: var(--ok); }
+.mini-thread { display: grid; gap: var(--s-3); padding: var(--s-5); }
+.mini-thread .sms { margin: 0; }
+.mini-thread .sms.to { justify-self: end; }
+.mini-note { display: flex; align-items: flex-start; gap: var(--s-2); font-size: 0.9375rem; font-weight: 600; }
+.mini-note.flagged::before { content: ""; inline-size: 0.5rem; block-size: 0.5rem; border-radius: 50%; background: var(--signal); flex: none; margin-block-start: 0.5em; }
+.wk .fn + .fn { margin-block-start: var(--s-2); }
+@media (min-width: 52em) {
+  .wk { grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); gap: var(--s-8); }
+  #w-recep { grid-template-columns: minmax(0, 1fr) 18.5rem; }
+  .wk .fn li { grid-template-columns: 8rem minmax(0, 1fr) 2.5rem; }
+}
+.fold { margin-block-start: var(--s-6); border-radius: var(--r-3); background: var(--surface); box-shadow: var(--e2), inset 0 1px 0 var(--highlight); }
+.fold summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); cursor: pointer; list-style: none;
+  min-block-size: 56px; padding: var(--s-3) var(--s-5); font: 600 1.375rem/1.2 var(--serif); letter-spacing: -0.01em;
+}
+.fold summary::-webkit-details-marker { display: none; }
+.fold summary::after { content: "+"; font: 400 1.75rem/1 var(--sans); color: var(--accent); transition: transform 200ms var(--ease-out); }
+.fold[open] summary::after { transform: rotate(45deg); }
+.fold summary:focus-visible { outline-offset: -3px; }
+.fold .rule-list { padding: 0 var(--s-5) var(--s-4); gap: var(--s-3); font-size: 0.9375rem; }
+.fold .ai-status { margin: 0 var(--s-5) var(--s-5); font-size: 0.9375rem; padding: var(--s-3) var(--s-4); }
+@media (min-width: 60em) { .fold .rule-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3) var(--s-6); } }
+
+/* samples and services: the heading and its notice share one row on wide screens */
+.samples-head { margin-block-end: var(--s-5); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 60em) {
+  .samples-head .section-head, .offer .section-head { max-inline-size: none; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-3) var(--s-8); align-items: start; }
+  .samples-head .section-head > :is(h2, .lede), .offer .section-head > :is(h2, .lede) { grid-column: 1; }
+  .samples-head .section-head > .notice, .offer .section-head > .notice { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+}
+.film-panel .section-head { margin-block-end: 0; }
+.film-panel .section-head h3 { font-size: var(--fs-2); }
+.slip-panel .slip { justify-self: center; inline-size: min(100%, 30rem); margin: var(--s-3) 0; }
+.ladder { padding: var(--s-5); }
+@media (min-width: 52em) { .ladder { padding: var(--s-6) var(--s-6) var(--s-5); } }
+.panel > .own { border-radius: var(--r-3); padding-block: var(--s-7); }
+.panel > .own h2 { font-size: var(--fs-3); }
+.panel > .terms { margin: 0; max-inline-size: 70ch; background: var(--surface); border-radius: var(--r-3); padding: var(--s-5); box-shadow: var(--e2), inset 0 1px 0 var(--highlight); }
+
+/* the receptionist's phone: a little wider and without the empty input row, so the tab stays under two screens */
+.wk .chat-input { display: none; }
+.wk-fig.chat-phone { inline-size: min(100%, 20rem); }
+.wk-fig.chat-phone .msgs { padding-block-end: var(--s-4); }
+@media (min-width: 52em) { #w-recep { grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); } }
+@media (min-width: 72em) { .fold .rule-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3) var(--s-5); } }
+.film-panel { gap: var(--s-3); }
+.film-panel .player-note { margin: 0; }
+.fold { margin-block-start: var(--s-5); }
 </style>
 </head>
 <body>
@@ -1144,6 +1317,9 @@ html:not(.js) .ow-actions { display: none; }
   <symbol id="g-tick" viewBox="-10 -10 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M-6,0.5 l4,4 l8,-9"/></symbol>
   <symbol id="g-yes" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><path d="M6.2,10.3 l2.6,2.6 l5,-5.4"/></symbol>
   <symbol id="g-wait" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke-dasharray="3 3.28"/></symbol>
+  <symbol id="g-map" viewBox="-10 -10 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M-8,-5.5 l5,-2 l6,2 l5,-2 v11 l-5,2 l-6,-2 l-5,2z M-3,-7.5 v11 M3,-5.5 v11"/></symbol>
+  <symbol id="g-steps" viewBox="-10 -10 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M-8,7 h5 v-4.5 h5 v-4.5 h5 v-4.5"/><path d="M4,-6.5 h3.5 v3.5"/></symbol>
+  <symbol id="g-demo" viewBox="-10 -10 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="-8" y="-6.5" width="16" height="13" rx="1.5"/><path d="M-2,-3 l5,3 l-5,3z"/></symbol>
 </svg>
 
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
@@ -1167,6 +1343,7 @@ html:not(.js) .ow-actions { display: none; }
     <nav class="tabs" aria-label="Sections" data-i18n-attr="aria-label:navLabel">
       <div class="tabs-scroll" id="tabs">
         <a href="#home" data-tab="home" data-i18n="navHome">Home</a>
+        <a href="#leaks" data-tab="leaks" data-i18n="navLeaks">The leaks</a>
         <a href="#map" data-tab="map" data-i18n="navMap">The Map</a>
         <a href="#ai" data-tab="ai" data-i18n="navAi">AI team</a>
         <a href="#samples" data-tab="samples" data-i18n="navSamples">Samples</a>
@@ -1184,20 +1361,12 @@ html:not(.js) .ow-actions { display: none; }
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
       <div class="hero-copy">
-        <p class="for" data-i18n="heroFor">For small businesses in eastern Pennsylvania: contractors, home services, offices, stores, anyone whose work comes in by phone, text or email.</p>
         <h1 id="hero-title" data-i18n="heroTitle">The jobs you lose are lost <em>in the office.</em></h1>
-        <p class="lede" data-i18n="heroLede">A call nobody answered. A quote nobody chased. A reminder that never went out. I find where your business is losing work, give you a written report, and build the AI workers that fix it: a receptionist, booking, follow-ups and reminders.</p>
+        <p class="lede" data-i18n="heroLine">I find where your office loses work, put it in a written report, and build the AI workers that fix it.</p>
         <div class="actions">
           <a class="btn" href="#test" data-i18n="heroCta">Get the free missed‑call test</a>
-          <a class="text-link" href="#ai" data-i18n="heroCta2">Meet the AI team</a>
+          <a class="btn ghost" href="#ai" data-i18n="heroCta2">Meet the AI team</a>
         </div>
-        <p class="reach" data-i18n="heroReach"><a href="tel:+15703929271">Call</a> or <a href="sms:+15703929271">text</a> (570) 392-9271</p>
-        <ul class="assure">
-          <li data-i18n="assure1">Fixed price, in writing, before you commit</li>
-          <li data-i18n="assure2">You own every account</li>
-          <li data-i18n="assure3">English or Spanish</li>
-        </ul>
-        <p class="hero-status"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="heroStatus"><b>Where things stand:</b> the Map is offered today. The AI workers are built and tested on made-up data, and none runs for a customer yet.</span></p>
       </div>
 
       <figure class="route">
@@ -1248,13 +1417,48 @@ html:not(.js) .ow-actions { display: none; }
     </div>
   </section>
 
+  <section class="teasers" aria-labelledby="tz-title">
+    <div class="wrap">
+      <h2 id="tz-title" class="sr-only" data-i18n="tzTitle">What is on this site</h2>
+      <ul class="tz">
+        <li><a class="tz-card" href="#map"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-map"/></svg></span><b data-i18n="navMap">The Map</b><span class="tz-p" data-i18n="tzMap">A paid visit and a written report of where your office loses work.</span><svg class="tz-go" aria-hidden="true"><use href="#g-next"/></svg></a></li>
+        <li><a class="tz-card" href="#ai"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-chat"/></svg></span><b data-i18n="navAi">AI team</b><span class="tz-p" data-i18n="tzAi">Six workers. Each one does a single repetitive job.</span><svg class="tz-go" aria-hidden="true"><use href="#g-next"/></svg></a></li>
+        <li><a class="tz-card" href="#samples"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-demo"/></svg></span><b data-i18n="navSamples">Samples</b><span class="tz-p" data-i18n="tzSamples">Demos you can click through, with made-up data.</span><svg class="tz-go" aria-hidden="true"><use href="#g-next"/></svg></a></li>
+        <li><a class="tz-card" href="#services"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-steps"/></svg></span><b data-i18n="navServices">Services</b><span class="tz-p" data-i18n="tzServices">What is offered today and what comes later, in writing.</span><svg class="tz-go" aria-hidden="true"><use href="#g-next"/></svg></a></li>
+        <li><a class="tz-card" href="#test"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-phone"/></svg></span><b data-i18n="tzTestH">Free missed-call test</b><span class="tz-p" data-i18n="tzTest">See what a new customer runs into when they call.</span><svg class="tz-go" aria-hidden="true"><use href="#g-next"/></svg></a></li>
+        <li><a class="tz-card" href="#contact"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-mail"/></svg></span><b data-i18n="navContact">Contact</b><span class="tz-p" data-i18n="tzContact">Call or text (570) 392-9271, or send an email.</span><svg class="tz-go" aria-hidden="true"><use href="#g-next"/></svg></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="trust" aria-labelledby="trust-title">
+    <div class="wrap">
+      <h2 id="trust-title" class="sr-only" data-i18n="trustTitle">At a glance</h2>
+      <ul class="trust-list">
+        <li><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="assure3">English or Spanish</span></li>
+        <li><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="assure2">You own every account</span></li>
+        <li><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="assure1">Fixed price, in writing, before you commit</span></li>
+      </ul>
+      <p class="hero-status"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="heroStatus"><b>Where things stand:</b> the Map is offered today. The AI workers are built and tested on made-up data, and none runs for a customer yet.</span></p>
+    </div>
+  </section>
+</div>
+
+<div class="tp" id="leaks">
   <section class="leaks" aria-labelledby="leaks-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="leaks-title" data-i18n="leaksTitle">Three places the money leaks out</h2>
         <p class="lede" data-i18n="leaksLede">None of these show up on a profit and loss statement. They show up as jobs that went to someone else.</p>
+        <p class="for" data-i18n="heroFor">For small businesses in eastern Pennsylvania: contractors, home services, offices, stores, anyone whose work comes in by phone, text or email.</p>
         <p class="bridge" data-i18n="leaksBridge">The examples on this page use a heating contractor. The same three leaks show up at a dental office, an insurance agency, a repair shop or a store that takes orders by phone.</p>
       </div>
+      <div class="tablist seg3" role="tablist" aria-label="The leaks" data-i18n-attr="aria-label:navLeaks">
+        <button type="button" class="tab" role="tab" id="tab-l1" aria-controls="leak-three" aria-selected="true" data-i18n="lkT1">The three leaks</button>
+        <button type="button" class="tab" role="tab" id="tab-l2" aria-controls="leak-week" aria-selected="false" tabindex="-1" data-i18n="lkT2">A made-up week</button>
+        <button type="button" class="tab" role="tab" id="tab-l3" aria-controls="test" aria-selected="false" tabindex="-1" data-i18n="tzTestH">Free missed-call test</button>
+      </div>
+      <div class="panel" role="tabpanel" id="leak-three" aria-labelledby="tab-l1" tabindex="0">
       <ol class="leak-list">
         <li class="leak">
           <p class="log"><span class="t" data-i18n="log1t">Tue 6:42 pm</span><b data-i18n="log1">Missed call, no message</b></p>
@@ -1278,6 +1482,9 @@ html:not(.js) .ow-actions { display: none; }
           </div>
         </li>
       </ol>
+      <p class="leak-cta" data-i18n="stripP">Seen enough? <a href="tel:+15703929271">Call</a> or <a href="sms:+15703929271">text</a> (570) 392-9271, or <a href="#test">ask for the free test</a>.</p>
+      </div>
+      <div class="panel" role="tabpanel" id="leak-week" aria-labelledby="tab-l2" tabindex="0" data-later>
       <figure class="leakchart">
         <figcaption>
           <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
@@ -1304,15 +1511,8 @@ html:not(.js) .ow-actions { display: none; }
         </div>
         <p class="fn-note" data-i18n="fnNote">Sample HVAC Co. is a made-up business. These numbers show how a leak is counted. They are not results, and yours will be different.</p>
       </figure>
-    </div>
-  </section>
-
-  <section class="strip" aria-label="Contact">
-    <div class="wrap"><p data-i18n="stripP">Seen enough? <a href="tel:+15703929271">Call</a> or <a href="sms:+15703929271">text</a> (570) 392-9271, or <a href="#test">ask for the free test</a>.</p></div>
-  </section>
-
-  <section id="test" aria-labelledby="test-title">
-    <div class="wrap">
+      </div>
+      <div class="panel" role="tabpanel" id="test" aria-labelledby="tab-l3" tabindex="0" data-later>
       <div class="test-panel">
         <div class="test-intro">
           <h2 id="test-title" data-i18n="testTitle">Free missed‑call response test</h2>
@@ -1333,6 +1533,7 @@ html:not(.js) .ow-actions { display: none; }
           <p class="fine" id="test-fb" data-i18n="testFb" hidden>Nothing opened? Email <a href="mailto:alexis.milander28@gmail.com">alexis.milander28@gmail.com</a> with "free test" in the subject, or call or text (570) 392-9271.</p>
           <p class="fine" data-i18n="testFine">One test only. No fake emergencies, no recorded calls. You get the times the same day the results are in, and no sales call follows unless you ask for one. Your results go only to you; I may keep anonymous totals with no business names.</p>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -1534,59 +1735,26 @@ html:not(.js) .ow-actions { display: none; }
           </ul>
         </div>
       </div>
-      <ul class="roster">
-        <li class="worker">
-          <div class="worker-top"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-chat"/></svg></span><span class="worker-role" data-i18n="aiRecTag">AI receptionist</span></div>
+
+      <div class="tablist wk-tabs" role="tablist" aria-label="AI team" data-i18n-attr="aria-label:navAi">
+        <button type="button" class="tab" role="tab" id="tab-w-recep" aria-controls="w-recep" aria-selected="true"><svg aria-hidden="true"><use href="#g-chat"/></svg><span data-i18n="aiRecTag">AI receptionist</span></button>
+        <button type="button" class="tab" role="tab" id="tab-w-book" aria-controls="w-book" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#g-calcheck"/></svg><span data-i18n="aiBookTag">Booking</span></button>
+        <button type="button" class="tab" role="tab" id="tab-w-quote" aria-controls="w-quote" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#g-send"/></svg><span data-i18n="aiQuoteTag">Quotes</span></button>
+        <button type="button" class="tab" role="tab" id="tab-w-remind" aria-controls="w-remind" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#g-bell"/></svg><span data-i18n="aiRemTag">Reminders</span></button>
+        <button type="button" class="tab" role="tab" id="tab-w-inv" aria-controls="w-inv" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#g-receipt"/></svg><span data-i18n="aiInvTag">Invoices</span></button>
+        <button type="button" class="tab" role="tab" id="tab-w-num" aria-controls="w-num" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#g-bars"/></svg><span data-i18n="aiNumTag">Your numbers</span></button>
+      </div>
+      <div class="panel wk" role="tabpanel" id="w-recep" aria-labelledby="tab-w-recep" tabindex="0">
+        <div class="wk-copy">
           <h3 data-i18n="aiRecH">Answers when nobody can</h3>
           <p data-i18n="aiRecP">On your website, a scheduling assistant answers common questions and collects a request for a visit. By phone, an AI voice receptionist can do the same. Either one says up front that it is automated. Prices, complaints, refunds and anything unclear go to a person.</p>
           <div class="chips">
             <span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipWeb">Website assistant: tested on made-up data</span></span>
             <span class="chip"><svg class="mark todo" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-wait"/></svg><span data-i18n="chipPhone">By phone: not offered yet</span></span>
           </div>
-        </li>
-        <li class="worker">
-          <div class="worker-top"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-calcheck"/></svg></span><span class="worker-role" data-i18n="aiBookTag">Booking</span></div>
-          <h3 data-i18n="aiBookH">Requests turn into appointments</h3>
-          <p data-i18n="aiBookP">A request comes in, your calendar is checked, and you get a message with Approve or Decline. Nothing is booked and nothing is sent to the customer until you tap Approve.</p>
-          <div class="chips"><span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span></div>
-        </li>
-        <li class="worker">
-          <div class="worker-top"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-send"/></svg></span><span class="worker-role" data-i18n="aiQuoteTag">Quotes</span></div>
-          <h3 data-i18n="aiQuoteH">Open quotes get chased</h3>
-          <p data-i18n="aiQuoteP">A short, polite follow-up on days 2, 5, 10 and 20. It checks first: if the customer replied, booked or said stop, nothing goes out.</p>
-          <div class="chips"><span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span></div>
-        </li>
-        <li class="worker">
-          <div class="worker-top"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-bell"/></svg></span><span class="worker-role" data-i18n="aiRemTag">Reminders</span></div>
-          <h3 data-i18n="aiRemH">Reminders go out on their own</h3>
-          <p data-i18n="aiRemP">A reminder before each appointment, in English or Spanish. A customer who answers STOP, or "no gracias", is never contacted again by it. Replies are passed to you.</p>
-          <div class="chips"><span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span></div>
-        </li>
-        <li class="worker">
-          <div class="worker-top"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-receipt"/></svg></span><span class="worker-role" data-i18n="aiInvTag">Invoices</span></div>
-          <h3 data-i18n="aiInvH">Unpaid invoices get a nudge</h3>
-          <p data-i18n="aiInvP">Plain reminders on invoices that are past due, from wording you approved. Disputes and refunds always go to you.</p>
-          <div class="chips"><span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span></div>
-        </li>
-        <li class="worker">
-          <div class="worker-top"><span class="worker-ico"><svg aria-hidden="true"><use href="#g-bars"/></svg></span><span class="worker-role" data-i18n="aiNumTag">Your numbers</span></div>
-          <h3 data-i18n="aiNumH">A morning summary and weekly numbers</h3>
-          <p data-i18n="aiNumP">One short message each morning with the day ahead, and one each Monday with calls, quotes and follow-through, so you see how the week went without opening a spreadsheet.</p>
-          <div class="chips"><span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span></div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="ai-demo alt" aria-labelledby="ai-demo-title">
-    <div class="wrap">
-      <div class="ai-demo-head">
-        <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
-        <h2 id="ai-demo-title" data-i18n="aiDemoH">One visit request, from the website to your approval</h2>
-        <p data-i18n="aiDemoP">A sample of the website scheduling assistant and of the message the owner gets. The assistant says it is automated in its first line.</p>
-      </div>
-      <div class="ai-demo-grid">
-        <figure class="chat-phone">
+        </div>
+        <figure class="chat-phone wk-fig">
+          <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
           <div class="phone">
             <div class="screen">
               <div class="status" aria-hidden="true"><span>7:12</span><i></i></div>
@@ -1609,9 +1777,15 @@ html:not(.js) .ow-actions { display: none; }
           </div>
           <figcaption data-i18n="chCap">What the customer sees on the website</figcaption>
         </figure>
-
-        <div class="flow-wrap">
-          <h3 data-i18n="flH">What happens in between</h3>
+      </div>
+      <div class="panel wk" role="tabpanel" id="w-book" aria-labelledby="tab-w-book" tabindex="0" data-later>
+        <div class="wk-copy">
+          <h3 data-i18n="aiBookH">Requests turn into appointments</h3>
+          <p data-i18n="aiBookP">A request comes in, your calendar is checked, and you get a message with Approve or Decline. Nothing is booked and nothing is sent to the customer until you tap Approve.</p>
+          <div class="chips">
+            <span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span>
+          </div>
+          <h4 class="wk-sub" data-i18n="flH">What happens in between</h4>
           <ol class="flow">
             <li><span class="flow-ico"><svg aria-hidden="true"><use href="#g-chat"/></svg></span><div><b data-i18n="fl1">The customer asks</b><span class="d" data-i18n="fl1p">On your website, at any hour.</span></div></li>
             <li><span class="flow-ico"><svg aria-hidden="true"><use href="#g-clip"/></svg></span><div><b data-i18n="fl2">The assistant takes the request</b><span class="d" data-i18n="fl2p">It says it is automated. Prices and complaints go to a person.</span></div></li>
@@ -1620,9 +1794,8 @@ html:not(.js) .ow-actions { display: none; }
             <li><span class="flow-ico"><svg aria-hidden="true"><use href="#g-mail"/></svg></span><div><b data-i18n="fl5">Then the customer hears back</b><span class="d" data-i18n="fl5p">Only after you approve, in wording you approved.</span></div></li>
           </ol>
         </div>
-
-        <figure class="owner-fig">
-          <h3 data-i18n="owFigH">What you get</h3>
+        <figure class="owner-fig wk-fig">
+          <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
           <div class="owner-msg" data-state="idle">
             <div class="ow-head"><b data-i18n="owTo">Message to the owner</b><span data-i18n="shop">Sample HVAC Co.</span></div>
             <div class="ow-body">
@@ -1649,13 +1822,111 @@ html:not(.js) .ow-actions { display: none; }
           <figcaption data-i18n="owCap">Try the two buttons. Nothing is sent from this page.</figcaption>
         </figure>
       </div>
-    </div>
-  </section>
+      <div class="panel wk" role="tabpanel" id="w-quote" aria-labelledby="tab-w-quote" tabindex="0" data-later>
+        <div class="wk-copy">
+          <h3 data-i18n="aiQuoteH">Open quotes get chased</h3>
+          <p data-i18n="aiQuoteP">A short, polite follow-up on days 2, 5, 10 and 20. It checks first: if the customer replied, booked or said stop, nothing goes out.</p>
+          <div class="chips">
+            <span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span>
+          </div>
+        </div>
+        <figure class="owner-fig wk-fig">
+          <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
+          <div class="owner-msg">
+            <div class="ow-head"><b data-i18n="qmTo">Open quote</b><span data-i18n="shop">Sample HVAC Co.</span></div>
+            <div class="ow-body">
+              <h4 data-i18n="qmH">Furnace replacement quote, sent Monday</h4>
+              <dl class="kv">
+                <div><dt data-i18n="qmD2">Day 2</dt><dd data-i18n="qmD2v">A short check-in is sent</dd></div>
+                <div class="flag ok"><dt data-i18n="qmD5">Day 5</dt><dd data-i18n="qmD5v">Dana replied. The follow-ups stop.</dd></div>
+                <div class="off"><dt data-i18n="qmD10">Day 10</dt><dd data-i18n="qmSkip">Nothing is sent</dd></div>
+                <div class="off"><dt data-i18n="qmD20">Day 20</dt><dd data-i18n="qmSkip">Nothing is sent</dd></div>
+              </dl>
+              <p class="ow-note" data-i18n="qmNote">It checks before each message. A reply, a booking or STOP ends the follow-ups.</p>
+            </div>
+          </div>
+          <figcaption data-i18n="qmCap">What the follow-up schedule looks like</figcaption>
+        </figure>
+      </div>
+      <div class="panel wk" role="tabpanel" id="w-remind" aria-labelledby="tab-w-remind" tabindex="0" data-later>
+        <div class="wk-copy">
+          <h3 data-i18n="aiRemH">Reminders go out on their own</h3>
+          <p data-i18n="aiRemP">A reminder before each appointment, in English or Spanish. A customer who answers STOP, or "no gracias", is never contacted again by it. Replies are passed to you.</p>
+          <div class="chips">
+            <span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span>
+          </div>
+        </div>
+        <figure class="owner-fig wk-fig">
+          <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
+          <div class="owner-msg">
+            <div class="ow-head"><b data-i18n="mtHead">Text message</b><span data-i18n="shop">Sample HVAC Co.</span></div>
+            <div class="mini-thread">
+              <p class="sms from" data-i18n="rm1">Sample HVAC Co.: Reminder: your visit is tomorrow, Thursday, at 9:30 am. Reply C to confirm, or call (555) 010-0100 to change it. Reply STOP to opt out.</p>
+              <p class="sms to" data-i18n="rm2">C</p>
+              <p class="mini-note"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="rm3">Confirmed. The office sees the reply.</span></p>
+            </div>
+          </div>
+          <figcaption data-i18n="rmCap">A sample reminder text</figcaption>
+        </figure>
+      </div>
+      <div class="panel wk" role="tabpanel" id="w-inv" aria-labelledby="tab-w-inv" tabindex="0" data-later>
+        <div class="wk-copy">
+          <h3 data-i18n="aiInvH">Unpaid invoices get a nudge</h3>
+          <p data-i18n="aiInvP">Plain reminders on invoices that are past due, from wording you approved. Disputes and refunds always go to you.</p>
+          <div class="chips">
+            <span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span>
+          </div>
+        </div>
+        <figure class="owner-fig wk-fig">
+          <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
+          <div class="owner-msg">
+            <div class="ow-head"><b data-i18n="mtHead">Text message</b><span data-i18n="shop">Sample HVAC Co.</span></div>
+            <div class="mini-thread">
+              <p class="sms from" data-i18n="iv1">Sample HVAC Co.: A reminder that invoice 0142 was due on March 3. If you already paid, thank you, and please ignore this message. Questions? Call (555) 010-0100. Reply STOP to opt out.</p>
+              <p class="sms to" data-i18n="iv2">I think the amount is wrong.</p>
+              <p class="mini-note flagged"><span data-i18n="iv3">A dispute. The reminders pause and it goes to the owner.</span></p>
+            </div>
+          </div>
+          <figcaption data-i18n="ivCap">A sample invoice reminder</figcaption>
+        </figure>
+      </div>
+      <div class="panel wk" role="tabpanel" id="w-num" aria-labelledby="tab-w-num" tabindex="0" data-later>
+        <div class="wk-copy">
+          <h3 data-i18n="aiNumH">A morning summary and weekly numbers</h3>
+          <p data-i18n="aiNumP">One short message each morning with the day ahead, and one each Monday with calls, quotes and follow-through, so you see how the week went without opening a spreadsheet.</p>
+          <div class="chips">
+            <span class="chip"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="chipTested">Tested on made-up data</span></span>
+          </div>
+        </div>
+        <figure class="owner-fig wk-fig">
+          <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
+          <div class="owner-msg">
+            <div class="ow-head"><b data-i18n="nmTo">Monday summary</b><span data-i18n="shop">Sample HVAC Co.</span></div>
+            <div class="ow-body">
+              <div class="fn">
+                <h4><svg aria-hidden="true"><use href="#g-phone"/></svg><span data-i18n="cV1">Calls</span></h4>
+                <ul>
+                  <li style="--v:1"><span class="fn-l" data-i18n="k1a">Calls in</span><span class="fn-bar" aria-hidden="true"><i></i></span><b>43</b></li>
+                  <li class="leak" style="--v:.326"><span class="fn-l"><svg aria-hidden="true"><use href="#g-drop"/></svg><span data-i18n="k1b">Missed calls</span></span><span class="fn-bar" aria-hidden="true"><i></i></span><b>14</b></li>
+                  <li style="--v:.163"><span class="fn-l" data-i18n="k1c">Texted back</span><span class="fn-bar" aria-hidden="true"><i></i></span><b>7</b></li>
+                </ul>
+              </div>
+              <div class="fn">
+                <h4><svg aria-hidden="true"><use href="#g-clip"/></svg><span data-i18n="cV2">Quotes</span></h4>
+                <ul>
+                  <li style="--v:1"><span class="fn-l" data-i18n="k2a">Quotes sent</span><span class="fn-bar" aria-hidden="true"><i></i></span><b>10</b></li>
+                  <li style="--v:.6"><span class="fn-l" data-i18n="k2d">Followed up</span><span class="fn-bar" aria-hidden="true"><i></i></span><b>6</b></li>
+                </ul>
+              </div>
+              <p class="ow-note" data-i18n="nmNote">Made-up numbers. They show what the message looks like, not a result.</p>
+            </div>
+          </div>
+          <figcaption data-i18n="nmCap">A sample weekly message</figcaption>
+        </figure>
+      </div>
 
-  <section class="ai-rules-sec" aria-labelledby="ai-rules-title">
-    <div class="wrap">
-      <div class="rules-grid">
-        <h2 id="ai-rules-title" data-i18n="aiRulesH">The rules every worker follows</h2>
+      <details class="fold" id="ai-rules" open>
+        <summary><span data-i18n="aiRulesH">The rules every worker follows</span></summary>
         <ul class="rule-list">
           <li><svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="aiR1">Every message to a customer comes from wording you approved in writing, in English and in Spanish.</span></li>
           <li><svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="aiR2">Messages go out only Monday to Saturday, 9 am to 7 pm Eastern, never on Sundays or Pennsylvania holidays.</span></li>
@@ -1665,49 +1936,34 @@ html:not(.js) .ow-actions { display: none; }
           <li><svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="aiR6">It works for contractors and home services, barbershops and salons, auto repair, and independent insurance agents. For licensed professions it only schedules and relays messages. It never quotes, advises or gives opinions.</span></li>
           <li><svg class="mark" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="aiR7">No promise of jobs, savings or results. Every figure in your Map is an estimate from your own numbers.</span></li>
         </ul>
-      </div>
       <p class="ai-status" data-i18n="aiStatus">Where this stands: these workers are built and tested on made-up data. None is running for a customer yet. The phone receptionist stays switched off for any business until you have approved its wording and its call-recording rules, and it is not yet offered. I will show you a working demo on a call.</p>
+      </details>
     </div>
   </section>
   <div class="pager"><div class="wrap"><a href="#samples"><span data-i18n="nextW">Next:</span> <b data-i18n="navSamples">Samples</b><svg aria-hidden="true"><use href="#g-next"/></svg></a></div></div>
 </div>
 
 <div class="tp" id="samples">
-  <section aria-labelledby="samples-title">
+  <section class="samples-sec" aria-labelledby="samples-title">
     <div class="wrap">
       <div class="samples-head">
         <div class="section-head">
           <h2 id="samples-title" data-i18n="sTitle">Samples you can click through</h2>
-          <p class="lede" data-i18n="sLede">Four samples with a made-up business and made-up data. They show how a fix could work on your end, so the report is easier to picture.</p>
+          <p class="lede" data-i18n="sLede">Samples with a made-up business and made-up data. They show how a fix could work on your end, so the report is easier to picture.</p>
           <div class="notice">
             <strong data-i18n="sNoticeH">The Map is a written report.</strong>
             <p data-i18n="sNoticeP">It builds nothing, sends no texts and needs no access to your accounts. Building fixes like these is not offered today. If you choose to build one later, you can hire anyone.</p>
           </div>
         </div>
-        <figure class="slip">
-          <div class="slip-top">
-            <span class="slip-title" data-i18n="slipTitle">Work order</span>
-            <span class="slip-no">No. 0001</span>
-          </div>
-          <dl>
-            <div class="row"><dt data-i18n="slipCustK">Customer</dt><dd data-i18n="slipCust">Your business</dd></div>
-            <div class="row"><dt data-i18n="slipProbK">Complaint</dt><dd data-i18n="slipProb">Calls after 5 pm go to voicemail. Quotes go out and nobody follows up.</dd></div>
-            <div class="row"><dt data-i18n="slipWorkK">Work done</dt><dd data-i18n="slipWork">An example fix: a text back to missed calls during hours you approve. Open quotes get a follow-up on a schedule you set.</dd></div>
-            <div class="row"><dt data-i18n="slipPartsK">Parts</dt><dd data-i18n="slipParts">Your phone number, your software, your accounts. Nothing rented from me.</dd></div>
-            <div class="row"><dt data-i18n="slipOkK">Approved by</dt><dd data-i18n="slipOk">You, before anything reaches a customer.</dd></div>
-          </dl>
-          <div class="slip-foot">
-            <figcaption data-i18n="slipCap">An example. The Map writes your real one.</figcaption>
-            <span class="stamp" aria-hidden="true" data-i18n="stamp">Approved</span>
-          </div>
-        </figure>
       </div>
 
-      <div class="tablist" role="tablist" aria-label="Samples" data-i18n-attr="aria-label:navSamples">
+      <div class="tablist seg6" role="tablist" aria-label="Samples" data-i18n-attr="aria-label:navSamples">
         <button type="button" class="tab" role="tab" id="tab-a" aria-controls="panel-a" aria-selected="true" data-i18n="tA">Missed-call text back</button>
+        <button type="button" class="tab" role="tab" id="tab-e" aria-controls="film" aria-selected="false" tabindex="-1" data-i18n="tE">Two endings</button>
         <button type="button" class="tab" role="tab" id="tab-b" aria-controls="panel-b" aria-selected="false" tabindex="-1" data-i18n="tB">Quote follow-up</button>
         <button type="button" class="tab" role="tab" id="tab-c" aria-controls="panel-c" aria-selected="false" tabindex="-1" data-i18n="tC">Weekly numbers</button>
         <button type="button" class="tab" role="tab" id="tab-d" aria-controls="panel-d" aria-selected="false" tabindex="-1" data-i18n="tD">Sample Map report</button>
+        <button type="button" class="tab" role="tab" id="tab-f" aria-controls="panel-f" aria-selected="false" tabindex="-1" data-i18n="slipTitle">Work order</button>
       </div>
 
       <!-- sample A: missed-call text back -->
@@ -1784,7 +2040,7 @@ html:not(.js) .ow-actions { display: none; }
       </div>
 
       <!-- sample B: quote follow-up -->
-      <div class="panel" role="tabpanel" id="panel-b" aria-labelledby="tab-b" tabindex="0" hidden>
+      <div class="panel" role="tabpanel" id="panel-b" aria-labelledby="tab-b" tabindex="0" data-later>
         <div class="panel-head">
           <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
           <h3 data-i18n="bH">Follow-ups on one open quote</h3>
@@ -1837,7 +2093,7 @@ html:not(.js) .ow-actions { display: none; }
       </div>
 
       <!-- sample C: weekly numbers -->
-      <div class="panel" role="tabpanel" id="panel-c" aria-labelledby="tab-c" tabindex="0" hidden>
+      <div class="panel" role="tabpanel" id="panel-c" aria-labelledby="tab-c" tabindex="0" data-later>
         <div class="panel-head">
           <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
           <h3 data-i18n="cH">An owner’s weekly numbers</h3>
@@ -1884,7 +2140,7 @@ html:not(.js) .ow-actions { display: none; }
       </div>
 
       <!-- sample D: the Map report -->
-      <div class="panel" role="tabpanel" id="panel-d" aria-labelledby="tab-d" tabindex="0" hidden>
+      <div class="panel" role="tabpanel" id="panel-d" aria-labelledby="tab-d" tabindex="0" data-later>
         <div class="panel-head">
           <p class="tag" data-i18n="sTag">Sample with made-up data, for illustration</p>
           <h3 data-i18n="dH">A shortened sample of the report</h3>
@@ -1962,13 +2218,9 @@ html:not(.js) .ow-actions { display: none; }
           </div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section id="film" class="alt" aria-labelledby="film-title">
-    <div class="wrap">
+      <div class="panel film-panel" role="tabpanel" id="film" aria-labelledby="tab-e" tabindex="0" data-later>
       <div class="section-head">
-        <h2 id="film-title" data-i18n="filmTitle">One missed call, two endings</h2>
+        <h3 id="film-title" data-i18n="filmTitle">One missed call, two endings</h3>
         <p class="lede" data-i18n="filmLede">A short illustration, about 20 seconds. Same caller, same evening. The only difference is whether a text goes back.</p>
       </div>
       <div class="player" data-state="idle" role="region" aria-label="Illustration: one missed call, two endings" data-i18n-attr="aria-label:filmRegion">
@@ -2008,6 +2260,26 @@ html:not(.js) .ow-actions { display: none; }
         </div>
       </div>
       <p class="player-note" data-i18n="filmNote">Illustration with a made-up business, caller and times. It shows how a text back works, not a result. In this illustration, texts go out only Monday to Saturday, 9 am to 7 pm Eastern.</p>
+      </div>
+      <div class="panel slip-panel" role="tabpanel" id="panel-f" aria-labelledby="tab-f" tabindex="0" data-later>
+        <figure class="slip">
+          <div class="slip-top">
+            <span class="slip-title" data-i18n="slipTitle">Work order</span>
+            <span class="slip-no">No. 0001</span>
+          </div>
+          <dl>
+            <div class="row"><dt data-i18n="slipCustK">Customer</dt><dd data-i18n="slipCust">Your business</dd></div>
+            <div class="row"><dt data-i18n="slipProbK">Complaint</dt><dd data-i18n="slipProb">Calls after 5 pm go to voicemail. Quotes go out and nobody follows up.</dd></div>
+            <div class="row"><dt data-i18n="slipWorkK">Work done</dt><dd data-i18n="slipWork">An example fix: a text back to missed calls during hours you approve. Open quotes get a follow-up on a schedule you set.</dd></div>
+            <div class="row"><dt data-i18n="slipPartsK">Parts</dt><dd data-i18n="slipParts">Your phone number, your software, your accounts. Nothing rented from me.</dd></div>
+            <div class="row"><dt data-i18n="slipOkK">Approved by</dt><dd data-i18n="slipOk">You, before anything reaches a customer.</dd></div>
+          </dl>
+          <div class="slip-foot">
+            <figcaption data-i18n="slipCap">An example. The Map writes your real one.</figcaption>
+            <span class="stamp" aria-hidden="true" data-i18n="stamp">Approved</span>
+          </div>
+        </figure>
+      </div>
     </div>
   </section>
   <div class="pager"><div class="wrap"><a href="#services"><span data-i18n="nextW">Next:</span> <b data-i18n="navServices">Services</b><svg aria-hidden="true"><use href="#g-next"/></svg></a></div></div>
@@ -2024,6 +2296,12 @@ html:not(.js) .ow-actions { display: none; }
           <p data-i18n="svStatus">Build and Run start once a separate company and its written agreement exist.</p>
         </div>
       </div>
+      <div class="tablist seg3" role="tablist" aria-label="Services" data-i18n-attr="aria-label:navServices">
+        <button type="button" class="tab" role="tab" id="tab-s1" aria-controls="sv-steps" aria-selected="true" data-i18n="svT1">The three steps</button>
+        <button type="button" class="tab" role="tab" id="tab-s2" aria-controls="sv-own" aria-selected="false" tabindex="-1" data-i18n="svT2">Your accounts</button>
+        <button type="button" class="tab" role="tab" id="tab-s3" aria-controls="sv-terms" aria-selected="false" tabindex="-1" data-i18n="svT3">Pricing, in writing</button>
+      </div>
+      <div class="panel" role="tabpanel" id="sv-steps" aria-labelledby="tab-s1" tabindex="0">
       <ol class="ladder">
         <li class="rung">
           <div class="rung-name"><h3 data-i18n="mapName">Map</h3><span class="avail on"><svg class="mark yes" viewBox="0 0 20 20" aria-hidden="true"><use href="#g-yes"/></svg><span data-i18n="svNow">Offered today</span></span></div>
@@ -2049,15 +2327,9 @@ html:not(.js) .ow-actions { display: none; }
           <p class="note" data-i18n="runNote">A monthly check that everything still works, fixes, and changes to the wording. Priced in writing, plus applicable sales tax, and available once Build is.</p>
         </li>
       </ol>
-      <div class="terms">
-        <strong data-i18n="termsH">Fixed price. You see it before you commit.</strong>
-        <p data-i18n="termsD">Plain disclosure: the fix prices in the report are planned prices from a company I intend to start. I would benefit if you chose it later. That is why the report is written so any vendor can quote from it.</p>
-        <p data-i18n="termsP">The Map fee is in writing before any work starts and includes any sales tax. Build and Run are priced in writing plus applicable sales tax. Software, phone and texting fees are billed to you directly by those companies, at their prices.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="own" aria-labelledby="own-title">
+      <div class="panel" role="tabpanel" id="sv-own" aria-labelledby="tab-s2" tabindex="0" data-later>
+  <div class="own">
     <div class="wrap">
       <div class="copy">
         <h2 id="own-title" data-i18n="ownTitle">You own <em>every account.</em></h2>
@@ -2072,6 +2344,16 @@ html:not(.js) .ow-actions { display: none; }
           <li><span data-i18n="acc5">Your AI usage account</span><span data-i18n="yours">In your name</span></li>
         </ul>
         <p class="fine" data-i18n="ownFine">You see every vendor bill yourself. I don't resell or mark up anything, and I take no commission or referral fee from any vendor.</p>
+      </div>
+    </div>
+  </div>
+      </div>
+      <div class="panel" role="tabpanel" id="sv-terms" aria-labelledby="tab-s3" tabindex="0" data-later>
+      <div class="terms">
+        <strong data-i18n="termsH">Fixed price. You see it before you commit.</strong>
+        <p data-i18n="termsD">Plain disclosure: the fix prices in the report are planned prices from a company I intend to start. I would benefit if you chose it later. That is why the report is written so any vendor can quote from it.</p>
+        <p data-i18n="termsP">The Map fee is in writing before any work starts and includes any sales tax. Build and Run are priced in writing plus applicable sales tax. Software, phone and texting fees are billed to you directly by those companies, at their prices.</p>
+      </div>
       </div>
     </div>
   </section>
@@ -2364,7 +2646,7 @@ html:not(.js) .ow-actions { display: none; }
     wNext: "Diapositiva siguiente",
     wGo1: "Diapositiva 1", wGo2: "Diapositiva 2", wGo3: "Diapositiva 3", wGo4: "Diapositiva 4", wGo5: "Diapositiva 5",
     sTitle: "Ejemplos que puede recorrer",
-    sLede: "Cuatro ejemplos con un negocio y datos inventados. Muestran cómo podría funcionar un arreglo de su lado, para que el informe sea más fácil de imaginar.",
+    sLede: "Ejemplos con un negocio y datos inventados. Muestran cómo podría funcionar un arreglo de su lado, para que el informe sea más fácil de imaginar.",
     sNoticeH: "El Mapa es un informe escrito.",
     sNoticeP: "No instala nada, no envía mensajes y no necesita acceso a sus cuentas. Hoy no se ofrece instalar arreglos como estos. Si más adelante decide instalar uno, puede contratar a quien quiera.",
     tA: "Respuesta a llamadas perdidas",
@@ -2596,6 +2878,46 @@ html:not(.js) .ow-actions { display: none; }
     fbCopied: "Copiado",
     footArea: "Este y noreste de Pensilvania.",
     footNote: "Sin cookies y sin analítica. Las fuentes se cargan desde Google, que puede ver su dirección IP.",
+    navLeaks: "Las fugas",
+    heroLine: "Encuentro dónde su oficina pierde trabajo, se lo entrego en un informe escrito y construyo los ayudantes de IA que lo arreglan.",
+    tzTitle: "Qué hay en esta página",
+    tzMap: "Una visita pagada y un informe escrito de dónde su oficina pierde trabajo.",
+    tzAi: "Seis ayudantes. Cada uno hace un solo trabajo repetitivo.",
+    tzSamples: "Demostraciones que puede probar, con datos inventados.",
+    tzServices: "Qué se ofrece hoy y qué viene después, por escrito.",
+    tzTestH: "Prueba gratuita de llamadas perdidas",
+    tzTest: "Vea con qué se encuentra un cliente nuevo cuando llama.",
+    tzContact: "Llame o escriba al (570) 392-9271, o mande un correo.",
+    trustTitle: "En resumen",
+    lkT1: "Las tres fugas",
+    lkT2: "Una semana inventada",
+    tE: "Dos finales",
+    svT1: "Los tres pasos",
+    svT2: "Sus cuentas",
+    svT3: "Precios, por escrito",
+    qmTo: "Estimado abierto",
+    qmH: "Estimado para reemplazar la calefacción, enviado el lunes",
+    qmD2: "Día 2",
+    qmD2v: "Sale un seguimiento corto",
+    qmD5: "Día 5",
+    qmD5v: "Dana respondió. Los seguimientos paran.",
+    qmD10: "Día 10",
+    qmD20: "Día 20",
+    qmSkip: "No se envía nada",
+    qmNote: "Revisa antes de cada mensaje. Una respuesta, una cita o un STOP terminan los seguimientos.",
+    qmCap: "Cómo se ve el calendario de seguimientos",
+    mtHead: "Mensaje de texto",
+    rm1: "HVAC Ejemplo: Recordatorio: su visita es mañana, jueves, a las 9:30 a. m. Responda C para confirmar, o llame al (555) 010-0100 para cambiarla. Responda STOP para no recibir más mensajes.",
+    rm2: "C",
+    rm3: "Confirmada. La oficina ve la respuesta.",
+    rmCap: "Un ejemplo de recordatorio por mensaje",
+    iv1: "HVAC Ejemplo: Le recordamos que la factura 0142 venció el 3 de marzo. Si ya pagó, gracias, y por favor ignore este mensaje. ¿Preguntas? Llame al (555) 010-0100. Responda STOP para no recibir más mensajes.",
+    iv2: "Creo que el monto está mal.",
+    iv3: "Es una disputa. Los recordatorios se pausan y pasa al dueño.",
+    ivCap: "Un ejemplo de recordatorio de factura",
+    nmTo: "Resumen del lunes",
+    nmNote: "Números inventados. Muestran cómo se ve el mensaje, no un resultado.",
+    nmCap: "Un ejemplo del mensaje semanal",
     navHome: "Inicio",
     navMap: "El Mapa",
     navServices: "Servicios",
@@ -2930,26 +3252,36 @@ html:not(.js) .ow-actions { display: none; }
     draw();
   }
 
-  /* tabs for the four samples */
-  var tabs = all(document, '.tablist [role="tab"]');
+  /* inner tab sets (leaks, AI workers, samples, services): every .tablist is its own group.
+     Panels start visible in the HTML so the page reads without scripts; "data-later" hides the
+     ones that are not first until this runs. */
   function pick(t, focus) {
-    tabs.forEach(function (x) {
-      var on = x === t;
+    all(t.closest('[role="tablist"]'), '[role="tab"]').forEach(function (x) {
+      var on = x === t, p = document.getElementById(x.getAttribute("aria-controls"));
       x.setAttribute("aria-selected", String(on));
       x.tabIndex = on ? 0 : -1;
-      document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+      p.hidden = !on;
+      p.removeAttribute("data-later");
     });
     if (focus) t.focus();
   }
-  tabs.forEach(function (t, k) {
-    t.addEventListener("click", function () { pick(t); });
-    t.addEventListener("keydown", function (e) {
-      var j = e.key === "ArrowRight" ? k + 1 : e.key === "ArrowLeft" ? k - 1 : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : null;
-      if (j === null) return;
-      e.preventDefault();
-      pick(tabs[(j + tabs.length) % tabs.length], true);
+  all(document, ".tablist").forEach(function (list) {
+    var tabs = all(list, '[role="tab"]');
+    tabs.forEach(function (t, k) {
+      t.addEventListener("click", function () { pick(t); });
+      t.addEventListener("keydown", function (e) {
+        var j = e.key === "ArrowRight" ? k + 1 : e.key === "ArrowLeft" ? k - 1 : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : null;
+        if (j === null) return;
+        e.preventDefault();
+        pick(tabs[(j + tabs.length) % tabs.length], true);
+      });
     });
+    pick(list.querySelector('[aria-selected="true"]') || tabs[0]);
   });
+
+  /* the rules list is an accordion: folded to start with, open when there are no scripts */
+  var fold = document.getElementById("ai-rules");
+  if (fold) fold.open = false;
 
   /* the player: a 20-second loop, pausable, replayable, paused when off screen */
   var player = document.querySelector(".player");
