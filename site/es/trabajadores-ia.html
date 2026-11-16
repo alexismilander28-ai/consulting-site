@@ -1,0 +1,498 @@
+<!doctype html>
+<!-- Carlos Milander. BUILT FILE: do not edit by hand.
+     Phone and email live in ONE place: build/build.py, the CONTACT block at the top.
+     Change them there and run: python build/build.py -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajadores de IA | Carlos Milander</title>
+<meta name="description" content="Los trabajadores de IA son programas automáticos que hacen una sola tarea repetitiva de oficina cada uno, como contestar por mensaje una llamada perdida. Están construidos y probados con datos inventados. Ninguno funciona todavía para un cliente.">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#F6F3EC">
+<meta name="format-detection" content="telephone=no">
+<link rel="alternate" hreflang="en" href="../ai-workers.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F6F3EC'/%3E%3Cpath d='M8 10h16M8 16h16M8 22h9' stroke='%231C1A17' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script>document.documentElement.className='js'</script>
+<style>
+/* Carlos Milander: paper and ink. Light only. One accent with one job: things you can press.
+   Two radii (buttons 6px, photos 3px). One shadow (paper and photos). Sheets of paper are square. */
+:root{
+  --paper:#F6F3EC; --band:#ECE7DA; --sheet:#FFFEFB;
+  --ink:#1C1A17; --ink-2:#4A453C; --rule:#CFC8B7;
+  --accent:#1D3F9C; --accent-dn:#152E75; --signal:#B4281E;
+  --serif:"Source Serif 4","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --shadow:0 1px 1px rgba(60,48,30,.12),0 14px 26px -14px rgba(60,48,30,.42);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.5 var(--serif);overflow-wrap:break-word}
+h1,h2,h3{font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,1.15rem + 3.5vw,3.25rem);line-height:1.08;letter-spacing:-.012em}
+h2{font-size:clamp(1.5rem,1.25rem + 1.1vw,2rem);line-height:1.15;margin-bottom:.6em}
+h3{font-size:1.1875rem;font-weight:600;line-height:1.3;margin-bottom:.3em}
+p{margin:0 0 .9em;text-wrap:pretty;max-width:66ch}
+p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 .9em;padding-left:1.3em}
+li{margin-bottom:.45em}
+a{color:var(--accent);text-decoration-thickness:.06em;text-underline-offset:.18em}
+a:hover{color:var(--accent-dn);text-decoration-thickness:.12em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+img{max-width:100%}
+.nw{white-space:nowrap}
+.small{font-family:var(--sans);font-size:.9375rem;line-height:1.45;color:var(--ink-2)}
+.wrap{max-width:70rem;margin-inline:auto;padding-inline:1.25rem}
+.skip{position:absolute;left:-999rem;top:0;background:var(--sheet);padding:.6rem .9rem;font-family:var(--sans)}
+.skip:focus{left:.5rem;top:.5rem;z-index:5}
+
+/* header: name, four links, the phone number as text */
+.top{font-family:var(--sans);border-bottom:1px solid var(--rule)}
+.top .wrap{display:grid;grid-template-columns:1fr auto;align-items:baseline;column-gap:1rem;padding-block:.8rem .15rem}
+.name{font:600 1.3125rem/1.2 var(--serif);color:var(--ink);text-decoration:none;justify-self:start}
+.tel{grid-column:2;grid-row:1;color:var(--ink);font-weight:600;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+.top nav{grid-column:1/-1}
+.top ul{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 .9rem;list-style:none;margin:0;padding:0}
+.top li{margin:0}
+.top nav a{display:inline-block;padding:.7rem 0;text-decoration:none;font-size:1rem}
+.top nav a:hover{text-decoration:underline}
+.top nav a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.4em}
+
+/* buttons: the only filled colour on the page */
+.btn{display:inline-block;font:600 1.0625rem/1.25 var(--sans);background:var(--accent);color:#fff;padding:.95rem 1.35rem;border:0;border-radius:6px;text-decoration:none;cursor:pointer;text-align:center}
+.btn:hover{background:var(--accent-dn);color:#fff}
+.btn:active{transform:translateY(1px)}
+.btn--quiet{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent);padding:.6rem .95rem;font-size:1rem}
+.btn--quiet:hover{background:transparent;color:var(--accent-dn);box-shadow:inset 0 0 0 2px var(--accent-dn)}
+.btn--quiet[aria-current="true"]{background:var(--accent);color:#fff}
+/* phone or desk: the main button writes a text on a phone and an email on a computer */
+.on-touch{display:none!important}
+@media (hover:none) and (pointer:coarse){
+  .on-desk{display:none!important}
+  a.btn.on-touch{display:inline-block!important}
+  span.on-touch{display:inline!important}
+}
+
+/* paper: a sheet of the sample report */
+.sheet{background:var(--sheet);color:var(--ink);box-shadow:var(--shadow);font-family:var(--sans);container-type:inline-size}
+.sheet-in{padding:1.4rem 1.25rem 1.1rem;font-size:.9375rem;line-height:1.4;display:flex;flex-direction:column;min-height:100%}
+.sh-head{display:grid;grid-template-columns:1fr auto;align-items:start;gap:.2em 1em;border-bottom:2px solid var(--ink);padding-bottom:.7em;margin-bottom:1em}
+.sh-doc{font:600 1.5em/1.1 var(--serif);margin:0}
+.sh-for{grid-column:1;margin:0;color:var(--ink-2)}
+.sh-stamp{grid-column:2;grid-row:1/3;align-self:center;margin:0;color:var(--signal);font-weight:600;font-size:1.05em;border:.14em solid var(--signal);padding:.12em .55em;transform:rotate(4deg)}
+.sh-h{font:600 1.12em/1.25 var(--sans);margin:0 0 .6em}
+.sh-path{list-style:none;margin:0 0 .5em;padding:0;display:flex;flex-wrap:wrap;gap:.5em .35em;align-items:center}
+.sh-path li{margin:0;padding:.22em .6em;border:1px solid var(--ink-2);position:relative;white-space:nowrap}
+.sh-path li + li::before{content:"";position:absolute;left:-.38em;top:50%;width:.36em;border-top:1px solid var(--ink-2)}
+.sh-path li.mk{border-color:transparent}
+.sh-path li.mk::after{content:"";position:absolute;inset:-.28em -.4em;border:.13em solid var(--signal);border-radius:48% 52% 46% 54%/58% 44% 56% 42%;transform:rotate(-3deg)}
+.sh-note{color:var(--signal);font-style:italic;margin:0 0 1em;max-width:none}
+.sh-list{margin:0 0 1em;padding-left:1.15em}
+.sh-list li{margin-bottom:.32em}
+.sh-list li::marker{color:var(--signal)}
+.sh-table{width:100%;border-collapse:collapse;margin:0 0 .8em;font-variant-numeric:tabular-nums}
+.sh-table caption{text-align:left;font-weight:600;padding-bottom:.35em}
+.sh-table th,.sh-table td{text-align:left;font-weight:400;padding:.34em .4em .34em 0;border-top:1px solid var(--rule);vertical-align:top}
+.sh-table thead th{font-weight:600;border-top:0;color:var(--ink-2)}
+.sh-table td:last-child,.sh-table thead th:last-child{text-align:right;padding-right:0;white-space:nowrap}
+.sh-table .how{color:var(--ink-2)}
+.sh-table .mk{color:var(--signal);font-weight:600;text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.2em}
+.sh-ol{margin:0 0 1em;padding-left:1.3em}
+.sh-ol li{margin-bottom:.6em}
+.sh-ol span{display:block;color:var(--ink-2)}
+.sh-foot{margin-top:auto;padding-top:.7em;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:1em;color:var(--ink-2);font-size:.92em}
+.sh-foot p{margin:0}
+
+/* home: first screen */
+.hero .wrap{display:grid;gap:.9rem;padding-block:.5rem 1.9rem}
+.hero-fig{margin:0;min-width:0}
+/* the miniature report scales with its own width, like a photo of a page would */
+.sheet--mini{aspect-ratio:8.5/11;overflow:hidden}
+.sheet--mini > div{height:100%}
+.sheet--mini .sheet-in{font-size:2.5cqi;padding:6cqi 7cqi 4.5cqi;height:100%}
+.hero-art{position:relative;height:11.25rem;overflow:hidden;margin-right:-1.25rem;border-bottom:1px solid var(--rule)}
+.hero-art .sheet{position:absolute;right:.4rem;top:.9rem;width:66%;transform:rotate(-2deg)}
+.hero-art .portrait{position:absolute;left:0;bottom:0;width:37%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:3px;box-shadow:var(--shadow)}
+.hero-photo{display:block;width:100%;height:auto;max-height:15rem;object-fit:cover;border-radius:3px}
+.hero-fig figcaption{font-family:var(--sans);font-size:.9375rem;line-height:1.4;color:var(--ink-2);margin-top:.5rem}
+.hero-fig figcaption b{color:var(--ink);font-weight:600}
+.lede{font-size:1.1875rem;line-height:1.45;margin-top:.8rem}
+.door{margin-top:.9rem;padding-top:.85rem;border-top:1px solid var(--rule)}
+.door p{margin-bottom:.8rem}
+.door .small{margin:.7rem 0 0}
+
+/* bands */
+.band{border-top:1px solid var(--rule)}
+.band--tint{background:var(--band)}
+.band > .wrap{padding-block:2.1rem}
+.two{display:grid;gap:1.9rem}
+.steps{padding-left:1.25em}
+.steps li{padding-left:.25em}
+.steps li::marker{font-family:var(--sans);font-weight:600}
+.ask .wrap{padding-block:1.15rem}
+.ask .status{max-width:none}
+.ask-q{font-size:clamp(1.3125rem,1.1rem + .9vw,1.625rem);line-height:1.25;max-width:32ch;margin-bottom:.5rem}
+.status{font-family:var(--sans);font-size:1rem;line-height:1.45;border-left:3px solid var(--ink);padding-left:.85rem;max-width:60ch}
+.status b{font-weight:600}
+
+.foot{border-top:1px solid var(--rule);font-family:var(--sans);font-size:.9375rem;line-height:1.5;color:var(--ink-2)}
+.foot .wrap{padding-block:1rem 1.3rem}
+.foot p{margin:0 0 .25em;max-width:none}
+
+/* inner pages */
+.head .wrap{padding-block:1.7rem 2rem;display:grid;gap:1.4rem}
+.head h1{font-size:clamp(1.875rem,1.2rem + 2.6vw,2.75rem);max-width:20ch}
+.head .lede{max-width:54ch}
+.narrow{max-width:44rem}
+.when{margin:0;display:grid;gap:1rem 1.5rem}
+.when dt{font:600 1rem/1.4 var(--sans)}
+.when dd{margin:0}
+.case{padding-block:1rem;border-top:1px solid var(--rule)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case time,.case .stamp{font:400 .9375rem var(--sans);color:var(--ink-2);display:block;margin-bottom:.15rem}
+.tag{font-family:var(--sans);font-size:1rem;line-height:1.45;margin-bottom:1rem}
+.tag b{font-weight:600}
+.pager{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0}
+.sheets{display:grid;gap:1.5rem;min-width:0}
+.sheets .sheet{max-width:38rem}
+html.js .sheets .sheet[hidden]{display:none}
+html:not(.js) .pager{display:none}
+.holds li{margin-bottom:.55em}
+
+/* demo stills: flat phone screenshots, square like a real screenshot */
+.stills{display:grid;gap:1.25rem;justify-items:start}
+.still{margin:0;width:100%;max-width:17rem}
+.shot{background:#fff;color:var(--ink);box-shadow:var(--shadow);font-family:var(--sans);font-size:.875rem;line-height:1.35;aspect-ratio:9/16;display:flex;flex-direction:column;overflow:hidden}
+.shot-bar{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem .3rem;font-weight:600;font-size:.8125rem}
+.shot-bar svg{display:block}
+.shot-top{text-align:center;border-bottom:1px solid var(--rule);padding:.35rem .5rem .55rem}
+.shot-top b{display:block;font-weight:600}
+.shot-top span{color:var(--ink-2);font-size:.8125rem}
+.shot-body{padding:.7rem .7rem 1rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.shot-day{align-self:center;color:var(--ink-2);font-size:.75rem;margin:0}
+.bub{margin:0;max-width:86%;padding:.5rem .7rem;border-radius:14px;background:#E9E6DE}
+.bub--me{align-self:flex-end;background:var(--ink);color:#fff}
+.shot-meta{align-self:flex-end;color:var(--ink-2);font-size:.75rem;margin:0}
+.callrow{display:grid;grid-template-columns:1fr auto;gap:.1rem .6rem;padding:.6rem .2rem;border-bottom:1px solid var(--rule)}
+.callrow b{font-weight:600}
+.callrow span{color:var(--ink-2);font-size:.8125rem}
+.callrow .miss{color:var(--signal)}
+.still figcaption{font-family:var(--sans);font-size:.9375rem;color:var(--ink-2);margin-top:.55rem}
+.script{margin:0;font-size:1rem;line-height:1.45}
+.script dt{font:600 .9375rem var(--sans);margin-top:.8rem}
+.script dt:first-child{margin-top:0}
+.script dd{margin:0}
+
+/* one worker at a time */
+.workers details{border-top:1px solid var(--rule)}
+.workers details:last-of-type{border-bottom:1px solid var(--rule)}
+.workers summary{cursor:pointer;padding:.85rem 0;font:600 1.125rem/1.3 var(--sans);color:var(--accent);display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .9rem}
+.workers summary:hover{color:var(--accent-dn)}
+.workers summary span{font-weight:400;font-size:.9375rem;color:var(--ink-2)}
+.w-body{padding:0 0 1.2rem;display:grid;gap:1rem}
+.slip{background:var(--sheet);box-shadow:var(--shadow);font-family:var(--sans);font-size:.9375rem;line-height:1.4;padding:.9rem 1rem;max-width:26rem}
+.slip p{margin:0 0 .5em}
+.slip .from{color:var(--ink-2);font-size:.875rem}
+.slip dl{margin:0 0 .7rem;display:grid;grid-template-columns:auto 1fr;gap:.25rem .9rem}
+.slip dt{color:var(--ink-2)}
+.slip dd{margin:0}
+.slip .acts{display:flex;flex-wrap:wrap;gap:.5rem;margin:.2rem 0 .6rem}
+.slip .days{list-style:none;margin:0;padding:0}
+.slip .days li{display:grid;grid-template-columns:4.2rem 1fr;gap:.6rem;margin:0;padding:.3rem 0;border-top:1px solid var(--rule)}
+.slip .days li:first-child{border-top:0}
+html:not(.js) .needs-js{display:none}
+.rules{padding-left:1.3em;max-width:44rem}
+.rules li{margin-bottom:.6em;padding-left:.2em}
+
+/* about */
+.who-photo{margin:0;max-width:17rem}
+.who-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:3px;box-shadow:var(--shadow)}
+.who-photo figcaption{font-family:var(--sans);font-size:.9375rem;color:var(--ink-2);margin-top:.55rem}
+.qa details{border-top:1px solid var(--rule)}
+.qa details:last-of-type{border-bottom:1px solid var(--rule)}
+.qa summary{cursor:pointer;padding:.85rem 0;font-size:1.125rem;color:var(--accent)}
+.qa summary:hover{color:var(--accent-dn)}
+.qa details p{padding-bottom:1rem;margin:0}
+.reach{margin:0;display:grid;gap:.9rem}
+.reach dt{font:600 .9375rem var(--sans);color:var(--ink-2)}
+.reach dd{margin:0}
+.reach .big{font-size:clamp(1.75rem,1.3rem + 2vw,2.5rem);line-height:1.1;font-variant-numeric:tabular-nums}
+.reach .big a{color:var(--ink);text-decoration:none}
+
+@media (min-width:48rem){
+  body{font-size:1.1875rem}
+  .wrap{padding-inline:2rem}
+  .top .wrap{grid-template-columns:auto 1fr auto;column-gap:2.25rem;padding-block:.9rem .9rem}
+  .top nav{grid-column:2;grid-row:1;justify-self:end}
+  .tel{grid-column:3}
+  .top ul{gap:0 1.75rem;justify-content:flex-end}
+  .top nav a{padding:.35rem 0;font-size:1.0625rem}
+  .lede{font-size:1.3125rem}
+  .when{grid-template-columns:9rem 1fr}
+  .stills{grid-template-columns:repeat(2,minmax(0,15.5rem))}
+  .w-body{grid-template-columns:1fr minmax(0,24rem);gap:1.75rem;align-items:start}
+  .sheet-in{padding:2.4rem 2.5rem 1.6rem}
+  .sheets .sheet{aspect-ratio:8.5/11}
+}
+@media (min-width:60rem){
+  .hero .wrap{grid-template-columns:5fr 7fr;gap:3.25rem;padding-block:2rem 1.9rem;align-items:start}
+  .hero-art{height:auto;overflow:visible;margin-right:0;border-bottom:0;padding-bottom:2.6rem}
+  .hero-art .sheet{position:relative;right:auto;top:auto;width:76%;margin-left:auto}
+  .hero-art .portrait{width:33%;left:0;bottom:0}
+  .hero-photo{max-height:none;aspect-ratio:4/5}
+  .door{margin-top:1.1rem;padding-top:1rem}
+  .band > .wrap{padding-block:2.1rem}
+  .two{grid-template-columns:7fr 5fr;gap:4rem}
+  .two > .second{order:2}
+  .two--flip{grid-template-columns:4fr 8fr}
+  .head .wrap{grid-template-columns:7fr 5fr;gap:4rem;align-items:end;padding-block:2.6rem 2.6rem}
+  .head--photo .wrap{grid-template-columns:8fr 4fr;align-items:start}
+  .sample .wrap{display:grid;grid-template-columns:4fr 8fr;gap:3rem;align-items:start}
+  .sample .sheets{margin-right:-2rem}
+  .demo{display:grid;grid-template-columns:7fr 5fr;gap:3rem;align-items:start}
+  .split{display:grid;grid-template-columns:4fr 8fr;gap:3rem;align-items:start}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.btn:active{transform:none}}
+@media print{.top nav,.skip,.pager,.btn{display:none!important}body{background:#fff}.sheet,.slip,.shot{box-shadow:none;border:1px solid #999}}
+.gap{margin-top:.8rem!important}
+.gap2{margin-top:1.6rem}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="top"><div class="wrap">
+<a class="name" href="index.html">Carlos Milander</a>
+<nav aria-label="Principal"><ul>
+<li><a href="mapa.html">El Mapa</a></li>
+<li><a href="trabajadores-ia.html" aria-current="page">Trabajadores de IA</a></li>
+<li><a href="sobre-mi.html">Sobre mí</a></li>
+<li><a href="../ai-workers.html" lang="en" hreflang="en" aria-label="English: esta página en inglés">English</a></li>
+</ul></nav>
+<a class="tel" href="tel:+15703929271" aria-label="Llamar al (570) 392-9271">(570) 392-9271</a>
+</div></header>
+<main id="main">
+<section class="head" aria-labelledby="h-title">
+  <div class="wrap">
+    <div>
+      <h1 id="h-title">Los trabajadores de IA son programas. Cada uno hace una sola tarea repetitiva de oficina.</h1>
+      <p class="lede">Uno contesta con un mensaje de texto la llamada perdida. Otro manda el recordatorio el día antes de la cita. Cada mensaje dice que es automático, y una persona de su negocio sigue a cargo.</p>
+    </div>
+    <div class="status">
+      <p><b>Cómo está esto hoy.</b></p>
+      <ul>
+        <li>Están construidos y probados con datos inventados.</li>
+        <li>Ninguno funciona todavía para un cliente.</li>
+        <li>La recepcionista por teléfono todavía no se ofrece.</li>
+        <li>Instalarlos y mantenerlos para un negocio empieza cuando exista una empresa aparte y un acuerdo por escrito.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="demo-t">
+  <div class="wrap">
+    <h2 id="demo-t">Cómo se ve un mensaje automático</h2>
+    <p class="tag"><b>Demostración con un negocio inventado y un cliente inventado.</b> Son imágenes fijas de una prueba, con el texto escrito al lado. Todavía no se ofrece a clientes.</p>
+    <div class="demo">
+      <div class="stills">
+        <figure class="still">
+          <div class="shot" role="img" aria-label="Pantalla de teléfono, llamadas recientes. Una llamada a Sample HVAC Co. a las 6:42 pm quedó sin contestar.">
+            <div aria-hidden="true" class="shot-bar"><span>6:42</span><svg width="42" height="10" viewBox="0 0 42 10"><path d="M1 9V7M5 9V5M9 9V3M13 9V1" stroke="#1C1A17" stroke-width="2"/><rect x="24" y="1" width="15" height="8" fill="none" stroke="#1C1A17"/><rect x="26" y="3" width="9" height="4" fill="#1C1A17"/></svg></div>
+            <div aria-hidden="true" class="shot-top"><b>Llamadas recientes</b></div>
+            <div aria-hidden="true" class="shot-body">
+              <div class="callrow"><b>Sample HVAC Co.</b><span>6:42 pm</span><span class="miss">Saliente. Sin respuesta.</span><span>mar</span></div>
+              <div class="callrow"><b>(555) 010-0177</b><span>2:10 pm</span><span>Entrante, 3 min</span><span>mar</span></div>
+              <div class="callrow"><b>(555) 010-0121</b><span>9:05 am</span><span>Saliente, 1 min</span><span>lun</span></div>
+            </div>
+          </div>
+          <figcaption>1. El cliente llama al negocio. Nadie puede contestar.</figcaption>
+        </figure>
+        <figure class="still">
+          <div class="shot" role="img" aria-label="Pantalla de teléfono, conversación por mensajes con Sample HVAC Co. El texto completo está en la transcripción.">
+            <div aria-hidden="true" class="shot-bar"><span>6:51</span><svg width="42" height="10" viewBox="0 0 42 10"><path d="M1 9V7M5 9V5M9 9V3M13 9V1" stroke="#1C1A17" stroke-width="2"/><rect x="24" y="1" width="15" height="8" fill="none" stroke="#1C1A17"/><rect x="26" y="3" width="9" height="4" fill="#1C1A17"/></svg></div>
+            <div aria-hidden="true" class="shot-top"><b>Sample HVAC Co.</b><span>(555) 010-0100</span></div>
+            <div aria-hidden="true" class="shot-body">
+              <p class="shot-day">mar 6:43 pm</p>
+              <p class="bub">Sample HVAC Co.: Este es un mensaje automático. Disculpe, no pudimos contestar su llamada. Responda aquí y una persona de la oficina se comunicará con usted. Responda STOP para no recibir más mensajes.</p>
+              <p class="bub bub--me">La calefacción está haciendo un ruido fuerte. ¿Pueden venir a verla esta semana?</p>
+              <p class="shot-meta">Entregado 6:51 pm</p>
+            </div>
+          </div>
+          <figcaption>2. Un minuto después llega el mensaje. El cliente lo contesta.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <h3>Transcripción</h3>
+        <dl class="script">
+          <dt>Martes, 6:42 pm</dt>
+          <dd>Un cliente llama a Sample HVAC Co. La cuadrilla está en un trabajo y nadie contesta.</dd>
+          <dt>6:43 pm, mensaje automático desde el número del propio negocio</dt>
+          <dd>«Sample HVAC Co.: Este es un mensaje automático. Disculpe, no pudimos contestar su llamada. Responda aquí y una persona de la oficina se comunicará con usted. Responda STOP para no recibir más mensajes.»</dd>
+          <dt>6:51 pm, el cliente</dt>
+          <dd>«La calefacción está haciendo un ruido fuerte. ¿Pueden venir a verla esta semana?»</dd>
+          <dt>6:53 pm</dt>
+          <dd>La respuesta llega a la bandeja de la oficina. Una persona la lee y devuelve la llamada. No se usa ninguna voz de IA.</dd>
+        </dl>
+        <p class="small gap">En esta demostración los mensajes salen solo de lunes a sábado, de 9 am a 7 pm, hora del Este. Una llamada a las 8:15 pm recibiría su mensaje a las 9:00 de la mañana siguiente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="six-t">
+  <div class="wrap split">
+    <div>
+      <h2 id="six-t">Las seis tareas, una a la vez</h2>
+      <p class="tag">Abra una. Todas las muestras usan un negocio inventado y datos inventados.</p>
+    </div>
+    <div class="workers">
+      <details name="worker" open>
+        <summary>Contestar cuando nadie puede <span>Asistente de la página web probado con datos inventados. Por teléfono: todavía no se ofrece.</span></summary>
+        <div class="w-body">
+          <p>En su página web, un asistente de citas contesta las preguntas comunes y toma la solicitud de una visita. Dice desde el principio que es automático. Los precios, las quejas, los reembolsos y todo lo que no esté claro pasan a una persona.</p>
+          <div class="slip">
+            <p class="from">Muestra. Chat de la página web, Sample HVAC Co.</p>
+            <p>«Hola. Soy el asistente automático de citas de Sample HVAC Co. No soy una persona. Puedo contestar preguntas comunes y tomar su solicitud de visita.»</p>
+            <p>«¿Cuánto me va a costar?»</p>
+            <p>«Los precios los da una persona de la oficina, así que anoté su pregunta en la solicitud. Todavía no hay nada agendado.»</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Citas <span>Probado con datos inventados.</span></summary>
+        <div class="w-body">
+          <p>Llega una solicitud, se revisa su calendario y usted recibe un mensaje con dos botones. No se agenda nada y no se le manda nada al cliente hasta que usted apruebe.</p>
+          <div class="slip" data-approve>
+            <p class="from">Muestra. Mensaje para el dueño, Sample HVAC Co.</p>
+            <dl>
+              <dt>De</dt><dd>Dana, (555) 010-0142</dd>
+              <dt>Asunto</dt><dd>La calefacción hace un ruido fuerte</dd>
+              <dt>Pidió</dt><dd>El jueves por la mañana</dd>
+              <dt>Su calendario</dt><dd>El jueves a las 9:30 am está libre</dd>
+              <dt>Necesita a una persona</dt><dd>Preguntó por el precio</dd>
+            </dl>
+            <div class="acts needs-js">
+              <button type="button" class="btn btn--quiet" data-say="Aprobado. En una instalación real la visita queda en su calendario y el cliente recibe la confirmación que usted aprobó por escrito. En esta muestra no se envió nada.">Aprobar</button>
+              <button type="button" class="btn btn--quiet" data-say="Rechazado. No se agenda nada y no se envía nada. La solicitud se queda con usted para que la conteste.">Rechazar</button>
+              <button type="button" class="btn btn--quiet" data-say="">Empezar de nuevo</button>
+            </div>
+            <p role="status">Pruebe los botones. Desde esta página no se envía nada.</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Presupuestos abiertos <span>Probado con datos inventados.</span></summary>
+        <div class="w-body">
+          <p>Un seguimiento corto y amable los días 2, 5, 10 y 20. Antes de cada envío revisa. Si el cliente ya respondió, ya agendó o pidió que no le escriban, no sale nada.</p>
+          <div class="slip">
+            <p class="from">Muestra. Presupuesto para cambiar la calefacción, enviado el lunes</p>
+            <ul class="days">
+              <li><b>Día 2</b><span>Sale un mensaje corto.</span></li>
+              <li><b>Día 5</b><span>Dana respondió. Los seguimientos se detienen.</span></li>
+              <li><b>Día 10</b><span>No se envía nada.</span></li>
+              <li><b>Día 20</b><span>No se envía nada.</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Recordatorios de citas <span>Probado con datos inventados.</span></summary>
+        <div class="w-body">
+          <p>Un recordatorio antes de cada cita, en español o en inglés. Al cliente que responde STOP, o «no gracias», no se le vuelve a escribir. Las respuestas le llegan a usted.</p>
+          <div class="slip">
+            <p class="from">Muestra. Mensaje automático, Sample HVAC Co.</p>
+            <p>«Sample HVAC Co.: Este es un recordatorio automático. Su visita es mañana jueves a las 9:30 am. Responda C para confirmar, o llame al (555) 010-0100 para cambiarla. Responda STOP para no recibir más mensajes.»</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Facturas sin pagar <span>Probado con datos inventados.</span></summary>
+        <div class="w-body">
+          <p>Recordatorios sencillos de las facturas vencidas, con el texto que usted aprobó. Si el cliente reclama o pregunta por un reembolso, los recordatorios se detienen y el asunto pasa a usted.</p>
+          <div class="slip">
+            <p class="from">Muestra. Mensaje automático, Sample HVAC Co.</p>
+            <p>«Sample HVAC Co.: Este es un recordatorio automático. La factura 0142 venció el 3 de marzo. Si ya pagó, muchas gracias y no haga caso de este mensaje. ¿Preguntas? Llame al (555) 010-0100. Responda STOP para no recibir más mensajes.»</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Sus números <span>Probado con datos inventados.</span></summary>
+        <div class="w-body">
+          <p>Un mensaje corto cada mañana con lo que viene en el día, y otro cada lunes con las llamadas y los presupuestos de la semana.</p>
+          <div class="slip">
+            <p class="from">Muestra. Resumen del lunes, Sample HVAC Co.</p>
+            <dl>
+              <dt>Llamadas recibidas</dt><dd>43</dd>
+              <dt>Llamadas que nadie contestó</dt><dd>14</dd>
+              <dt>Contestadas por mensaje</dt><dd>7</dd>
+              <dt>Presupuestos enviados</dt><dd>10</dd>
+              <dt>Con seguimiento</dt><dd>6</dd>
+            </dl>
+            <p>Números inventados. Solo muestran cómo se ve el mensaje.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="rules-t">
+  <div class="wrap">
+    <h2 id="rules-t">Las reglas que sigue cada trabajador</h2>
+    <ol class="rules">
+      <li>Todo mensaje a un cliente sale de un texto que usted aprobó por escrito, en español y en inglés.</li>
+      <li>Los mensajes salen solo de lunes a sábado, de 9 am a 7 pm, hora del Este. Nunca en domingo ni en días feriados de Pensilvania.</li>
+      <li>Al cliente que dice STOP, en español o en inglés, no se le vuelve a escribir.</li>
+      <li>Todo lo que el programa dice en un mensaje o en un chat se presenta como automático. Nunca se hace pasar por una persona.</li>
+      <li>Usted recibe un aviso si algo falla, tiene un interruptor que lo detiene todo de una vez y un registro de cada mensaje enviado.</li>
+      <li>Las cuentas están a nombre de su negocio. Usted decide quién tiene acceso y puede quitárselo a cualquiera.</li>
+      <li>En las profesiones con licencia solo agenda y pasa recados. Nunca da precios, consejos ni opiniones.</li>
+    </ol>
+    <p>No le prometo trabajos ni dinero. Si quiere ver funcionar el sistema de prueba, llame o escriba al <a href="tel:+15703929271" class="nw">(570) 392-9271</a> y se lo muestro en una llamada. Hoy, el lugar para empezar es <a href="mapa.html#test">la prueba gratuita de llamadas perdidas</a>.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot"><div class="wrap">
+<p>© 2026 Carlos Milander. Área de Wilkes-Barre, Pensilvania. <a href="hoja.html">Un resumen de una página para imprimir</a></p>
+<p>Sin cookies. Sin analítica. Las fuentes se cargan desde Google, que puede ver su dirección IP.</p>
+</div></footer>
+<script>
+(function () {
+  var d = document;
+  // Sample report: one page at a time. Without this script all three pages show.
+  var pager = d.querySelector("[data-pager]");
+  if (pager) {
+    var btns = [].slice.call(pager.querySelectorAll("button"));
+    var show = function (id) {
+      btns.forEach(function (b) {
+        var on = b.getAttribute("aria-controls") === id;
+        b.setAttribute("aria-current", on ? "true" : "false");
+        d.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+      });
+    };
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () { show(b.getAttribute("aria-controls")); });
+    });
+    show(btns[0].getAttribute("aria-controls"));
+  }
+  // Sample approval message: the two buttons only change this card. Nothing is sent.
+  [].forEach.call(d.querySelectorAll("[data-approve]"), function (card) {
+    var out = card.querySelector("[role=status]");
+    var idle = out.textContent;
+    [].forEach.call(card.querySelectorAll("button[data-say]"), function (b) {
+      b.addEventListener("click", function () { out.textContent = b.getAttribute("data-say") || idle; });
+    });
+  });
+  // Leave-behind: the print button.
+  [].forEach.call(d.querySelectorAll("[data-print]"), function (b) {
+    b.addEventListener("click", function () { window.print(); });
+  });
+})();
+
+</script>
+</body>
+</html>
