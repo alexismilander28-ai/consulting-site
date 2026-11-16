@@ -1,0 +1,346 @@
+# SPANISH-REVIEW: site rewrite of 2026-11-15 (test site, branch ai-team)
+
+Carlos: every Spanish line below is NEW or CHANGED in this rewrite. Please read each one and tick it,
+or write the correction under it. Nothing here goes to the live site until you approve.
+Generated from the built pages (site/es/), compared with the previous build. Lines that did not change are not listed.
+
+Total lines to review: 314.
+
+## es/hoja.html (changed lines, 9)
+
+- [ ] CMRI Consulting | Resumen de una página para imprimir
+- [ ] Un resumen de una página de lo que hace CMRI Consulting (Carlos Milander), para imprimir en papel tamaño carta.
+- [ ] CMRI Consulting
+- [ ] Encuentro el trabajo de oficina de su negocio que la IA puede hacer, con una persona a cargo.
+- [ ] Me siento con usted y con quien contesta el teléfono, dos horas o más. Tomo notas y no grabo nada. Más o menos una semana después le entrego un informe escrito, contado con sus propios números. El informe es suyo y puede usarlo con quien quiera.
+- [ ] La visita es de pago. Usted recibe el costo por escrito antes de comprometerse. Su Supervisor de IA maneja la IA; la IA hace la rutina. Usted elige a una persona; yo la entreno.
+- [ ] No le prometo trabajos ni dinero. Los trabajadores de IA son una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada. Ninguno funciona todavía para un cliente.
+- [ ] Para pedir la prueba, llame al
+- [ ] carlos@cmriconsulting.com · Carlos Milander, propietario único
+
+## es/index.html (changed lines, 24)
+
+- [ ] CMRI Consulting | Carlos Milander encuentra el trabajo de oficina que la IA puede hacer en su negocio
+- [ ] CMRI Consulting es Carlos Milander, área de Wilkes-Barre. Visito su negocio, encuentro dónde se quedan sin respuesta las llamadas y los presupuestos, y le muestro el trabajo de oficina que la IA puede hacer con una persona a cargo. Puede empezar con una prueba gratuita de llamadas perdidas. Atiendo en español o en inglés.
+- [ ] Primera página de un informe de muestra del Mapa para Sample HVAC Co., un negocio de muestra. Dos pasos están marcados en rojo: la llamada y el seguimiento.
+- [ ] Más páginas
+- [ ] CMRI Consulting
+- [ ] Véalo funcionar
+- [ ] Preparado para Sample HVAC Co., un negocio de muestra
+- [ ] Números de muestra, no son resultados.
+- [ ] Carlos Milander, área de Wilkes-Barre. La hoja de atrás es un informe de muestra de un negocio de muestra.
+- [ ] Soy Carlos. Encuentro el trabajo de oficina de su negocio que la IA puede hacer, con una persona a cargo.
+- [ ] CMRI Consulting soy yo, trabajando solo. Voy yo mismo a su negocio. Atiendo en español o en inglés.
+- [ ] Empiece con algo pequeño: me comunico con su negocio como lo haría un cliente nuevo y le digo cuánto tardó la respuesta.
+- [ ] Pedir la prueba gratuita Pedir la prueba gratuita Ver la demostración
+- [ ] El botón abre un correo para mí, ya escrito. No se envía nada hasta que usted lo mande. También puede llamar al (570) 392-9271.El botón abre su propia aplicación de mensajes con una nota para mí, ya escrita. No se envía nada hasta que usted lo mande. También puede llamar al (570) 392-9271 o mandarme un correo.
+- [ ] Acordamos el día por teléfono, y yo manejo hasta su negocio. Cubro Wilkes-Barre, Scranton, Hazleton y la zona de Allentown.
+- [ ] Me siento con usted y con quien contesta el teléfono, dos horas o más. Repasamos cómo una llamada llega a ser un trabajo cobrado. Tomo notas, no grabo nada y nunca le pido sus contraseñas. Si necesito ver su correo o su calendario, usted lo aprueba primero por escrito, y es solo para mirar.
+- [ ] Más o menos una semana después regreso y le entrego un informe escrito, contado con sus propios números. El informe es suyo y puede usarlo con quien quiera. A esa visita la llamo el Mapa. Es de pago, y usted recibe el costo por escrito antes de comprometerse.
+- [ ] Su Supervisor de IA maneja la IA. La IA hace la rutina.
+- [ ] Usted elige a una persona de su negocio. Yo la entreno. Esa persona aprueba el texto antes de que salga cualquier mensaje, revisa el registro y puede detenerlo todo con un solo interruptor.
+- [ ] Cómo están las cosas hoy. El Mapa es lo primero que ofrezco. Los trabajadores de IA son una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada. Ninguno funciona todavía para un cliente.
+- [ ] © 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.
+- [ ] La recepcionista
+- [ ] Privacidad
+- [ ] Resumen de una página para imprimir
+
+## es/mapa.html (changed lines, 20)
+
+- [ ] El Mapa | CMRI Consulting
+- [ ] El Mapa es una visita a su negocio y un informe escrito sobre sus llamadas y sus presupuestos, contado con sus propios números. Vea un informe de muestra de un negocio de muestra. Wilkes-Barre, Scranton, Hazleton y la zona de Allentown.
+- [ ] Más páginas
+- [ ] CMRI Consulting
+- [ ] Véalo funcionar
+- [ ] Voy en persona, veo cómo una llamada llega a ser un trabajo cobrado y anoto dónde se detiene. No instalo nada y no cambio nada.
+- [ ] Lo primero que ofrezco. El Mapa es de pago. Usted recibe el costo y un acuerdo corto por escrito antes de comprometerse, y el informe es suyo para usarlo con quien quiera.
+- [ ] Manejo hasta su negocio. Cubro Wilkes-Barre, Scranton, Hazleton y la zona de Allentown. Me siento con usted y con quien contesta el teléfono, dos horas o más. Contamos lo que ya está ahí: llamadas que nadie contestó, presupuestos que siguen abiertos, citas a las que el cliente no llegó. Tomo notas y no grabo nada. Con su permiso por escrito también miro, solo para leer, dentro de los sistemas que usted elija. No cambio nada.
+- [ ] Los dos ejemplos de abajo son de muestra, no son negocios reales. Sirven para mostrar lo que se cuenta en la visita.
+- [ ] Informe de muestra de un negocio de muestra de calefacción y aire acondicionado. El negocio y todos los números son de muestra. No son resultados.
+- [ ] Preparado para Sample HVAC Co., un negocio de muestra
+- [ ] Números de muestra, no son resultados.
+- [ ] Un informe real cuenta sus propios números. Estos son números de muestra.
+- [ ] Responder cada llamada perdida el mismo día: un correo si se conoce la dirección de quien llamó, o si no, una llamada de una persona. En la muestra, casi todas las llamadas sin contestar llegan después de las 4:30 pm, cuando no hay nadie en el escritorio.
+- [ ] Las preguntas sobre el costo, las quejas y todo lo que tenga que ver con un reembolso.
+- [ ] Es una sola prueba. No invento emergencias, no grabo llamadas y no lo llamo para venderle nada si usted no lo pide. Las horas son solo para usted. Puedo guardar totales anónimos, sin nombres de negocios. También puede llamar al (570) 392-9271.
+- [ ] © 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.
+- [ ] La recepcionista
+- [ ] Privacidad
+- [ ] Resumen de una página para imprimir
+
+## es/privacidad.html (new page, 50)
+
+- [ ] Privacidad | CMRI Consulting
+- [ ] Cómo maneja CMRI Consulting la información que usted envía. Sin cookies, sin analítica y sin vender información.
+- [ ] Principal
+- [ ] English: esta página en inglés
+- [ ] Llamar al (570) 392-9271
+- [ ] Más páginas
+- [ ] Ir al contenido
+- [ ] CMRI Consulting
+- [ ] El Mapa
+- [ ] Trabajadores de IA
+- [ ] Véalo funcionar
+- [ ] Sobre mí
+- [ ] English
+- [ ] Privacidad
+- [ ] CMRI Consulting es el nombre comercial de Carlos Alexis Milander, propietario único en Pensilvania. «Yo» y «mí» aquí se refieren a Carlos.
+- [ ] En pocas palabras. Esta página no usa cookies ni analítica. No vendo su información. Si me pide que la borre, la borro. Contacto: carlos@cmriconsulting.com.
+- [ ] Qué cubre
+- [ ] Esta página web y a las personas que se comunican conmigo sobre mi trabajo de consultoría. No cubre la información que está dentro del correo, el calendario u otros sistemas de un cliente. Eso se rige por el acuerdo firmado entre ese cliente y yo, y por el aviso de privacidad del propio cliente. Si usted es cliente de uno de mis clientes y tiene una pregunta sobre su información, pregúntele a ese negocio. Yo le ayudo a contestar.
+- [ ] Qué recibo
+- [ ] Lo que usted me manda. Si me escribe un correo, me llama o me manda un mensaje, recibo lo que usted escribe o dice: su nombre, correo, teléfono, nombre del negocio y su mensaje. Los botones de esta página abren su propia aplicación de correo o de mensajes con una nota corta ya escrita. No se envía nada hasta que usted lo mande.
+- [ ] Registros normales del servidor. La empresa que aloja esta página guarda registros comunes de las visitas: dirección IP, fecha y hora, la página pedida y el tipo de navegador. Los uso solo para que la página funcione y para revisar problemas.
+- [ ] Fuentes. Esta página carga sus fuentes desde Google. Cuando su navegador las pide, Google puede ver su dirección IP.
+- [ ] Lo que no recibo. Sin cookies, sin analítica y sin rastreadores de publicidad. Esta página no tiene cuentas ni cobra pagos. No compro listas con información de personas.
+- [ ] Para qué la uso
+- [ ] Para contestarle.
+- [ ] Para acordar y hacer la llamada o la visita que usted pidió.
+- [ ] Para preparar la propuesta o el acuerdo que usted pidió.
+- [ ] Para llevar los registros del negocio, de impuestos y legales.
+- [ ] No mando mensajes de texto de publicidad. Si usted me escribe un mensaje, la respuesta viene de mí, una persona. No lo agrego a una lista de correos a menos que usted lo pida.
+- [ ] Con quién la comparto
+- [ ] No vendo su información y no la comparto para la publicidad de nadie. Unos pocos proveedores manejan información por mí para que el negocio funcione: un proveedor de correo y documentos (Google Workspace), el servicio que aloja la página (Render), mi servicio de teléfono y, cuando usted ya es cliente, un procesador de pagos y un servicio de firma electrónica. Solo pueden usarla para darme su servicio. Puedo entregar información si la ley lo exige, o para proteger mis derechos legales.
+- [ ] Herramientas de IA
+- [ ] Uso herramientas de IA en mi propio trabajo, por ejemplo para redactar documentos. No pongo sus datos de contacto ni su mensaje en una herramienta de IA para entrenarla, y no los uso para nadie más.
+- [ ] Cuánto tiempo la guardo
+- [ ] Si se comunica conmigo y no llega a ser cliente: hasta 24 meses después de nuestro último contacto, y luego se borra.
+- [ ] Si llega a ser cliente: mientras dure el trabajo y 4 años más, o más si la ley lo exige.
+- [ ] Registros del servidor: lo que los guarde el servicio que aloja la página. Yo no guardo copia propia.
+- [ ] Sus opciones
+- [ ] Puede preguntarme qué información tengo sobre usted, pedirme que la corrija o pedirme que la borre. Escriba a carlos@cmriconsulting.com. Contesto en un plazo de 30 días. Si la ley me obliga a guardar algunos registros, se lo digo. Puede pedirme que deje de comunicarme con usted en cualquier momento y por cualquier medio, y lo hago.
+- [ ] Menores
+- [ ] Esta página es para negocios. No está dirigida a menores, y no recibo a sabiendas información de menores de 13 años.
+- [ ] Seguridad
+- [ ] Protejo mis cuentas con contraseñas y verificación en dos pasos. Ningún método es perfecto. Si me entero de que su información quedó expuesta, se lo aviso cuando la ley lo exija.
+- [ ] Cambios
+- [ ] Si cambio esta política, publico la versión nueva aquí con una fecha nueva. Si el cambio es importante, lo digo al principio de la página.
+- [ ] Carlos Alexis Milander, con el nombre comercial CMRI Consulting · carlos@cmriconsulting.com · Actualizada el 15 de noviembre de 2026.
+- [ ] © 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.
+- [ ] La recepcionista
+- [ ] Resumen de una página para imprimir
+- [ ] Sin cookies. Sin analítica. Las fuentes se cargan desde Google, que puede ver su dirección IP.
+
+## es/recepcionista.html (new page, 41)
+
+- [ ] La recepcionista | CMRI Consulting
+- [ ] Una recepcionista de chat para la página web, con respuestas fijas, que dice que es automática. Se muestra como una demostración armada alrededor de un negocio de muestra. La recepcionista por teléfono todavía no se ofrece.
+- [ ] Principal
+- [ ] English: esta página en inglés
+- [ ] Llamar al (570) 392-9271
+- [ ] Más páginas
+- [ ] Ir al contenido
+- [ ] CMRI Consulting
+- [ ] El Mapa
+- [ ] Trabajadores de IA
+- [ ] Véalo funcionar
+- [ ] Sobre mí
+- [ ] English
+- [ ] La recepcionista: lo que le puedo mostrar y lo que todavía no se ofrece.
+- [ ] En una página web, un asistente de chat puede contestar las preguntas comunes y tomar la solicitud de una visita. Por teléfono, todavía no se ofrece nada.
+- [ ] Cómo está esto hoy.
+- [ ] La recepcionista por teléfono todavía no se ofrece. Nada en esta página contesta una llamada.
+- [ ] El chat de la página web es una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada.
+- [ ] No está en la página web de ningún cliente.
+- [ ] En una página web: un chat con respuestas fijas
+- [ ] Su primera línea dice que es automático y que no es una persona. Contesta con una lista corta de respuestas que el dueño escribió y aprobó de antemano: horario, zona que atiende, idiomas y los próximos horarios libres. No se inventa respuestas.
+- [ ] Cuando alguien quiere una visita, toma su nombre, teléfono, correo y uno de los horarios libres, y le pasa la solicitud al dueño. El dueño la aprueba igual que en la demostración de citas.
+- [ ] Para todo lo demás tiene una sola frase fija que pasa la pregunta a una persona. Eso incluye el costo, las quejas y los reembolsos. Nunca dice un costo.
+- [ ] Muestra. Chat de la página web, Sample HVAC Co.
+- [ ] AsistenteHola. Soy el asistente automático de citas de Sample HVAC Co. No soy una persona. Puedo contestar preguntas comunes y tomar su solicitud de visita.
+- [ ] Visitante¿Van hasta Kingston?
+- [ ] AsistenteSí. Sample HVAC Co. atiende Kingston y el área de Wilkes-Barre, de lunes a sábado.
+- [ ] Visitante¿Cuánto cuesta revisar la calefacción?
+- [ ] AsistenteLas preguntas sobre el costo las contesta una persona de la oficina. Puedo tomar su solicitud de visita y pasar su pregunta.
+- [ ] VisitanteBueno. ¿El jueves por la mañana?
+- [ ] AsistenteLos próximos horarios libres son el jueves a las 9:30 am o a la 1:00 pm. ¿Cuál prefiere, y qué nombre y teléfono le doy a la oficina? No se agenda nada hasta que la oficina lo apruebe.
+- [ ] Conversación de muestra. El negocio, los horarios y las preguntas son de muestra.
+- [ ] Por teléfono: todavía no se ofrece
+- [ ] Hoy no ofrezco una recepcionista por teléfono, y no la he instalado para nadie. Cuando entra una llamada a su negocio, la sigue contestando una persona, o pasa a su buzón de voz como ahora.
+- [ ] Si eso cambia algún día, esta página lo dirá primero, junto con cómo se le avisa a quien llama que está hablando con un sistema automático.
+- [ ] ¿Preguntas? Llame al (570) 392-9271. Contesta una persona: yo.
+- [ ] © 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.
+- [ ] La recepcionista
+- [ ] Privacidad
+- [ ] Resumen de una página para imprimir
+- [ ] Sin cookies. Sin analítica. Las fuentes se cargan desde Google, que puede ver su dirección IP.
+
+## es/sobre-mi.html (changed lines, 21)
+
+- [ ] Sobre mí | CMRI Consulting
+- [ ] CMRI Consulting es Carlos Alexis Milander, propietario único en el área de Wilkes-Barre. Trabajo solo, en español y en inglés. Quien contesta su llamada es quien visita su negocio y escribe su informe. Llame al (570) 392-9271.
+- [ ] Más páginas
+- [ ] CMRI Consulting
+- [ ] Véalo funcionar
+- [ ] Soy Carlos Alexis Milander. CMRI Consulting es el nombre con el que trabajo, como propietario único: si contrata a CMRI Consulting, me contrata a mí. Vivo en el área de Wilkes-Barre. Quien contesta su llamada es quien visita su negocio y escribe su informe.
+- [ ] Construí yo mismo cada parte del sistema de demostración y lo probé en mis propias cuentas: citas, recordatorios, seguimiento de presupuestos y un informe semanal, en español y en inglés. Pídame que abra cualquier parte y le muestro cómo funciona.
+- [ ] ¿Cuánto cuesta el Mapa?
+- [ ] El Mapa tiene una sola tarifa fija. Se la digo en la primera llamada y queda escrita en un acuerdo corto que usted lee antes de pagar nada. No se debe nada por la primera llamada, la prueba gratuita ni la demostración en vivo.
+- [ ] Suyas. Para el Mapa miro solo dentro de los sistemas que usted anota y firma, solo para leer, y no cambio nada. Si más adelante se instala algo, funciona en sus propias cuentas, a nombre de su negocio. Usted decide quién tiene acceso y puede quitárselo a cualquiera el día que quiera. No revendo nada y no recibo comisión de ningún proveedor.
+- [ ] Solo yo. Lo que veo en su negocio es confidencial y se usa únicamente para su informe. Tomo notas por escrito y no grabo nada. Nunca le pido que me mande una contraseña y nunca recibo números de tarjeta ni de banco. Si necesito ver un sistema, usted me da mi propio usuario y firma primero un formulario de acceso de una página. Hablo de su negocio en público solo si usted me lo autoriza por escrito.
+- [ ] El Mapa es una persona en su negocio y un informe escrito. Los trabajadores de IA son programas automáticos. Hoy son una demostración que funciona, armada alrededor de un negocio de muestra, y ninguno funciona todavía para un cliente. Casi todo lo que hacen es automatización sencilla, como recordar un presupuesto abierto. Una persona de su negocio, su Supervisor de IA, sigue a cargo.
+- [ ] No. El Mapa trabaja con lo que usted usa hoy. Miro solo donde usted lo autoriza por escrito, al principio solo para leer, y no cambio nada.
+- [ ] Llame
+- [ ] carlos@cmriconsulting.com
+- [ ] Si no puedo contestar, le devuelvo la llamada el mismo día, de lunes a sábado. La primera llamada dura unos 20 minutos.
+- [ ] El botón abre su propia aplicación de mensajes. Lo contesto yo mismo. No hay formulario que llenar ni nada a qué inscribirse. Soy una persona con un teléfono.
+- [ ] © 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.
+- [ ] La recepcionista
+- [ ] Privacidad
+- [ ] Resumen de una página para imprimir
+
+## es/trabajadores-ia.html (changed lines, 49)
+
+- [ ] Trabajadores de IA | CMRI Consulting
+- [ ] Los trabajadores de IA son programas automáticos que hacen una sola tarea repetitiva de oficina cada uno, como mandar el recordatorio antes de una visita. Una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada. Ninguno funciona todavía para un cliente. Todos envían solo correos.
+- [ ] Aprobado. En una instalación real la visita queda en su calendario y el cliente recibe el correo de confirmación que usted aprobó por escrito. En esta muestra no se envió nada.
+- [ ] Rechazado. No se agenda nada y no se envía nada. Usted recibe una lista de otros horarios libres y elige uno.
+- [ ] Más páginas
+- [ ] CMRI Consulting
+- [ ] Véalo funcionar
+- [ ] Uno manda un correo de recordatorio el día antes de la visita. Otro le pide a usted que apruebe cada cita antes de fijarla. Cada mensaje dice que es automático, y una persona de su negocio sigue a cargo.
+- [ ] Una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada.
+- [ ] Todos los trabajadores envían solo correos. Ninguno envía mensajes de texto.
+- [ ] Instalarlos para un negocio empieza con un acuerdo por escrito. Funcionan en sus propias cuentas, y una persona de su negocio, su Supervisor de IA, está a cargo de ellos.
+- [ ] Abra una. Todas las muestras de abajo usan un negocio de muestra y números de muestra.
+- [ ] ¿Quiere ver una de principio a fin? Véala funcionar.
+- [ ] Contestar cuando nadie puede En la página web, por chat. Por teléfono: todavía no se ofrece.
+- [ ] En su página web, un asistente de citas contesta las preguntas comunes con respuestas fijas y toma la solicitud de una visita. Dice desde el principio que es automático. Las preguntas sobre el costo, las quejas, los reembolsos y todo lo que no esté claro pasan a una persona. Más sobre la recepcionista.
+- [ ] «Las preguntas sobre el costo las contesta una persona de la oficina, así que anoté la suya en la solicitud. Todavía no hay nada agendado.»
+- [ ] Citas Demostración que funciona. Negocio de muestra.
+- [ ] Llega una solicitud, se revisa su calendario y usted recibe en su teléfono un mensaje con dos botones. No se agenda nada y no se le manda nada al cliente hasta que usted apruebe.
+- [ ] Preguntó cuánto va a costar
+- [ ] Presupuestos abiertos Demostración que funciona. Negocio de muestra.
+- [ ] Un correo de seguimiento corto y amable los días 2, 5, 10 y 20. Antes de cada envío revisa. Si el cliente ya respondió, ya agendó o pidió que no le escriban, no sale nada.
+- [ ] Día 2Sale un correo corto.
+- [ ] Recordatorios de citas Demostración que funciona. Negocio de muestra.
+- [ ] Un correo de recordatorio el día antes de cada cita, en español o en inglés. Al cliente que responde PARAR, o STOP, no se le vuelve a escribir. Las demás respuestas le llegan a usted.
+- [ ] Muestra. Correo automático, Sample HVAC Co.
+- [ ] «Este es un recordatorio automático de Sample HVAC Co. Su visita es mañana jueves a las 9:30 am. Para cambiarla, responda a este correo o llame al (555) 010-0100. Responda PARAR y no le volveremos a escribir.»
+- [ ] Facturas sin pagar Demostración que funciona. Negocio de muestra.
+- [ ] Correos sencillos de recordatorio de las facturas vencidas, con el texto que usted aprobó. Si el cliente reclama o pregunta por un reembolso, los recordatorios se detienen y el asunto pasa a usted.
+- [ ] «Este es un recordatorio automático de Sample HVAC Co. La factura 0142 venció el 3 de marzo. Si ya pagó, muchas gracias y no haga caso de este correo. ¿Preguntas? Llame al (555) 010-0100.»
+- [ ] Sus números Demostración que funciona. Negocio de muestra.
+- [ ] Un mensaje corto para el dueño cada lunes por la mañana, con las llamadas, los presupuestos y las citas de la semana. Le llega a usted, nunca a un cliente.
+- [ ] Llamadas devueltas
+- [ ] Números de muestra. Solo muestran cómo se ve el mensaje.
+- [ ] Su Supervisor de IA maneja la IA. La IA hace la rutina.
+- [ ] Usted elige a una persona de su negocio. Yo la entreno. Puede ser usted, su encargada de oficina o quien ya contesta el teléfono.
+- [ ] Qué hace el Supervisor de IA
+- [ ] Aprueba el texto de cada mensaje antes de que salga, en español y en inglés.
+- [ ] Toca Aprobar o Rechazar en cada cita.
+- [ ] Revisa el registro de lo que se envió y contesta las respuestas que debe contestar una persona.
+- [ ] Lo detiene todo con un solo interruptor si algo no se ve bien.
+- [ ] Al cliente que pide que no le escriban más, en español o en inglés, no se le vuelve a escribir.
+- [ ] Todo lo que el programa dice en un correo o en un chat se presenta como automático. Nunca se hace pasar por una persona.
+- [ ] Las cuentas están a nombre de su negocio. Yo entro solo con su autorización por escrito, al principio solo para leer, y usted puede quitarme el acceso el día que quiera.
+- [ ] En las profesiones con licencia solo agenda y pasa recados. Nunca da cotizaciones, consejos ni opiniones.
+- [ ] No le prometo trabajos ni dinero. Para ver la demostración, véala funcionar o llame al (570) 392-9271 y la pongo a funcionar en vivo en una llamada. Hoy, el lugar para empezar es la prueba gratuita de llamadas perdidas.
+- [ ] © 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.
+- [ ] La recepcionista
+- [ ] Privacidad
+- [ ] Resumen de una página para imprimir
+
+## es/vealo-funcionar.html (new page, 100)
+
+- [ ] Véalo funcionar | CMRI Consulting
+- [ ] La demostración de citas, paso a paso, como la vería en una llamada: llega una solicitud, el dueño toca Aprobar, la visita queda en el calendario, y la confirmación y el recordatorio salen por correo. Negocio de muestra, nombres y horarios de muestra.
+- [ ] Principal
+- [ ] English: esta página en inglés
+- [ ] Llamar al (570) 392-9271
+- [ ] Pasos de la demostración
+- [ ] Aprobado. La visita queda en el calendario y sale el correo de confirmación. En esta muestra no se envió nada.
+- [ ] Rechazado. No se agenda nada y no se envía nada. El dueño recibe otros horarios libres y elige uno él mismo.
+- [ ] Más páginas
+- [ ] Ir al contenido
+- [ ] CMRI Consulting
+- [ ] El Mapa
+- [ ] Trabajadores de IA
+- [ ] Véalo funcionar
+- [ ] Sobre mí
+- [ ] English
+- [ ] Véalo funcionar: una cita, de principio a fin.
+- [ ] Así es la demostración que le enseño en una llamada, paso a paso. Llega una solicitud, suena el teléfono del dueño, un toque, y la visita queda en el calendario.
+- [ ] Una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada. Funciona con mi propio calendario, mi correo y mi teléfono. El negocio, el cliente, los horarios y los números son de muestra. Nada de esto funciona todavía para un cliente.
+- [ ] La demostración, paso a paso
+- [ ] 1. Solicitud
+- [ ] 2. Aprobar
+- [ ] 3. Calendario
+- [ ] 4. Confirmación
+- [ ] 5. Recordatorio
+- [ ] 6. Sus números
+- [ ] Paso 1 de 6
+- [ ] Un cliente pide una visita en la página web del negocio.
+- [ ] Llena una solicitud corta: nombre, teléfono, correo, qué problema tiene y cuándo le gustaría que fueran. Todavía no se agenda nada.
+- [ ] Siguiente: el teléfono del dueño
+- [ ] Muestra. Solicitud en la página web, Sample HVAC Co.
+- [ ] Nombre
+- [ ] Dana
+- [ ] Teléfono
+- [ ] Correo
+- [ ] dana@example.com
+- [ ] Problema
+- [ ] La calefacción hace un ruido fuerte
+- [ ] Cuándo
+- [ ] El jueves por la mañana
+- [ ] Paso 2 de 6
+- [ ] El dueño recibe un solo mensaje, con dos botones.
+- [ ] Primero se revisa el calendario, así que el mensaje ya dice qué horario está libre. Llega al teléfono del dueño, en la aplicación Telegram. No se agenda nada y no le llega nada al cliente hasta que alguien toca Aprobar.
+- [ ] Pruebe los botones de la tarjeta. Solo cambian esa tarjeta.
+- [ ] Siguiente: el calendario
+- [ ] Muestra. Mensaje para el dueño, Sample HVAC Co.
+- [ ] Dana, (555) 010-0142
+- [ ] Asunto
+- [ ] Pidió
+- [ ] Horario libre
+- [ ] Jueves, 9:30 am
+- [ ] Aprobar
+- [ ] Rechazar
+- [ ] Empezar de nuevo
+- [ ] Desde esta página no se envía nada.
+- [ ] Paso 3 de 6
+- [ ] Un toque, y la visita queda en el calendario.
+- [ ] Antes de agendar, vuelve a revisar que el horario siga libre. En la demostración, la cita en el calendario empieza con [DEMO] para que nadie la confunda con un trabajo real.
+- [ ] Siguiente: la confirmación
+- [ ] Muestra. Calendario, Sample HVAC Co.
+- [ ] Jueves
+- [ ] 9:30 a 10:30 am · [DEMO] Dana, ruido de la calefacción(555) 010-0142
+- [ ] Agendada después de que el dueño tocó Aprobar.
+- [ ] Paso 4 de 6
+- [ ] El cliente recibe un correo de confirmación que dice que es automático.
+- [ ] El texto es el que el dueño aprobó por escrito, en español o en inglés. Sale solo de lunes a sábado, de 9 am a 7 pm. En la demostración, la confirmación llega a mi propio correo, no a un cliente.
+- [ ] Siguiente: el recordatorio
+- [ ] Muestra. Correo automático, Sample HVAC Co.
+- [ ] Para
+- [ ] Su visita del jueves a las 9:30 am
+- [ ] Este es un mensaje automático de Sample HVAC Co.
+- [ ] Hola, Dana. Su visita quedó para el jueves a las 9:30 am. Para cambiarla, responda a este correo o llame al (555) 010-0100.
+- [ ] Paso 5 de 6
+- [ ] El día antes, un correo de recordatorio.
+- [ ] Si Dana responde, la respuesta le llega al dueño. Nadie le contesta de forma automática. Si responde PARAR, o STOP, no se le vuelve a escribir nunca.
+- [ ] Siguiente: sus números
+- [ ] Recordatorio: su visita de mañana
+- [ ] Este es un recordatorio automático de Sample HVAC Co. Su visita es mañana jueves a las 9:30 am.
+- [ ] Responda PARAR y no le volveremos a escribir.
+- [ ] Paso 6 de 6
+- [ ] El lunes por la mañana, la semana en un mensaje.
+- [ ] Un resumen corto le llega solo al dueño, nunca a un cliente. Cuenta lo que muestran los registros del propio negocio de muestra.
+- [ ] Volver al paso 1
+- [ ] Muestra. Resumen del lunes para el dueño, Sample HVAC Co.
+- [ ] Solicitudes nuevas
+- [ ] Visitas agendadas
+- [ ] Recordatorios enviados
+- [ ] Presupuestos abiertos
+- [ ] Números de muestra, no son resultados.
+- [ ] Véala en vivo en una llamada
+- [ ] Deme 15 minutos por llamada y la pongo a funcionar delante de usted. Entra una solicitud, suena mi teléfono, toco Aprobar y la visita queda en el calendario.
+- [ ] Es mi propio sistema en mis propias cuentas. Usted no tiene que inscribirse en nada.
+- [ ] Pedir la demostración en vivo Pedir la demostración en vivo
+- [ ] El botón abre un correo para mí, ya escrito. No se envía nada hasta que usted lo mande.El botón abre su propia aplicación de mensajes con una nota para mí, ya escrita. No se envía nada hasta que usted lo mande. O mándeme un correo. También puede llamar al (570) 392-9271.
+- [ ] ¿También quiere ver la recepcionista del chat? Esto es lo que hace, y lo que todavía no se ofrece.
+- [ ] © 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.
+- [ ] La recepcionista
+- [ ] Privacidad
+- [ ] Resumen de una página para imprimir
+- [ ] Sin cookies. Sin analítica. Las fuentes se cargan desde Google, que puede ver su dirección IP.
+

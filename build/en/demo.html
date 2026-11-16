@@ -1,0 +1,158 @@
+title: See it work | CMRI Consulting
+description: The booking demo written out step by step, as you would see it on a call: a request comes in, the owner taps Approve, the visit lands on the calendar, and the confirmation and reminder go out by email. Sample shop, sample names and times.
+---
+<section class="head" aria-labelledby="h-title">
+  <div class="wrap">
+    <div>
+      <h1 id="h-title">See it work: one booking, start to finish.</h1>
+      <p class="lede">This is the demo as you would see it on a call, one step at a time. A request comes in, the owner’s phone buzzes, one tap, and the visit is on the calendar.</p>
+    </div>
+    <p class="status"><b>A working demo built around a sample shop; I run it live on a call.</b> It runs on my own calendar, email and phone. The shop, the customer, the times and the numbers are samples. None of this runs for a customer yet.</p>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="run-t">
+  <div class="wrap">
+    <h2 id="run-t">The demo, step by step</h2>
+    <div data-steps>
+      <ol class="stepper" aria-label="Steps of the demo">
+        <li><button type="button" class="btn btn--quiet" aria-controls="s1">1. Request</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s2">2. Approve</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s3">3. Calendar</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s4">4. Confirmation</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s5">5. Reminder</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s6">6. Your numbers</button></li>
+      </ol>
+
+      <div class="step" id="s1">
+        <div>
+          <span class="n">Step 1 of 6</span>
+          <h3>A customer asks for a visit on the shop’s website.</h3>
+          <p>They fill in a short request: name, phone, email, what is wrong, and when they would like someone to come. Nothing is booked yet.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s2">Next: the owner’s phone</button>
+        </div>
+        <div class="slip">
+          <p class="from">Sample. Website request, Sample HVAC Co.</p>
+          <dl>
+            <dt>Name</dt><dd>Dana</dd>
+            <dt>Phone</dt><dd>(555) 010-0142</dd>
+            <dt>Email</dt><dd>dana@example.com</dd>
+            <dt>Problem</dt><dd>Furnace making a banging noise</dd>
+            <dt>When</dt><dd>Thursday morning</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="step" id="s2">
+        <div>
+          <span class="n">Step 2 of 6</span>
+          <h3>The owner gets one message, with two buttons.</h3>
+          <p>The calendar is checked first, so the message already says which time is open. It arrives on the owner’s phone in the Telegram app. Nothing is booked and nothing goes to the customer until someone taps Approve.</p>
+          <p class="small">Try the buttons on the right. They only change this card.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s3">Next: the calendar</button>
+        </div>
+        <div class="slip" data-approve>
+          <p class="from">Sample. Message to the owner, Sample HVAC Co.</p>
+          <dl>
+            <dt>From</dt><dd>Dana, (555) 010-0142</dd>
+            <dt>About</dt><dd>Furnace making a banging noise</dd>
+            <dt>Asked for</dt><dd>Thursday morning</dd>
+            <dt>Open time</dt><dd>Thursday, 9:30 am</dd>
+          </dl>
+          <div class="acts needs-js">
+            <button type="button" class="btn btn--quiet" data-say="Approved. The visit goes on the calendar and the confirmation email goes out. In this sample, nothing was sent.">Approve</button>
+            <button type="button" class="btn btn--quiet" data-say="Declined. Nothing is booked and nothing is sent. The owner gets other open times and chooses one himself.">Decline</button>
+            <button type="button" class="btn btn--quiet" data-say="">Start over</button>
+          </div>
+          <p role="status">Nothing is sent from this page.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s3">
+        <div>
+          <span class="n">Step 3 of 6</span>
+          <h3>One tap, and the visit is on the calendar.</h3>
+          <p>Before it books, it checks again that the time is still open. In the demo, the calendar entry starts with [DEMO] so nobody mistakes it for a real job.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s4">Next: the confirmation</button>
+        </div>
+        <div class="slip">
+          <p class="from">Sample. Calendar, Sample HVAC Co.</p>
+          <p>Thursday</p>
+          <div class="cal"><b>9:30 to 10:30 am · [DEMO] Dana, furnace noise</b>(555) 010-0142</div>
+          <p class="small">Booked after the owner tapped Approve.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s4">
+        <div>
+          <span class="n">Step 4 of 6</span>
+          <h3>The customer gets a confirmation email that says it is automated.</h3>
+          <p>The wording is the one the owner approved in writing, in English or Spanish. It goes out only Monday to Saturday, 9 am to 7 pm. In the demo, the confirmation goes to my own inbox, not to a customer.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s5">Next: the reminder</button>
+        </div>
+        <div class="slip mail">
+          <p class="from">Sample. Automated email, Sample HVAC Co.</p>
+          <dl class="hdr">
+            <dt>To</dt><dd>dana@example.com</dd>
+            <dt>Subject</dt><dd>Your visit on Thursday at 9:30 am</dd>
+          </dl>
+          <p>This is an automated message from Sample HVAC Co.</p>
+          <p>Hi Dana, your visit is set for Thursday at 9:30 am. To change it, reply to this email or call (555) 010-0100.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s5">
+        <div>
+          <span class="n">Step 5 of 6</span>
+          <h3>The day before, a reminder email.</h3>
+          <p>If Dana replies, the reply goes to the owner. Nothing is answered for him. If she replies STOP, or PARAR, she is never emailed by it again.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s6">Next: your numbers</button>
+        </div>
+        <div class="slip mail">
+          <p class="from">Sample. Automated email, Sample HVAC Co.</p>
+          <dl class="hdr">
+            <dt>To</dt><dd>dana@example.com</dd>
+            <dt>Subject</dt><dd>Reminder: your visit tomorrow</dd>
+          </dl>
+          <p>This is an automated reminder from Sample HVAC Co. Your visit is tomorrow, Thursday, at 9:30 am.</p>
+          <p>Reply STOP and we will not email you again.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s6">
+        <div>
+          <span class="n">Step 6 of 6</span>
+          <h3>Monday morning, the week in one message.</h3>
+          <p>One short summary goes to the owner only, never to a customer. It counts what the sample shop’s own records show.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s1">Back to step 1</button>
+        </div>
+        <div class="slip">
+          <p class="from">Sample. Monday summary to the owner, Sample HVAC Co.</p>
+          <dl>
+            <dt>New requests</dt><dd>9</dd>
+            <dt>Visits booked</dt><dd>6</dd>
+            <dt>Reminders sent</dt><dd>6</dd>
+            <dt>Quotes still open</dt><dd>4</dd>
+          </dl>
+          <p>Sample numbers, not results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="live-t">
+  <div class="wrap two">
+    <div>
+      <h2 id="live-t">Watch it live on a call</h2>
+      <p>Give me 15 minutes on a call and I’ll run it in front of you. A request comes in, my phone buzzes, I tap Approve, and the visit lands on the calendar.</p>
+      <p>It is my own system on my own accounts. You do not need to sign up for anything.</p>
+    </div>
+    <div class="second">
+      <a class="btn on-desk" href="{{MAIL_DEMO}}">Ask for the live demo</a>
+      <a class="btn on-touch" href="{{SMS_DEMO}}">Ask for the live demo</a>
+      <p class="small gap"><span class="on-desk">The button opens an email to me, already written. Nothing is sent until you press send.</span><span class="on-touch">The button opens your own messages app with a note to me, already written. Nothing is sent until you press send. Or <a href="{{MAIL_DEMO}}">send an email</a>.</span> Or call <a href="{{TEL}}" class="nw">{{PHONE}}</a>.</p>
+      <p class="small">Want the chat receptionist too? <a href="{{HREF:recep}}">Here is what it does, and what is not offered yet</a>.</p>
+    </div>
+  </div>
+</section>

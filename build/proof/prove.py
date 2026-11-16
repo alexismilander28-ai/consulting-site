@@ -8,9 +8,12 @@ base, out = sys.argv[1].rstrip("/"), pathlib.Path(sys.argv[2])
 quick = "--quick" in sys.argv
 out.mkdir(parents=True, exist_ok=True)
 PAGES = [("en", "home", "/index.html"), ("en", "map", "/map.html"), ("en", "ai", "/ai-workers.html"),
-         ("en", "about", "/about.html"), ("en", "leave", "/leave-behind.html"),
+         ("en", "demo", "/see-it-work.html"), ("en", "recep", "/receptionist.html"), ("en", "about", "/about.html"),
+         ("en", "privacy", "/privacy.html"), ("en", "leave", "/leave-behind.html"),
          ("es", "home", "/es/index.html"), ("es", "map", "/es/mapa.html"), ("es", "ai", "/es/trabajadores-ia.html"),
-         ("es", "about", "/es/sobre-mi.html"), ("es", "leave", "/es/hoja.html")]
+         ("es", "demo", "/es/vealo-funcionar.html"), ("es", "recep", "/es/recepcionista.html"), ("es", "about", "/es/sobre-mi.html"),
+         ("es", "privacy", "/es/privacidad.html"), ("es", "leave", "/es/hoja.html")]
+SCHEMES = ["light", "dark"]
 WIDTHS = [(375, 812, True), (768, 1024, False), (1280, 800, False)]
 fails, rows = [], []
 
@@ -21,15 +24,16 @@ FOCUS = """() => { const e = document.activeElement; if (!e || e === document.bo
 with sync_playwright() as p:
     b = p.chromium.launch()
     for lang, key, path in PAGES:
+      for scheme in SCHEMES:
         for w, h, touch in WIDTHS:
-            ctx = b.new_context(viewport={"width": w, "height": h}, device_scale_factor=1, has_touch=touch, is_mobile=touch, color_scheme="light")
+            ctx = b.new_context(viewport={"width": w, "height": h}, device_scale_factor=1, has_touch=touch, is_mobile=touch, color_scheme=scheme)
             pg = ctx.new_page(); errs = []
             pg.on("console", lambda m: errs.append(m.text) if m.type in ("error", "warning") else None)
             pg.on("pageerror", lambda e: errs.append("pageerror: " + str(e)))
             pg.on("requestfailed", lambda r: errs.append("requestfailed: " + r.url[:90]))
             resp = pg.goto(base + path, wait_until="networkidle")
             pg.wait_for_timeout(400)
-            name = f"{key}-{w}-{lang}"
+            name = f"{key}-{w}-{lang}-{scheme}"
             m = pg.evaluate("""() => ({ h: document.documentElement.scrollHeight, sw: document.documentElement.scrollWidth, vw: innerWidth,
                  htmlLang: document.documentElement.lang, h1: document.querySelectorAll('h1').length,
                  navOff: [...document.querySelectorAll('header.top a')].filter(a => { const r = a.getBoundingClientRect(); return r.right > innerWidth + 1 || r.left < -1; }).length,
@@ -53,7 +57,7 @@ with sync_playwright() as p:
                 else:
                     pg.screenshot(path=str(out / f"{name}.png"), full_page=True)
             # keyboard walk at 1280 only
-            if w == 1280:
+            if w == 1280 and scheme == "light":
                 n = pg.evaluate("document.querySelectorAll('a[href],button:not([hidden]),summary').length")
                 seen = 0
                 for _ in range(n + 3):

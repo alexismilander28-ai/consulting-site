@@ -1,16 +1,17 @@
 <!doctype html>
-<!-- Carlos Milander. BUILT FILE: do not edit by hand.
+<!-- CMRI Consulting. BUILT FILE: do not edit by hand.
      Phone and email live in ONE place: build/build.py, the CONTACT block at the top.
      Change them there and run: python build/build.py -->
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carlos Milander | Resumen de una página para imprimir</title>
-<meta name="description" content="Un resumen de una página de lo que hace Carlos Milander, para imprimir en papel tamaño carta.">
-<meta name="color-scheme" content="light">
+<title>CMRI Consulting | Resumen de una página para imprimir</title>
+<meta name="description" content="Un resumen de una página de lo que hace CMRI Consulting (Carlos Milander), para imprimir en papel tamaño carta.">
+<meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
-<meta name="theme-color" content="#F6F3EC">
+<meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1815" media="(prefers-color-scheme: dark)">
 <meta name="format-detection" content="telephone=no">
 <meta name="robots" content="noindex">
 <link rel="alternate" hreflang="en" href="../leave-behind.html">
@@ -18,7 +19,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <script>document.documentElement.className='js'</script>
 <style>
-/* Carlos Milander: paper and ink. Light only. One accent with one job: things you can press.
+/* CMRI Consulting: paper and ink. Light first; dark follows the device. One accent with one job: things you can press.
    Two radii (buttons 6px, photos 3px). One shadow (paper and photos). Sheets of paper are square. */
 :root{
   --paper:#F6F3EC; --band:#ECE7DA; --sheet:#FFFEFB;
@@ -27,9 +28,10 @@
   --serif:"Source Serif 4","Iowan Old Style","Palatino Linotype",Georgia,serif;
   --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
   --shadow:0 1px 1px rgba(60,48,30,.12),0 14px 26px -14px rgba(60,48,30,.42);
+  --on-accent:#fff;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{color-scheme:light;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{color-scheme:light dark;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.5 var(--serif);overflow-wrap:break-word}
 h1,h2,h3{font-weight:400;margin:0;text-wrap:balance}
 h1{font-size:clamp(2rem,1.15rem + 3.5vw,3.25rem);line-height:1.08;letter-spacing:-.012em}
@@ -46,7 +48,7 @@ img{max-width:100%}
 .nw{white-space:nowrap}
 .small{font-family:var(--sans);font-size:.9375rem;line-height:1.45;color:var(--ink-2)}
 .wrap{max-width:70rem;margin-inline:auto;padding-inline:1.25rem}
-.skip{position:absolute;left:-999rem;top:0;background:var(--sheet);padding:.6rem .9rem;font-family:var(--sans)}
+.skip{position:absolute;left:-999rem;top:0;background:var(--sheet);color:#1D3F9C;padding:.6rem .9rem;font-family:var(--sans)}
 .skip:focus{left:.5rem;top:.5rem;z-index:5}
 
 /* header: name, four links, the phone number as text */
@@ -55,19 +57,19 @@ img{max-width:100%}
 .name{font:600 1.3125rem/1.2 var(--serif);color:var(--ink);text-decoration:none;justify-self:start}
 .tel{grid-column:2;grid-row:1;color:var(--ink);font-weight:600;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
 .top nav{grid-column:1/-1}
-.top ul{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 .9rem;list-style:none;margin:0;padding:0}
+.top ul{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:0 1.25rem;list-style:none;margin:0;padding:0}
 .top li{margin:0}
 .top nav a{display:inline-block;padding:.7rem 0;text-decoration:none;font-size:1rem}
 .top nav a:hover{text-decoration:underline}
 .top nav a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.4em}
 
 /* buttons: the only filled colour on the page */
-.btn{display:inline-block;font:600 1.0625rem/1.25 var(--sans);background:var(--accent);color:#fff;padding:.95rem 1.35rem;border:0;border-radius:6px;text-decoration:none;cursor:pointer;text-align:center}
-.btn:hover{background:var(--accent-dn);color:#fff}
+.btn{display:inline-block;font:600 1.0625rem/1.25 var(--sans);background:var(--accent);color:var(--on-accent);padding:.95rem 1.35rem;border:0;border-radius:6px;text-decoration:none;cursor:pointer;text-align:center}
+.btn:hover{background:var(--accent-dn);color:var(--on-accent)}
 .btn:active{transform:translateY(1px)}
 .btn--quiet{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent);padding:.6rem .95rem;font-size:1rem}
 .btn--quiet:hover{background:transparent;color:var(--accent-dn);box-shadow:inset 0 0 0 2px var(--accent-dn)}
-.btn--quiet[aria-current="true"]{background:var(--accent);color:#fff}
+.btn--quiet[aria-current="true"],.btn--quiet[aria-current="step"]{background:var(--accent);color:var(--on-accent)}
 /* phone or desk: the main button writes a text on a phone and an email on a computer */
 .on-touch{display:none!important}
 @media (hover:none) and (pointer:coarse){
@@ -141,6 +143,9 @@ img{max-width:100%}
 .foot{border-top:1px solid var(--rule);font-family:var(--sans);font-size:.9375rem;line-height:1.5;color:var(--ink-2)}
 .foot .wrap{padding-block:1rem 1.3rem}
 .foot p{margin:0 0 .25em;max-width:none}
+.foot-links{list-style:none;margin:.2rem 0 .45rem;padding:0;display:flex;flex-wrap:wrap;gap:.1rem 1.4rem}
+.foot-links li{margin:0}
+.foot-links a{display:inline-block;padding:.3rem 0}
 
 /* inner pages */
 .head .wrap{padding-block:1.7rem 2rem;display:grid;gap:1.4rem}
@@ -225,11 +230,7 @@ html:not(.js) .needs-js{display:none}
 @media (min-width:48rem){
   body{font-size:1.1875rem}
   .wrap{padding-inline:2rem}
-  .top .wrap{grid-template-columns:auto 1fr auto;column-gap:2.25rem;padding-block:.9rem .9rem}
-  .top nav{grid-column:2;grid-row:1;justify-self:end}
-  .tel{grid-column:3}
-  .top ul{gap:0 1.75rem;justify-content:flex-end}
-  .top nav a{padding:.35rem 0;font-size:1.0625rem}
+  .top ul{gap:0 1.75rem}
   .lede{font-size:1.3125rem}
   .when{grid-template-columns:9rem 1fr}
   .stills{grid-template-columns:repeat(2,minmax(0,15.5rem))}
@@ -238,6 +239,11 @@ html:not(.js) .needs-js{display:none}
   .sheets .sheet{aspect-ratio:8.5/11}
 }
 @media (min-width:60rem){
+  .top .wrap{grid-template-columns:auto 1fr auto;column-gap:2.25rem;padding-block:.9rem .9rem}
+  .top nav{grid-column:2;grid-row:1;justify-self:end}
+  .tel{grid-column:3}
+  .top ul{gap:0 1.6rem;justify-content:flex-end}
+  .top nav a{padding:.35rem 0;font-size:1.0625rem}
   .hero .wrap{grid-template-columns:5fr 7fr;gap:3.25rem;padding-block:2rem 1.9rem;align-items:start}
   .hero-art{height:auto;overflow:visible;margin-right:0;border-bottom:0;padding-bottom:2.6rem}
   .hero-art .sheet{position:relative;right:auto;top:auto;width:76%;margin-left:auto}
@@ -259,6 +265,46 @@ html:not(.js) .needs-js{display:none}
 @media print{.top nav,.skip,.pager,.btn{display:none!important}body{background:#fff}.sheet,.slip,.shot{box-shadow:none;border:1px solid #999}}
 .gap{margin-top:.8rem!important}
 .gap2{margin-top:1.6rem}
+
+/* second action beside the main button */
+.door .alt{display:inline-block;margin-left:1rem;font-family:var(--sans);font-weight:600;padding:.95rem 0}
+@media (max-width:30rem){.door .alt{margin-left:0;display:block;padding:.7rem 0 0}}
+
+/* the AI Supervisor band: one large sentence, then plain detail */
+.lead-line{font-size:clamp(1.5rem,1.2rem + 1.4vw,2.125rem);line-height:1.18;max-width:26ch;margin-bottom:.7rem}
+.duty{padding-left:1.25em}
+.duty li{margin-bottom:.5em}
+
+/* See it work: one step at a time; without the script every step shows */
+.stepper{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem;padding:0;list-style:none}
+.stepper li{margin:0}
+.step{display:grid;gap:1.1rem;padding-block:.4rem 1.6rem;border-top:1px solid var(--rule)}
+.step:first-of-type{border-top:0}
+html.js .steps-js .step[hidden]{display:none}
+html.js .steps-js .step{border-top:0}
+.step h3{font-size:1.3125rem}
+.step .n{font:600 .9375rem var(--sans);color:var(--ink-2);display:block;margin-bottom:.25rem}
+.step-next{margin-top:.6rem}
+html:not(.js) .stepper,html:not(.js) .step-next{display:none}
+.mail .hdr{display:grid;grid-template-columns:auto 1fr;gap:.15rem .8rem;border-bottom:1px solid var(--rule);padding-bottom:.55rem;margin-bottom:.6rem}
+.mail .hdr dt{color:var(--ink-2)}
+.mail .hdr dd{margin:0}
+.cal{border-left:4px solid var(--accent);padding:.45rem .7rem;background:color-mix(in srgb,var(--accent) 8%,var(--sheet));margin:.3rem 0 .6rem}
+.cal b{display:block;font-weight:600}
+.chat p{margin:0 0 .55em;max-width:88%}
+.chat .me{margin-left:auto;text-align:right}
+.chat .who{display:block;color:var(--ink-2);font-size:.8125rem}
+.pol h2{font-size:1.375rem;margin:1.6rem 0 .45rem}
+.pol h2:first-child{margin-top:0}
+@media (min-width:48rem){.step{grid-template-columns:1fr minmax(0,24rem);gap:2rem;align-items:start}}
+
+/* dark: the page goes dark, the paper samples stay paper */
+@media (prefers-color-scheme:dark){
+  :root{--paper:#1A1815;--band:#221F1A;--ink:#EDE8DD;--ink-2:#BFB7A8;--rule:#3B362E;
+    --accent:#A9BEF7;--accent-dn:#CCD9FB;--signal:#F29A8F;--on-accent:#14120F;
+    --shadow:0 1px 1px rgba(0,0,0,.45),0 14px 26px -14px rgba(0,0,0,.8)}
+  .sheet,.slip,.shot,.letter{--ink:#1C1A17;--ink-2:#4A453C;--rule:#CFC8B7;--accent:#1D3F9C;--accent-dn:#152E75;--signal:#B4281E;--on-accent:#fff;color:var(--ink)}
+}
 
 /* leave-behind: one US Letter page. On screen it sits on the paper ground like a printed sheet. */
 @page{size:letter;margin:0}
@@ -315,7 +361,7 @@ html:not(.js) .needs-js{display:none}
 </nav>
 <main class="letter" id="main">
   <header class="lb-head">
-    <p class="lb-name">Carlos Milander</p>
+    <p class="lb-name">CMRI Consulting</p>
     <p class="lb-area">Área de Wilkes-Barre · Español e inglés</p>
   </header>
   <div class="lb-main">
@@ -324,7 +370,7 @@ html:not(.js) .needs-js{display:none}
       <figcaption>Carlos Milander<br>Trabajo solo.</figcaption>
     </figure>
     <div>
-      <h1>Voy a su negocio y anoto dónde se quedan sin respuesta las llamadas y los presupuestos.</h1>
+      <h1>Encuentro el trabajo de oficina de su negocio que la IA puede hacer, con una persona a cargo.</h1>
       <p class="lb-lede">Voy yo mismo, a negocios y oficinas de Wilkes-Barre, Scranton, Hazleton y la zona de Allentown.</p>
     </div>
   </div>
@@ -341,15 +387,15 @@ html:not(.js) .needs-js{display:none}
     </section>
     <section>
       <h2>Después, si usted quiere, una visita</h2>
-      <p>Me siento con usted y con quien contesta el teléfono, dos horas o más. Tomo notas en papel. Más o menos una semana después le entrego un informe escrito, contado con sus propios números. El informe es suyo y puede usarlo con quien quiera.</p>
-      <p>La visita es de pago. Usted recibe el precio por escrito antes de comprometerse.</p>
-      <p class="lb-fine">No le prometo trabajos ni dinero. Los trabajadores de IA que he construido están probados con datos inventados, y ninguno funciona todavía para un cliente.</p>
+      <p>Me siento con usted y con quien contesta el teléfono, dos horas o más. Tomo notas y no grabo nada. Más o menos una semana después le entrego un informe escrito, contado con sus propios números. El informe es suyo y puede usarlo con quien quiera.</p>
+      <p>La visita es de pago. Usted recibe el costo por escrito antes de comprometerse. Su Supervisor de IA maneja la IA; la IA hace la rutina. Usted elige a una persona; yo la entreno.</p>
+      <p class="lb-fine">No le prometo trabajos ni dinero. Los trabajadores de IA son una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada. Ninguno funciona todavía para un cliente.</p>
     </section>
   </div>
   <footer class="lb-foot">
-    <p class="lb-ask">Para pedir la prueba, escriba o llame al</p>
+    <p class="lb-ask">Para pedir la prueba, llame al</p>
     <p class="lb-tel">(570) 392-9271</p>
-    <p class="lb-mail">alexis.milander28@gmail.com <span>(Alexis es mi segundo nombre)</span></p>
+    <p class="lb-mail">carlos@cmriconsulting.com <span>· Carlos Milander, propietario único</span></p>
   </footer>
 </main>
 
@@ -379,6 +425,24 @@ html:not(.js) .needs-js{display:none}
     [].forEach.call(card.querySelectorAll("button[data-say]"), function (b) {
       b.addEventListener("click", function () { out.textContent = b.getAttribute("data-say") || idle; });
     });
+  });
+  // See it work: one step at a time. Without this script every step shows, in order.
+  [].forEach.call(d.querySelectorAll("[data-steps]"), function (box) {
+    var tabs = [].slice.call(box.querySelectorAll(".stepper button"));
+    var go = function (id, focus) {
+      tabs.forEach(function (b) {
+        var on = b.getAttribute("aria-controls") === id;
+        b.setAttribute("aria-current", on ? "step" : "false");
+        d.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+      });
+      if (focus) { var h = d.getElementById(id).querySelector("h3"); if (h) { h.tabIndex = -1; h.focus(); } }
+    };
+    tabs.forEach(function (b) { b.addEventListener("click", function () { go(b.getAttribute("aria-controls")); }); });
+    [].forEach.call(box.querySelectorAll("[data-next]"), function (b) {
+      b.addEventListener("click", function () { go(b.getAttribute("data-next"), true); });
+    });
+    box.classList.add("steps-js");
+    if (tabs.length) go(tabs[0].getAttribute("aria-controls"));
   });
   // Leave-behind: the print button.
   [].forEach.call(d.querySelectorAll("[data-print]"), function (b) {

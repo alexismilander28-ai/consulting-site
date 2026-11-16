@@ -1,23 +1,24 @@
 <!doctype html>
-<!-- Carlos Milander. BUILT FILE: do not edit by hand.
+<!-- CMRI Consulting. BUILT FILE: do not edit by hand.
      Phone and email live in ONE place: build/build.py, the CONTACT block at the top.
      Change them there and run: python build/build.py -->
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sobre mí | Carlos Milander</title>
-<meta name="description" content="Carlos Alexis Milander, área de Wilkes-Barre. Trabajo solo, en español y en inglés. Quien contesta su llamada es quien visita su negocio y escribe su informe. Llame o escriba al (570) 392-9271.">
-<meta name="color-scheme" content="light">
+<title>Sobre mí | CMRI Consulting</title>
+<meta name="description" content="CMRI Consulting es Carlos Alexis Milander, propietario único en el área de Wilkes-Barre. Trabajo solo, en español y en inglés. Quien contesta su llamada es quien visita su negocio y escribe su informe. Llame al (570) 392-9271.">
+<meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
-<meta name="theme-color" content="#F6F3EC">
+<meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1815" media="(prefers-color-scheme: dark)">
 <meta name="format-detection" content="telephone=no">
 <link rel="alternate" hreflang="en" href="../about.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F6F3EC'/%3E%3Cpath d='M8 10h16M8 16h16M8 22h9' stroke='%231C1A17' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <script>document.documentElement.className='js'</script>
 <style>
-/* Carlos Milander: paper and ink. Light only. One accent with one job: things you can press.
+/* CMRI Consulting: paper and ink. Light first; dark follows the device. One accent with one job: things you can press.
    Two radii (buttons 6px, photos 3px). One shadow (paper and photos). Sheets of paper are square. */
 :root{
   --paper:#F6F3EC; --band:#ECE7DA; --sheet:#FFFEFB;
@@ -26,9 +27,10 @@
   --serif:"Source Serif 4","Iowan Old Style","Palatino Linotype",Georgia,serif;
   --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
   --shadow:0 1px 1px rgba(60,48,30,.12),0 14px 26px -14px rgba(60,48,30,.42);
+  --on-accent:#fff;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{color-scheme:light;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{color-scheme:light dark;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.5 var(--serif);overflow-wrap:break-word}
 h1,h2,h3{font-weight:400;margin:0;text-wrap:balance}
 h1{font-size:clamp(2rem,1.15rem + 3.5vw,3.25rem);line-height:1.08;letter-spacing:-.012em}
@@ -45,7 +47,7 @@ img{max-width:100%}
 .nw{white-space:nowrap}
 .small{font-family:var(--sans);font-size:.9375rem;line-height:1.45;color:var(--ink-2)}
 .wrap{max-width:70rem;margin-inline:auto;padding-inline:1.25rem}
-.skip{position:absolute;left:-999rem;top:0;background:var(--sheet);padding:.6rem .9rem;font-family:var(--sans)}
+.skip{position:absolute;left:-999rem;top:0;background:var(--sheet);color:#1D3F9C;padding:.6rem .9rem;font-family:var(--sans)}
 .skip:focus{left:.5rem;top:.5rem;z-index:5}
 
 /* header: name, four links, the phone number as text */
@@ -54,19 +56,19 @@ img{max-width:100%}
 .name{font:600 1.3125rem/1.2 var(--serif);color:var(--ink);text-decoration:none;justify-self:start}
 .tel{grid-column:2;grid-row:1;color:var(--ink);font-weight:600;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
 .top nav{grid-column:1/-1}
-.top ul{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 .9rem;list-style:none;margin:0;padding:0}
+.top ul{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:0 1.25rem;list-style:none;margin:0;padding:0}
 .top li{margin:0}
 .top nav a{display:inline-block;padding:.7rem 0;text-decoration:none;font-size:1rem}
 .top nav a:hover{text-decoration:underline}
 .top nav a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.4em}
 
 /* buttons: the only filled colour on the page */
-.btn{display:inline-block;font:600 1.0625rem/1.25 var(--sans);background:var(--accent);color:#fff;padding:.95rem 1.35rem;border:0;border-radius:6px;text-decoration:none;cursor:pointer;text-align:center}
-.btn:hover{background:var(--accent-dn);color:#fff}
+.btn{display:inline-block;font:600 1.0625rem/1.25 var(--sans);background:var(--accent);color:var(--on-accent);padding:.95rem 1.35rem;border:0;border-radius:6px;text-decoration:none;cursor:pointer;text-align:center}
+.btn:hover{background:var(--accent-dn);color:var(--on-accent)}
 .btn:active{transform:translateY(1px)}
 .btn--quiet{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent);padding:.6rem .95rem;font-size:1rem}
 .btn--quiet:hover{background:transparent;color:var(--accent-dn);box-shadow:inset 0 0 0 2px var(--accent-dn)}
-.btn--quiet[aria-current="true"]{background:var(--accent);color:#fff}
+.btn--quiet[aria-current="true"],.btn--quiet[aria-current="step"]{background:var(--accent);color:var(--on-accent)}
 /* phone or desk: the main button writes a text on a phone and an email on a computer */
 .on-touch{display:none!important}
 @media (hover:none) and (pointer:coarse){
@@ -140,6 +142,9 @@ img{max-width:100%}
 .foot{border-top:1px solid var(--rule);font-family:var(--sans);font-size:.9375rem;line-height:1.5;color:var(--ink-2)}
 .foot .wrap{padding-block:1rem 1.3rem}
 .foot p{margin:0 0 .25em;max-width:none}
+.foot-links{list-style:none;margin:.2rem 0 .45rem;padding:0;display:flex;flex-wrap:wrap;gap:.1rem 1.4rem}
+.foot-links li{margin:0}
+.foot-links a{display:inline-block;padding:.3rem 0}
 
 /* inner pages */
 .head .wrap{padding-block:1.7rem 2rem;display:grid;gap:1.4rem}
@@ -224,11 +229,7 @@ html:not(.js) .needs-js{display:none}
 @media (min-width:48rem){
   body{font-size:1.1875rem}
   .wrap{padding-inline:2rem}
-  .top .wrap{grid-template-columns:auto 1fr auto;column-gap:2.25rem;padding-block:.9rem .9rem}
-  .top nav{grid-column:2;grid-row:1;justify-self:end}
-  .tel{grid-column:3}
-  .top ul{gap:0 1.75rem;justify-content:flex-end}
-  .top nav a{padding:.35rem 0;font-size:1.0625rem}
+  .top ul{gap:0 1.75rem}
   .lede{font-size:1.3125rem}
   .when{grid-template-columns:9rem 1fr}
   .stills{grid-template-columns:repeat(2,minmax(0,15.5rem))}
@@ -237,6 +238,11 @@ html:not(.js) .needs-js{display:none}
   .sheets .sheet{aspect-ratio:8.5/11}
 }
 @media (min-width:60rem){
+  .top .wrap{grid-template-columns:auto 1fr auto;column-gap:2.25rem;padding-block:.9rem .9rem}
+  .top nav{grid-column:2;grid-row:1;justify-self:end}
+  .tel{grid-column:3}
+  .top ul{gap:0 1.6rem;justify-content:flex-end}
+  .top nav a{padding:.35rem 0;font-size:1.0625rem}
   .hero .wrap{grid-template-columns:5fr 7fr;gap:3.25rem;padding-block:2rem 1.9rem;align-items:start}
   .hero-art{height:auto;overflow:visible;margin-right:0;border-bottom:0;padding-bottom:2.6rem}
   .hero-art .sheet{position:relative;right:auto;top:auto;width:76%;margin-left:auto}
@@ -259,15 +265,56 @@ html:not(.js) .needs-js{display:none}
 .gap{margin-top:.8rem!important}
 .gap2{margin-top:1.6rem}
 
+/* second action beside the main button */
+.door .alt{display:inline-block;margin-left:1rem;font-family:var(--sans);font-weight:600;padding:.95rem 0}
+@media (max-width:30rem){.door .alt{margin-left:0;display:block;padding:.7rem 0 0}}
+
+/* the AI Supervisor band: one large sentence, then plain detail */
+.lead-line{font-size:clamp(1.5rem,1.2rem + 1.4vw,2.125rem);line-height:1.18;max-width:26ch;margin-bottom:.7rem}
+.duty{padding-left:1.25em}
+.duty li{margin-bottom:.5em}
+
+/* See it work: one step at a time; without the script every step shows */
+.stepper{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem;padding:0;list-style:none}
+.stepper li{margin:0}
+.step{display:grid;gap:1.1rem;padding-block:.4rem 1.6rem;border-top:1px solid var(--rule)}
+.step:first-of-type{border-top:0}
+html.js .steps-js .step[hidden]{display:none}
+html.js .steps-js .step{border-top:0}
+.step h3{font-size:1.3125rem}
+.step .n{font:600 .9375rem var(--sans);color:var(--ink-2);display:block;margin-bottom:.25rem}
+.step-next{margin-top:.6rem}
+html:not(.js) .stepper,html:not(.js) .step-next{display:none}
+.mail .hdr{display:grid;grid-template-columns:auto 1fr;gap:.15rem .8rem;border-bottom:1px solid var(--rule);padding-bottom:.55rem;margin-bottom:.6rem}
+.mail .hdr dt{color:var(--ink-2)}
+.mail .hdr dd{margin:0}
+.cal{border-left:4px solid var(--accent);padding:.45rem .7rem;background:color-mix(in srgb,var(--accent) 8%,var(--sheet));margin:.3rem 0 .6rem}
+.cal b{display:block;font-weight:600}
+.chat p{margin:0 0 .55em;max-width:88%}
+.chat .me{margin-left:auto;text-align:right}
+.chat .who{display:block;color:var(--ink-2);font-size:.8125rem}
+.pol h2{font-size:1.375rem;margin:1.6rem 0 .45rem}
+.pol h2:first-child{margin-top:0}
+@media (min-width:48rem){.step{grid-template-columns:1fr minmax(0,24rem);gap:2rem;align-items:start}}
+
+/* dark: the page goes dark, the paper samples stay paper */
+@media (prefers-color-scheme:dark){
+  :root{--paper:#1A1815;--band:#221F1A;--ink:#EDE8DD;--ink-2:#BFB7A8;--rule:#3B362E;
+    --accent:#A9BEF7;--accent-dn:#CCD9FB;--signal:#F29A8F;--on-accent:#14120F;
+    --shadow:0 1px 1px rgba(0,0,0,.45),0 14px 26px -14px rgba(0,0,0,.8)}
+  .sheet,.slip,.shot,.letter{--ink:#1C1A17;--ink-2:#4A453C;--rule:#CFC8B7;--accent:#1D3F9C;--accent-dn:#152E75;--signal:#B4281E;--on-accent:#fff;color:var(--ink)}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Ir al contenido</a>
 <header class="top"><div class="wrap">
-<a class="name" href="index.html">Carlos Milander</a>
+<a class="name" href="index.html">CMRI Consulting</a>
 <nav aria-label="Principal"><ul>
 <li><a href="mapa.html">El Mapa</a></li>
 <li><a href="trabajadores-ia.html">Trabajadores de IA</a></li>
+<li><a href="vealo-funcionar.html">Véalo funcionar</a></li>
 <li><a href="sobre-mi.html" aria-current="page">Sobre mí</a></li>
 <li><a href="../about.html" lang="en" hreflang="en" aria-label="English: esta página en inglés">English</a></li>
 </ul></nav>
@@ -278,8 +325,8 @@ html:not(.js) .needs-js{display:none}
   <div class="wrap">
     <div>
       <h1 id="h-title">Con quién va a tratar</h1>
-      <p class="lede">Soy Carlos Alexis Milander. Vivo en el área de Wilkes-Barre y trabajo solo. Quien contesta su llamada es quien visita su negocio y escribe su informe.</p>
-      <p>Construyo programas con IA para mi propio uso: aplicaciones web, tableros de datos, herramientas de investigación y esta página. Por eso sé lo que la IA hace bien y dónde necesita que una persona la vigile.</p>
+      <p class="lede">Soy Carlos Alexis Milander. CMRI Consulting es el nombre con el que trabajo, como propietario único: si contrata a CMRI Consulting, me contrata a mí. Vivo en el área de Wilkes-Barre. Quien contesta su llamada es quien visita su negocio y escribe su informe.</p>
+      <p>Construí yo mismo cada parte del sistema de demostración y lo probé en mis propias cuentas: citas, recordatorios, seguimiento de presupuestos y un informe semanal, en español y en inglés. Pídame que abra cualquier parte y le muestro cómo funciona.</p>
       <p>Trabajo en español y en inglés. No soy abogado ni contador. Voy yo mismo a su negocio, en Wilkes-Barre, Scranton, Hazleton y la zona de Allentown.</p>
     </div>
     <figure class="who-photo">
@@ -294,24 +341,24 @@ html:not(.js) .needs-js{display:none}
     <h2 id="qa-t">Cinco preguntas que me hacen</h2>
     <div class="qa">
       <details>
-        <summary>¿Cómo me entero del precio?</summary>
-        <p>El Mapa tiene un solo precio fijo. Se lo digo en la primera llamada y queda escrito en un acuerdo corto que usted lee antes de pagar nada. No se debe nada por la primera llamada ni por la prueba gratuita.</p>
+        <summary>¿Cuánto cuesta el Mapa?</summary>
+        <p>El Mapa tiene una sola tarifa fija. Se la digo en la primera llamada y queda escrita en un acuerdo corto que usted lee antes de pagar nada. No se debe nada por la primera llamada, la prueba gratuita ni la demostración en vivo.</p>
       </details>
       <details>
         <summary>¿De quién son las cuentas?</summary>
-        <p>Suyas. El Mapa no necesita acceso a sus cuentas. Si más adelante se instala algo, se abre a nombre de su negocio, usted decide quién tiene acceso y puede quitárselo a cualquiera el día que quiera. No revendo nada y no recibo comisión de ningún proveedor.</p>
+        <p>Suyas. Para el Mapa miro solo dentro de los sistemas que usted anota y firma, solo para leer, y no cambio nada. Si más adelante se instala algo, funciona en sus propias cuentas, a nombre de su negocio. Usted decide quién tiene acceso y puede quitárselo a cualquiera el día que quiera. No revendo nada y no recibo comisión de ningún proveedor.</p>
       </details>
       <details>
         <summary>¿Quién ve mis números?</summary>
-        <p>Solo yo. Lo que veo en su negocio es confidencial y se usa únicamente para su informe. Tomo notas por escrito, no grabo nada y nunca pido contraseñas ni números de tarjeta o de banco. Hablo de su negocio en público solo si usted me lo autoriza por escrito.</p>
+        <p>Solo yo. Lo que veo en su negocio es confidencial y se usa únicamente para su informe. Tomo notas por escrito y no grabo nada. Nunca le pido que me mande una contraseña y nunca recibo números de tarjeta ni de banco. Si necesito ver un sistema, usted me da mi propio usuario y firma primero un formulario de acceso de una página. Hablo de su negocio en público solo si usted me lo autoriza por escrito.</p>
       </details>
       <details>
         <summary>¿Esto es un producto de IA?</summary>
-        <p>El Mapa es una persona en su negocio y un informe escrito. Los trabajadores de IA son programas automáticos y todavía no se ofrecen a clientes. Casi todo lo que hacen es automatización sencilla, como recordar un presupuesto abierto. El informe dice dónde debe seguir a cargo una persona.</p>
+        <p>El Mapa es una persona en su negocio y un informe escrito. Los trabajadores de IA son programas automáticos. Hoy son una demostración que funciona, armada alrededor de un negocio de muestra, y ninguno funciona todavía para un cliente. Casi todo lo que hacen es automatización sencilla, como recordar un presupuesto abierto. Una persona de su negocio, su Supervisor de IA, sigue a cargo.</p>
       </details>
       <details>
         <summary>¿Tengo que cambiar de programa?</summary>
-        <p>No. El Mapa trabaja con lo que usted usa hoy, y yo no lo toco.</p>
+        <p>No. El Mapa trabaja con lo que usted usa hoy. Miro solo donde usted lo autoriza por escrito, al principio solo para leer, y no cambio nada.</p>
       </details>
     </div>
   </div>
@@ -322,24 +369,25 @@ html:not(.js) .needs-js{display:none}
     <div>
       <h2 id="reach-t">Hable conmigo</h2>
       <dl class="reach">
-        <dt>Llame o escriba</dt>
+        <dt>Llame</dt>
         <dd class="big"><a href="tel:+15703929271" class="nw">(570) 392-9271</a></dd>
         <dt>Correo</dt>
-        <dd><a href="mailto:alexis.milander28@gmail.com?subject=Pregunta%20para%20Carlos&amp;body=Hola%2C%20Carlos.%20">alexis.milander28@gmail.com</a><br><span class="small">Alexis es mi segundo nombre.</span></dd>
+        <dd><a href="mailto:carlos@cmriconsulting.com?subject=Pregunta%20para%20Carlos&amp;body=Hola%2C%20Carlos.%20">carlos@cmriconsulting.com</a></dd>
       </dl>
     </div>
     <div class="second">
-      <p>Si no puedo contestar, le devuelvo la llamada o el mensaje el mismo día, de lunes a sábado. La primera llamada dura unos 20 minutos.</p>
-      <a class="btn on-desk" href="mailto:alexis.milander28@gmail.com?subject=Pregunta%20para%20Carlos&amp;body=Hola%2C%20Carlos.%20">Mandarme un correo</a>
+      <p>Si no puedo contestar, le devuelvo la llamada el mismo día, de lunes a sábado. La primera llamada dura unos 20 minutos.</p>
+      <a class="btn on-desk" href="mailto:carlos@cmriconsulting.com?subject=Pregunta%20para%20Carlos&amp;body=Hola%2C%20Carlos.%20">Mandarme un correo</a>
       <a class="btn on-touch" href="sms:+15703929271">Mandarme un mensaje</a>
-      <p class="small gap">No hay formulario que llenar ni nada a qué inscribirse. Soy una persona con un teléfono.</p>
+      <p class="small gap"><span class="on-touch">El botón abre su propia aplicación de mensajes. Lo contesto yo mismo. </span>No hay formulario que llenar ni nada a qué inscribirse. Soy una persona con un teléfono.</p>
     </div>
   </div>
 </section>
 
 </main>
 <footer class="foot"><div class="wrap">
-<p>© 2026 Carlos Milander. Área de Wilkes-Barre, Pensilvania. <a href="hoja.html">Un resumen de una página para imprimir</a></p>
+<p>© 2026 CMRI Consulting. Carlos Milander, propietario único. Área de Wilkes-Barre, Pensilvania.</p>
+<ul class="foot-links" aria-label="Más páginas"><li><a href="recepcionista.html">La recepcionista</a></li><li><a href="privacidad.html">Privacidad</a></li><li><a href="hoja.html">Resumen de una página para imprimir</a></li></ul>
 <p>Sin cookies. Sin analítica. Las fuentes se cargan desde Google, que puede ver su dirección IP.</p>
 </div></footer>
 <script>
@@ -368,6 +416,24 @@ html:not(.js) .needs-js{display:none}
     [].forEach.call(card.querySelectorAll("button[data-say]"), function (b) {
       b.addEventListener("click", function () { out.textContent = b.getAttribute("data-say") || idle; });
     });
+  });
+  // See it work: one step at a time. Without this script every step shows, in order.
+  [].forEach.call(d.querySelectorAll("[data-steps]"), function (box) {
+    var tabs = [].slice.call(box.querySelectorAll(".stepper button"));
+    var go = function (id, focus) {
+      tabs.forEach(function (b) {
+        var on = b.getAttribute("aria-controls") === id;
+        b.setAttribute("aria-current", on ? "step" : "false");
+        d.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+      });
+      if (focus) { var h = d.getElementById(id).querySelector("h3"); if (h) { h.tabIndex = -1; h.focus(); } }
+    };
+    tabs.forEach(function (b) { b.addEventListener("click", function () { go(b.getAttribute("aria-controls")); }); });
+    [].forEach.call(box.querySelectorAll("[data-next]"), function (b) {
+      b.addEventListener("click", function () { go(b.getAttribute("data-next"), true); });
+    });
+    box.classList.add("steps-js");
+    if (tabs.length) go(tabs[0].getAttribute("aria-controls"));
   });
   // Leave-behind: the print button.
   [].forEach.call(d.querySelectorAll("[data-print]"), function (b) {

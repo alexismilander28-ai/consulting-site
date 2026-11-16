@@ -1,0 +1,158 @@
+title: Véalo funcionar | CMRI Consulting
+description: La demostración de citas, paso a paso, como la vería en una llamada: llega una solicitud, el dueño toca Aprobar, la visita queda en el calendario, y la confirmación y el recordatorio salen por correo. Negocio de muestra, nombres y horarios de muestra.
+---
+<section class="head" aria-labelledby="h-title">
+  <div class="wrap">
+    <div>
+      <h1 id="h-title">Véalo funcionar: una cita, de principio a fin.</h1>
+      <p class="lede">Así es la demostración que le enseño en una llamada, paso a paso. Llega una solicitud, suena el teléfono del dueño, un toque, y la visita queda en el calendario.</p>
+    </div>
+    <p class="status"><b>Una demostración que funciona, armada alrededor de un negocio de muestra; la pongo a funcionar en vivo en una llamada.</b> Funciona con mi propio calendario, mi correo y mi teléfono. El negocio, el cliente, los horarios y los números son de muestra. Nada de esto funciona todavía para un cliente.</p>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="run-t">
+  <div class="wrap">
+    <h2 id="run-t">La demostración, paso a paso</h2>
+    <div data-steps>
+      <ol class="stepper" aria-label="Pasos de la demostración">
+        <li><button type="button" class="btn btn--quiet" aria-controls="s1">1. Solicitud</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s2">2. Aprobar</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s3">3. Calendario</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s4">4. Confirmación</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s5">5. Recordatorio</button></li>
+        <li><button type="button" class="btn btn--quiet" aria-controls="s6">6. Sus números</button></li>
+      </ol>
+
+      <div class="step" id="s1">
+        <div>
+          <span class="n">Paso 1 de 6</span>
+          <h3>Un cliente pide una visita en la página web del negocio.</h3>
+          <p>Llena una solicitud corta: nombre, teléfono, correo, qué problema tiene y cuándo le gustaría que fueran. Todavía no se agenda nada.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s2">Siguiente: el teléfono del dueño</button>
+        </div>
+        <div class="slip">
+          <p class="from">Muestra. Solicitud en la página web, Sample HVAC Co.</p>
+          <dl>
+            <dt>Nombre</dt><dd>Dana</dd>
+            <dt>Teléfono</dt><dd>(555) 010-0142</dd>
+            <dt>Correo</dt><dd>dana@example.com</dd>
+            <dt>Problema</dt><dd>La calefacción hace un ruido fuerte</dd>
+            <dt>Cuándo</dt><dd>El jueves por la mañana</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="step" id="s2">
+        <div>
+          <span class="n">Paso 2 de 6</span>
+          <h3>El dueño recibe un solo mensaje, con dos botones.</h3>
+          <p>Primero se revisa el calendario, así que el mensaje ya dice qué horario está libre. Llega al teléfono del dueño, en la aplicación Telegram. No se agenda nada y no le llega nada al cliente hasta que alguien toca Aprobar.</p>
+          <p class="small">Pruebe los botones de la tarjeta. Solo cambian esa tarjeta.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s3">Siguiente: el calendario</button>
+        </div>
+        <div class="slip" data-approve>
+          <p class="from">Muestra. Mensaje para el dueño, Sample HVAC Co.</p>
+          <dl>
+            <dt>De</dt><dd>Dana, (555) 010-0142</dd>
+            <dt>Asunto</dt><dd>La calefacción hace un ruido fuerte</dd>
+            <dt>Pidió</dt><dd>El jueves por la mañana</dd>
+            <dt>Horario libre</dt><dd>Jueves, 9:30 am</dd>
+          </dl>
+          <div class="acts needs-js">
+            <button type="button" class="btn btn--quiet" data-say="Aprobado. La visita queda en el calendario y sale el correo de confirmación. En esta muestra no se envió nada.">Aprobar</button>
+            <button type="button" class="btn btn--quiet" data-say="Rechazado. No se agenda nada y no se envía nada. El dueño recibe otros horarios libres y elige uno él mismo.">Rechazar</button>
+            <button type="button" class="btn btn--quiet" data-say="">Empezar de nuevo</button>
+          </div>
+          <p role="status">Desde esta página no se envía nada.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s3">
+        <div>
+          <span class="n">Paso 3 de 6</span>
+          <h3>Un toque, y la visita queda en el calendario.</h3>
+          <p>Antes de agendar, vuelve a revisar que el horario siga libre. En la demostración, la cita en el calendario empieza con [DEMO] para que nadie la confunda con un trabajo real.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s4">Siguiente: la confirmación</button>
+        </div>
+        <div class="slip">
+          <p class="from">Muestra. Calendario, Sample HVAC Co.</p>
+          <p>Jueves</p>
+          <div class="cal"><b>9:30 a 10:30 am · [DEMO] Dana, ruido de la calefacción</b>(555) 010-0142</div>
+          <p class="small">Agendada después de que el dueño tocó Aprobar.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s4">
+        <div>
+          <span class="n">Paso 4 de 6</span>
+          <h3>El cliente recibe un correo de confirmación que dice que es automático.</h3>
+          <p>El texto es el que el dueño aprobó por escrito, en español o en inglés. Sale solo de lunes a sábado, de 9 am a 7 pm. En la demostración, la confirmación llega a mi propio correo, no a un cliente.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s5">Siguiente: el recordatorio</button>
+        </div>
+        <div class="slip mail">
+          <p class="from">Muestra. Correo automático, Sample HVAC Co.</p>
+          <dl class="hdr">
+            <dt>Para</dt><dd>dana@example.com</dd>
+            <dt>Asunto</dt><dd>Su visita del jueves a las 9:30 am</dd>
+          </dl>
+          <p>Este es un mensaje automático de Sample HVAC Co.</p>
+          <p>Hola, Dana. Su visita quedó para el jueves a las 9:30 am. Para cambiarla, responda a este correo o llame al (555) 010-0100.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s5">
+        <div>
+          <span class="n">Paso 5 de 6</span>
+          <h3>El día antes, un correo de recordatorio.</h3>
+          <p>Si Dana responde, la respuesta le llega al dueño. Nadie le contesta de forma automática. Si responde PARAR, o STOP, no se le vuelve a escribir nunca.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s6">Siguiente: sus números</button>
+        </div>
+        <div class="slip mail">
+          <p class="from">Muestra. Correo automático, Sample HVAC Co.</p>
+          <dl class="hdr">
+            <dt>Para</dt><dd>dana@example.com</dd>
+            <dt>Asunto</dt><dd>Recordatorio: su visita de mañana</dd>
+          </dl>
+          <p>Este es un recordatorio automático de Sample HVAC Co. Su visita es mañana jueves a las 9:30 am.</p>
+          <p>Responda PARAR y no le volveremos a escribir.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s6">
+        <div>
+          <span class="n">Paso 6 de 6</span>
+          <h3>El lunes por la mañana, la semana en un mensaje.</h3>
+          <p>Un resumen corto le llega solo al dueño, nunca a un cliente. Cuenta lo que muestran los registros del propio negocio de muestra.</p>
+          <button type="button" class="btn btn--quiet step-next" data-next="s1">Volver al paso 1</button>
+        </div>
+        <div class="slip">
+          <p class="from">Muestra. Resumen del lunes para el dueño, Sample HVAC Co.</p>
+          <dl>
+            <dt>Solicitudes nuevas</dt><dd>9</dd>
+            <dt>Visitas agendadas</dt><dd>6</dd>
+            <dt>Recordatorios enviados</dt><dd>6</dd>
+            <dt>Presupuestos abiertos</dt><dd>4</dd>
+          </dl>
+          <p>Números de muestra, no son resultados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="live-t">
+  <div class="wrap two">
+    <div>
+      <h2 id="live-t">Véala en vivo en una llamada</h2>
+      <p>Deme 15 minutos por llamada y la pongo a funcionar delante de usted. Entra una solicitud, suena mi teléfono, toco Aprobar y la visita queda en el calendario.</p>
+      <p>Es mi propio sistema en mis propias cuentas. Usted no tiene que inscribirse en nada.</p>
+    </div>
+    <div class="second">
+      <a class="btn on-desk" href="{{MAIL_DEMO}}">Pedir la demostración en vivo</a>
+      <a class="btn on-touch" href="{{SMS_DEMO}}">Pedir la demostración en vivo</a>
+      <p class="small gap"><span class="on-desk">El botón abre un correo para mí, ya escrito. No se envía nada hasta que usted lo mande.</span><span class="on-touch">El botón abre su propia aplicación de mensajes con una nota para mí, ya escrita. No se envía nada hasta que usted lo mande. O <a href="{{MAIL_DEMO}}">mándeme un correo</a>.</span> También puede llamar al <a href="{{TEL}}" class="nw">{{PHONE}}</a>.</p>
+      <p class="small">¿También quiere ver la recepcionista del chat? <a href="{{HREF:recep}}">Esto es lo que hace, y lo que todavía no se ofrece</a>.</p>
+    </div>
+  </div>
+</section>
