@@ -1,0 +1,154 @@
+title: AI workers | CMRI Consulting
+description: AI workers are automated software that does one repetitive office job each, like sending the reminder before a visit. I show them live on a call. Every worker sends email only.
+---
+<section class="head" aria-labelledby="h-title">
+  <div class="wrap">
+    <div>
+      <h1 id="h-title">AI workers are software. Each one does one repetitive office job.</h1>
+      <p class="lede">One sends a reminder email the day before a visit. Another asks you to approve each booking before anything is set. Every message says it is automated, and a person at your shop stays in charge.</p>
+    </div>
+    <div class="status">
+      <p><b>Where this stands today.</b></p>
+      <ul>
+        <li>A working demo built around a sample shop; I run it live on a call.</li>
+        <li>None is running for a customer yet.</li>
+        <li>Every worker sends email only. None sends text messages.</li>
+        <li>The website chat and the <a href="{{HREF:recep}}">phone receptionist</a> are not offered yet.</li>
+        <li>Building them for a business starts with a written agreement. They run in your own accounts, and one person at your shop, your AI Supervisor, is in charge of them.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="six-t">
+  <div class="wrap split">
+    <div>
+      <h2 id="six-t">The six jobs, one at a time</h2>
+      <p class="tag">Open one. Every sample below uses a sample shop and sample numbers.</p>
+      <p class="small">Want to see one run start to finish? <a href="{{HREF:demo}}">See it work</a>.</p>
+    </div>
+    <div class="workers">
+      <details name="worker" open>
+        <summary>Answering when nobody can <span>On a website, by chat: not offered yet. By phone: not offered yet.</span></summary>
+        <div class="w-body">
+          <p>On your website, a scheduling assistant answers common questions with fixed answers and takes a request for a visit. It says up front that it is automated. Questions about cost, complaints, refunds and anything unclear go to a person. <a href="{{HREF:recep}}">More about the receptionist</a>.</p>
+          <div class="slip">
+            <p class="from">Sample. Website chat, Sample HVAC Co.</p>
+            <p>“Hi. I’m the automated scheduling assistant for Sample HVAC Co. I’m not a person. I can answer common questions and take a request for a visit.”</p>
+            <p>“How much will it cost?”</p>
+            <p>“A person at the office answers questions about cost, so I added yours to the request. Nothing is booked yet.”</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Booking <span>Working demo. Sample shop.</span></summary>
+        <div class="w-body">
+          <p>A request comes in, your calendar is checked, and you get one message on your phone with two buttons. Nothing is booked and nothing is sent to the customer until you approve.</p>
+          <div class="slip" data-approve>
+            <p class="from">Sample. Message to the owner, Sample HVAC Co.</p>
+            <dl>
+              <dt>From</dt><dd>Dana, (555) 010-0142</dd>
+              <dt>About</dt><dd>Furnace making a banging noise</dd>
+              <dt>Asked for</dt><dd>Thursday morning</dd>
+              <dt>Your calendar</dt><dd>Thursday at 9:30 am is open</dd>
+              <dt>Needs a person</dt><dd>Asked what it will cost</dd>
+            </dl>
+            <div class="acts needs-js">
+              <button type="button" class="btn btn--quiet" data-say="Approved. In a real setup the visit goes on your calendar and the customer gets the confirmation email you approved in writing. In this sample, nothing was sent.">Approve</button>
+              <button type="button" class="btn btn--quiet" data-say="Declined. Nothing is booked. You get a list of other open times and choose one yourself.">Decline</button>
+              <button type="button" class="btn btn--quiet" data-say="">Start over</button>
+            </div>
+            <p role="status">Try the buttons. Nothing is sent from this page.</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Open quotes <span>Working demo. Sample shop.</span></summary>
+        <div class="w-body">
+          <p>A short, polite follow-up email on days 2, 5, 10 and 20. It checks first. If the customer replied, booked or asked to stop, nothing goes out.</p>
+          <div class="slip">
+            <p class="from">Sample. Furnace replacement quote, sent Monday</p>
+            <ul class="days">
+              <li><b>Day 2</b><span>A short check-in email is sent.</span></li>
+              <li><b>Day 5</b><span>Dana replied. The follow-ups stop.</span></li>
+              <li><b>Day 10</b><span>No email goes out.</span></li>
+              <li><b>Day 20</b><span>Still stopped.</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Appointment reminders <span>Working demo. Sample shop.</span></summary>
+        <div class="w-body">
+          <p>A reminder email the day before each appointment, in English or Spanish. A customer who replies STOP, or PARAR, is not contacted again by it. Other replies are passed to you.</p>
+          <div class="slip">
+            <p class="from">Sample. Automated email, Sample HVAC Co.</p>
+            <p>“This is an automated reminder from Sample HVAC Co. Your visit is tomorrow, Thursday, at 9:30 am. To change it, reply to this email or call (555) 010-0100. Reply STOP and we will not email you again.”</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Unpaid invoices <span>Working demo. Sample shop.</span></summary>
+        <div class="w-body">
+          <p>Plain reminder emails on invoices that are past due, from wording you approved. If the customer questions the amount or asks about a refund, the reminders pause and it goes to you.</p>
+          <div class="slip">
+            <p class="from">Sample. Automated email, Sample HVAC Co.</p>
+            <p>“This is an automated reminder from Sample HVAC Co. that invoice 0142 was due on March 3. If you already paid, thank you, and please ignore this email. Questions? Call (555) 010-0100.”</p>
+          </div>
+        </div>
+      </details>
+      <details name="worker">
+        <summary>Your numbers <span>Working demo. Sample shop.</span></summary>
+        <div class="w-body">
+          <p>One short message to the owner each Monday morning with the week’s calls, quotes and appointments. It goes to you, never to a customer.</p>
+          <div class="slip">
+            <p class="from">Sample. Monday summary, Sample HVAC Co.</p>
+            <dl>
+              <dt>Calls in</dt><dd>43</dd>
+              <dt>Calls nobody answered</dt><dd>14</dd>
+              <dt>Called back</dt><dd>7</dd>
+              <dt>Quotes sent</dt><dd>10</dd>
+              <dt>Followed up</dt><dd>6</dd>
+            </dl>
+            <p>Sample numbers. They show what the message looks like.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="sup-t">
+  <div class="wrap two">
+    <div>
+      <h2 id="sup-t" class="lead-line">You pick one person at your shop to be in charge of any automation. They approve what goes out and can switch it off.</h2>
+      <p>I train them. It can be you, your office manager, or whoever already answers the phone.</p>
+    </div>
+    <div class="second">
+      <h3>What the AI Supervisor does</h3>
+      <ul class="duty">
+        <li>Approves the wording of every message before it goes out, in English and Spanish.</li>
+        <li>Taps Approve or Decline on each booking.</li>
+        <li>Reads the log of what was sent and answers the replies a person should answer.</li>
+        <li>Pauses everything with one switch if something looks wrong.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="rules-t">
+  <div class="wrap">
+    <h2 id="rules-t">The rules every worker follows</h2>
+    <ol class="rules">
+      <li>Every message to a customer comes from wording you approved in writing, in English and in Spanish.</li>
+      <li>Every worker sends email only. None sends text messages.</li>
+      <li>Messages go out only Monday to Saturday, 9 am to 7 pm in the customer’s local time (your shop’s, if the customer’s is not known). Never on a US federal holiday.</li>
+      <li>A customer who asks to stop, in English or Spanish, is not contacted again.</li>
+      <li>Anything the software says in an email or a chat is disclosed as automated. It never pretends to be a person.</li>
+      <li>You get an alert if something fails, a switch that pauses everything at once, and a log of every message sent.</li>
+      <li>The accounts are in your business’s name. I get access only through a separate access form that you sign, read-only to start, and you can remove it any day.</li>
+      <li>I don’t take on health care or veterinary practices, insurance agencies, businesses that lend money, offer payment plans or take credit applications for a lender, collection agencies, tax preparers, accountants, bookkeepers, law firms, child care, schools or youth programmes.</li>
+    </ol>
+    <p>I make no promise of jobs or money. To see the demo run, <a href="{{HREF:demo}}">see it work</a> or call <a href="{{TEL}}" class="nw">{{PHONE}}</a> and I will run it live on a call. Today the place to start is <a href="{{HREF:map}}#test">the free missed-call test</a>.</p>
+  </div>
+</section>
