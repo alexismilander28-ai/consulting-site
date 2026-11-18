@@ -4,7 +4,7 @@ Writes self-contained pages into site/ (English) and site/es/ (Spanish). Every p
 own CSS, JS and the photo inline, because the host policy allows nothing else
 (default-src 'none'; img-src data:; script-src 'unsafe-inline'). Do not edit site/*.html by hand.
 """
-import base64, pathlib, re, sys, urllib.parse
+import base64, json, pathlib, re, sys, urllib.parse
 
 # ---------------------------------------------------------------------------------------------
 # CONTACT DETAILS: the ONE place to change them. The phone is a Google number. The email is the
@@ -34,6 +34,25 @@ HELLO = {
     "es": {"subject": "Pregunta para Carlos", "body": "Hola, Carlos. "},
 }
 # ---------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------
+# LOCAL SEARCH: the public address of the site and the business facts the search engines read.
+# Every fact here is already printed on the site (phone, email, mailing address on the privacy
+# page, the towns on the Map page). Do not add a fact here that the pages do not already say.
+# ---------------------------------------------------------------------------------------------
+BASE = "https://cmriconsulting.com/"
+BUSINESS = {
+    "name": "CMRI Consulting",
+    "founder": "Carlos Alexis Milander",
+    "street": "20 Dundee Apartments",
+    "town": "Wilkes-Barre",
+    "region": "PA",
+    "zip": "18706",
+    # the towns the Map page names; Luzerne and Lackawanna are the counties they sit in (Allentown is Lehigh)
+    "areas": ["Wilkes-Barre, PA", "Scranton, PA", "Hazleton, PA", "Allentown, PA",
+              "Luzerne County, PA", "Lackawanna County, PA"],
+    "languages": ["en", "es"],
+}
 
 ROOT = pathlib.Path(__file__).resolve().parent
 SITE = ROOT.parent / "site"
@@ -119,6 +138,34 @@ def render(text, lang, toks, depth=0):
     return re.sub(r"\{\{([A-Z_]+(?::\w+)?)\}\}", tok, text)
 
 
+def url(lang, key):
+    """The one public address of a page. Home pages use the folder form (/ and /es/)."""
+    f = PAGES[key][0 if lang == "en" else 1]
+    return BASE + ("" if lang == "en" else "es/") + ("" if f == "index.html" else f)
+
+
+def schema(lang, desc):
+    """LocalBusiness facts for the home page, as JSON-LD (a data block; the CSP does not run it)."""
+    b = BUSINESS
+    data = {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": BASE + "#business",
+        "name": b["name"],
+        "url": url(lang, "home"),
+        "description": desc,
+        "telephone": CONTACT["phone_dial"],
+        "email": CONTACT["email"],
+        "founder": {"@type": "Person", "name": b["founder"]},
+        "address": {"@type": "PostalAddress", "streetAddress": b["street"], "addressLocality": b["town"],
+                    "addressRegion": b["region"], "postalCode": b["zip"], "addressCountry": "US"},
+        "areaServed": [{"@type": "Place", "name": a} for a in b["areas"]],
+        "knowsLanguage": b["languages"],
+        "inLanguage": lang,
+    }
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
 def page(lang, key):
     src = (ROOT / lang / (key + ".html")).read_text(encoding="utf-8")
     front, body = src.split("\n---\n", 1)
@@ -146,8 +193,17 @@ def page(lang, key):
     ]
     if meta.get("layout") == "letter":
         out.append('<meta name="robots" content="noindex">')
+        out.append(f'<link rel="alternate" hreflang="{other}" href="{other_href}">')
+    else:
+        out += [
+            f'<link rel="canonical" href="{url(lang, key)}">',
+            f'<link rel="alternate" hreflang="en" href="{url("en", key)}">',
+            f'<link rel="alternate" hreflang="es" href="{url("es", key)}">',
+            f'<link rel="alternate" hreflang="x-default" href="{url("en", key)}">',
+        ]
+    if key == "home":
+        out.append(schema(lang, meta["description"]))
     out += [
-        f'<link rel="alternate" hreflang="{other}" href="{other_href}">',
         f'<link rel="icon" href="{ICON}">',
         f'<link rel="stylesheet" href="{FONTS}">',
         "<script>document.documentElement.className='js'</script>",
@@ -193,6 +249,25 @@ def main():
             html = page(lang, key)
             dest.write_text(html, encoding="utf-8", newline="\n")
             written.append((dest.relative_to(SITE.parent).as_posix(), len(html.encode("utf-8"))))
+    # sitemap: every indexable page in both languages, each with its language pair. The letter
+    # layout (leave-behind) is noindex, so it is left out.
+    letters = {k for k in PAGES if "layout: letter" in (ROOT / "en" / (k + ".html")).read_text(encoding="utf-8").split("\n---\n", 1)[0]}
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for lang in ("en", "es"):
+        for key in PAGES:
+            if key in letters:
+                continue
+            sm.append(f"  <url><loc>{url(lang, key)}</loc>")
+            for l2 in ("en", "es"):
+                sm.append(f'    <xhtml:link rel="alternate" hreflang="{l2}" href="{url(l2, key)}"/>')
+            sm.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url("en", key)}"/>')
+            sm.append("  </url>")
+    sm += ["</urlset>", ""]
+    (SITE / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8", newline="\n")
+    (SITE / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n",
+                                     encoding="utf-8", newline="\n")
+    written += [("site/sitemap.xml", len("\n".join(sm))), ("site/robots.txt", 0)]
     sys.stdout.reconfigure(encoding="utf-8")
     for name, size in written:
         print(f"{size/1024:7.1f} KB  {name}")
