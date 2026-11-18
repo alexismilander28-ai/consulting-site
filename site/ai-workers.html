@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI workers | CMRI Consulting</title>
-<meta name="description" content="AI workers are automated software that does one repetitive office job each, like sending the reminder before a visit. A working demo built around a sample shop; I run it live on a call. None runs for a customer yet. Every worker sends email only.">
+<meta name="description" content="AI workers are automated software that does one repetitive office job each, like sending the reminder before a visit. I show them live on a call. Every worker sends email only.">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
@@ -375,7 +375,7 @@ html:not(.js) .stepper,html:not(.js) .step-next{display:none}
             </dl>
             <div class="acts needs-js">
               <button type="button" class="btn btn--quiet" data-say="Approved. In a real setup the visit goes on your calendar and the customer gets the confirmation email you approved in writing. In this sample, nothing was sent.">Approve</button>
-              <button type="button" class="btn btn--quiet" data-say="Declined. Nothing is booked and nothing is sent. You get a list of other open times and choose one yourself.">Decline</button>
+              <button type="button" class="btn btn--quiet" data-say="Declined. Nothing is booked. You get a list of other open times and choose one yourself.">Decline</button>
               <button type="button" class="btn btn--quiet" data-say="">Start over</button>
             </div>
             <p role="status">Try the buttons. Nothing is sent from this page.</p>
@@ -391,8 +391,8 @@ html:not(.js) .stepper,html:not(.js) .step-next{display:none}
             <ul class="days">
               <li><b>Day 2</b><span>A short check-in email is sent.</span></li>
               <li><b>Day 5</b><span>Dana replied. The follow-ups stop.</span></li>
-              <li><b>Day 10</b><span>Nothing is sent.</span></li>
-              <li><b>Day 20</b><span>Nothing is sent.</span></li>
+              <li><b>Day 10</b><span>No email goes out.</span></li>
+              <li><b>Day 20</b><span>Still stopped.</span></li>
             </ul>
           </div>
         </div>
@@ -441,8 +441,8 @@ html:not(.js) .stepper,html:not(.js) .step-next{display:none}
 <section class="band" aria-labelledby="sup-t">
   <div class="wrap two">
     <div>
-      <h2 id="sup-t" class="lead-line">Your AI Supervisor runs the AI. The AI runs the routine.</h2>
-      <p>You pick one person at your shop. I train them. It can be you, your office manager, or whoever already answers the phone.</p>
+      <h2 id="sup-t" class="lead-line">You pick one person at your shop to be in charge of any automation. They approve what goes out and can switch it off.</h2>
+      <p>I train them. It can be you, your office manager, or whoever already answers the phone.</p>
     </div>
     <div class="second">
       <h3>What the AI Supervisor does</h3>
@@ -462,12 +462,12 @@ html:not(.js) .stepper,html:not(.js) .step-next{display:none}
     <ol class="rules">
       <li>Every message to a customer comes from wording you approved in writing, in English and in Spanish.</li>
       <li>Every worker sends email only. None sends text messages.</li>
-      <li>Messages go out only Monday to Saturday, 9 am to 7 pm Eastern. Never on Sundays or Pennsylvania holidays.</li>
+      <li>Messages go out only Monday to Saturday, 9 am to 7 pm in the customer’s local time (your shop’s, if the customer’s is not known). Never on a US federal holiday.</li>
       <li>A customer who asks to stop, in English or Spanish, is not contacted again.</li>
       <li>Anything the software says in an email or a chat is disclosed as automated. It never pretends to be a person.</li>
       <li>You get an alert if something fails, a switch that pauses everything at once, and a log of every message sent.</li>
-      <li>The accounts are in your business’s name. I get access only with your written authorization, read-only to start, and you can remove it any day.</li>
-      <li>For licensed professions it only schedules and passes messages along. It never quotes, advises or gives opinions.</li>
+      <li>The accounts are in your business’s name. I get access only through a separate access form that you sign, read-only to start, and you can remove it any day.</li>
+      <li>I don’t take on health care, insurance, lending, collections, tax, accounting, legal or child care businesses.</li>
     </ol>
     <p>I make no promise of jobs or money. To see the demo run, <a href="see-it-work.html">see it work</a> or call <a href="tel:+15703929271" class="nw">(570) 392-9271</a> and I will run it live on a call. Today the place to start is <a href="map.html#test">the free missed-call test</a>.</p>
   </div>
