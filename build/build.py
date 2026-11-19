@@ -48,8 +48,8 @@ BUSINESS = {
     "town": "Wilkes-Barre",
     "region": "PA",
     "zip": "18706",
-    # the towns the Map page names; Luzerne and Lackawanna are the counties they sit in (Allentown is Lehigh)
-    "areas": ["Wilkes-Barre, PA", "Scranton, PA", "Hazleton, PA", "Allentown, PA",
+    # the towns the Map page names; Luzerne and Lackawanna are the counties they sit in
+    "areas": ["Wilkes-Barre, PA", "Scranton, PA", "Hazleton, PA",
               "Luzerne County, PA", "Lackawanna County, PA"],
     "languages": ["en", "es"],
 }
@@ -157,7 +157,7 @@ def schema(lang, desc):
         "telephone": CONTACT["phone_dial"],
         "email": CONTACT["email"],
         "founder": {"@type": "Person", "name": b["founder"]},
-        "address": {"@type": "PostalAddress", "streetAddress": b["street"], "addressLocality": b["town"],
+        "address": {"@type": "PostalAddress", "addressLocality": b["town"],
                     "addressRegion": b["region"], "postalCode": b["zip"], "addressCountry": "US"},
         "areaServed": [{"@type": "Place", "name": a} for a in b["areas"]],
         "knowsLanguage": b["languages"],

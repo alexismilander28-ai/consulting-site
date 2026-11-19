@@ -58,7 +58,7 @@ for lang in ("en", "es"):
             need(build.CONTACT["phone_shown"].replace(" ", " ") in html or build.CONTACT["phone_shown"] in html,
                  f"{rel}: phone in schema is not printed on the page")
             a = d["address"]
-            printed = f'{a["streetAddress"]}, {a["addressLocality"]}, {a["addressRegion"]} {a["postalCode"]}'
+            printed = f'{a["addressLocality"]}, {a["addressRegion"]} {a["postalCode"]}'
             need(printed in privacy_text, f"{rel}: schema address not printed on the privacy page: {printed}")
             need(d["url"] == build.url(lang, "home"), f"{rel}: schema url")
         else:
@@ -66,7 +66,7 @@ for lang in ("en", "es"):
 
 # the towns named in the schema must be named on the Map page
 map_text = (SITE / "map.html").read_text(encoding="utf-8")
-for town in ("Wilkes-Barre", "Scranton", "Hazleton", "Allentown"):
+for town in ("Wilkes-Barre", "Scranton", "Hazleton"):
     need(town in map_text, f"map.html does not name {town}, but the schema does")
 
 ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "x": "http://www.w3.org/1999/xhtml"}
